@@ -6,28 +6,47 @@
 </head>
 <body>
 	<header>
+		<img src="imagenes/pi.png" alt="Logotipo PI" width="256" height="256">
 		<h1>Formulario de registro</h1>
 	</header>
-	<section>
-		<form method="POST" action="">
+		<form method="POST" action="prueba.php">
 			<p><label for="usuario">Nombre de usuario :</label>
-				<input type="text" name="usuario" required>
+				<input type="text" name="usuario" id="usuario" required autofocus>
 			</p>
 			<p><label for="pass">Contraseña :</label>
-				<input type="password" name="pass" required>
+				<input type="password" name="pass" id="pass" required>
 			</p>
 			<p><label for="pass2">Repetir contraseña :</label>
-				<input type="password" name="pass2" required>
+				<input type="password" name="pass2" id="pass2" required>
 			</p>
 			<p><label for="mail">Email :</label>
-				<input type="email" name="mail" required>
+				<input type="email" name="mail" id="mail" required>
 			</p>
 			<p><label for="sexo">Sexo :</label><br>
 				<input type="radio" name="sexo" value="Hombre" checked >Hombre<br>
 				<input type="radio" name="sexo" value="Mujer" >Mujer<br>
 				<input type="radio" name="sexo" value="Otro" >Otro<br>
 			</p>
+			<p>
+				<label for="nacimiento">Fecha de nacimiento :</label>
+				<input type="date" name="nacimiento" id="nacimiento" required>
+			</p>
+			<p>
+				<label for="ciudad">Ciudad :</label>
+				<input type="text" name="ciudad" id="ciudad" required>
+			</p>
+			<p>
+				<label for="pais">Pais de residencia :</label>
+				<input type="text" name="pais" id="pais" required>
+			</p>
+			<p>
+				<label for="foto">Foto de perfil :</label>
+				<input type="file" name="foto" id="foto" required>
+			</p>
+			<p>
+			
+				<input type="submit" value="Registrar">
+			</p>
 		</form>
-	</section>
 </body>
 </html>
