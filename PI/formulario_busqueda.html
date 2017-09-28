@@ -1,6 +1,5 @@
 <!DOCTYPE html> 
 <html lang="es"> 
-	 
 	<head> 
 		<meta charset="UTF-8" />
 		<title>PI - Pictures & images</title> 
@@ -16,13 +15,13 @@
 		</header>
 		<main>
 			<section id="formBusqueda">
-				<h1>Formulario de busqueda</h1>
-				<form action="resultado_busqueda.html">	
-					<label for="tituloFoto">Título: </label><input type="text" name="tituloFoto" id="tituloFoto" placeholder="Titulo" required><br>
-					<label for="fechaInicial">Fecha entre: </label><input type="date" name="fechaInicial" id="fechaInicial" required>
-					<label for="fechaFinal"> y: </label><input type="date" name="fechaFinal" id="fechaFinal" required><br>
-					<label for="pais">Pais: </label><input type="text" name="pais" id="pais" placeholder="Pais"><br>
-					<input type="submit" name="busqueda" value="Buscar">
+				<h1>Formulario de búsqueda</h1>
+				<form method="GET" action="resultado_busqueda.html">	
+					<p><label for="tituloFoto">Título: </label><input type="text" name="tituloFoto" id="tituloFoto" placeholder="Titulo" autofocus></p>
+					<p><label for="fechaInicial">Fecha entre: </label><input type="date" name="fechaInicial" id="fechaInicial">
+					<label for="fechaFinal"> y: </label><input type="date" name="fechaFinal" id="fechaFinal" ></p>
+					<p><label for="pais">Pais: </label><input type="text" name="pais" id="pais" placeholder="Pais"></p>
+					<input type="submit" value="Buscar">
 				</form>
 			</section>
 		</main>
