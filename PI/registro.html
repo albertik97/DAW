@@ -9,7 +9,7 @@
 		<a href="index.html"><img src="imagenes/pi.png" alt="Logotipo PI" width="256" height="256"></a>
 		<h1>Formulario de registro</h1>
 	</header>
-		<form method="POST" action="prueba.php">
+		<form method="POST" action="ejemplo.php"> <!-- valor del action provisional para que no de error en la validacion del código -->
 			<p><label for="usuario">Nombre de usuario :</label>
 				<input type="text" name="usuario" id="usuario" required autofocus>
 			</p>
@@ -22,14 +22,12 @@
 			<p><label for="mail">Email :</label>
 				<input type="email" name="mail" id="mail" required>
 			</p>
-			<p>
 				<fieldset>
 				<legend>Sexo :</legend>
-				<p><label><input type="radio" name="sexo" value="Hombre" checked> Hombre </label></p>
-				<p><label><input type="radio" name="sexo" value="Mujer"> Mujer </label></p>
-				<p><label><input type="radio" name="sexo" value="Otro"> Otro </label></p>
+					<p><label><input type="radio" name="sexo" value="Hombre" checked> Hombre </label></p>
+					<p><label><input type="radio" name="sexo" value="Mujer"> Mujer </label></p>
+					<p><label><input type="radio" name="sexo" value="Otro"> Otro </label></p>
 				</fieldset>
-			</p>
 			<p>
 				<label for="nacimiento">Fecha de nacimiento :</label>
 				<input type="date" name="nacimiento" id="nacimiento" required>
@@ -47,7 +45,6 @@
 				<input type="file" name="foto" id="foto" required>
 			</p>
 			<p>
-			
 				<input type="submit" value="Registrar">
 			</p>
 		</form>

@@ -3,12 +3,11 @@
 <head>
 	<title>Resultados de búsqueda</title>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="css/article.css">
 </head>
 <body>
 	<header>
-		<img src="imagenes/pi.png" alt="Logotipo PI" width="256" height="256">
-		<input type="search" name="busqueda" placeholder="Buscar...">
+		<a href="index.html"><img src="imagenes/pi.png" alt="Logotipo PI" width="256" height="256"></a>
+		<input type="search" name="busqueda" id="barra_busqueda" placeholder="Buscar...">
 		<img src="imagenes/lupa.png" alt="Lupa" width="15" height="15">
 	</header>
 
@@ -42,11 +41,13 @@
 		</article>
 
 		<aside>
-			<h3>Filtros</h3>
-			<p>Fecha:</p>
-			<p>Entre 01/02/2005 y 01/02/2017</p>
-			<p>País :</p>
-			<p>España, Alemania</p>
+			<fieldset>
+				<legend><h3>Filtros</h3></legend>
+				<p>Fecha:</p>
+				<p>Entre 01/02/2005 y 01/02/2017</p>
+				<p>País :</p>
+				<p>España, Alemania</p>
+			</fieldset>
 		</aside>
 	</section>
 
