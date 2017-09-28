@@ -7,35 +7,37 @@
 <body>
 	<header>
 		<a href="index.html"><img src="imagenes/pi.png" alt="Logotipo PI" width="256" height="256"></a>
-		<input type="search" name="busqueda" id="barra_busqueda" placeholder="Buscar...">
-		<img src="imagenes/lupa.png" alt="Lupa" width="15" height="15">
+		<form method="GET" action="resultado_busqueda.html">
+			<input type="search" name="busqueda" id="barra_busqueda" placeholder="Fotos divertidas, paisaje , playa ..." size="40">
+			<input type="submit" name="boton_busqueda" value="Buscar">
+			
+		</form>
 	</header>
-
-		<h3>Resultado de búsqueda de "Visita,vacaciones,viajando"</h3>
 	<section>
+		<h3>Resultado de búsqueda de "Visita,vacaciones,viajando"</h3>
 		<article>
 			<img src="imagenes/ejemplo_imagen.jpg" alt="Descripcion de imagen" width="256" height="256">
-			<p>Título : Mis vacaciones</p>
+			<h4> Mis vacaciones</h4>
 			<p>Fecha : 02/04/2017</p>
 			<p>País : Alemania</p>
 		</article>
 		<article>
 			<img src="imagenes/ejemplo_imagen.jpg" alt="Descripcion de imagen" width="256" height="256">
-			<p>Título : Viajando</p>
+			<h4>Viajando</h4>
 			<p>Fecha : 02/04/2017</p>
 			<p>País : España</p>
 		</article>
 
 		<article>
 			<img src="imagenes/ejemplo_imagen.jpg" alt="Descripcion de imagen" width="256" height="256">
-			<p>Título :Visita a Valencia</p>
+			<h4>Visita a Valencia</h4>
 			<p>Fecha : 02/04/2017</p>
 			<p>País : España</p>
 		</article>
 
 		<article>
 			<img src="imagenes/ejemplo_imagen.jpg" alt="Descripcion de imagen" width="256" height="256">
-			<p>Título :Visita a Berlín</p>
+			<h4>Visita a Berlín</h4>
 			<p>Fecha : 20/04/2015</p>
 			<p>País : Alemania</p>
 		</article>
@@ -49,8 +51,6 @@
 				<p>España, Alemania</p>
 			</fieldset>
 		</aside>
-	</section>
-
-	
+	</section>	
 </body>
 </html>
