@@ -6,7 +6,7 @@
 </head>
 <body>
 	<header>
-		<img src="imagenes/pi.png" alt="Logotipo PI" width="256" height="256">
+		<a href="index.html"><img src="imagenes/pi.png" alt="Logotipo PI" width="256" height="256"></a>
 		<h1>Formulario de registro</h1>
 	</header>
 		<form method="POST" action="prueba.php">
@@ -22,10 +22,13 @@
 			<p><label for="mail">Email :</label>
 				<input type="email" name="mail" id="mail" required>
 			</p>
-			<p><label for="sexo">Sexo :</label><br>
-				<input type="radio" name="sexo" value="Hombre" checked >Hombre<br>
-				<input type="radio" name="sexo" value="Mujer" >Mujer<br>
-				<input type="radio" name="sexo" value="Otro" >Otro<br>
+			<p>
+				<fieldset>
+				<legend>Sexo :</legend>
+				<p><label><input type="radio" name="sexo" value="Hombre" checked> Hombre </label></p>
+				<p><label><input type="radio" name="sexo" value="Mujer"> Mujer </label></p>
+				<p><label><input type="radio" name="sexo" value="Otro"> Otro </label></p>
+				</fieldset>
 			</p>
 			<p>
 				<label for="nacimiento">Fecha de nacimiento :</label>
