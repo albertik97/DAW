@@ -2,15 +2,15 @@
 <html lang="es"> 
 	 
 	<head> 
-		<meta charset="iso-8859-1" />  
+		<meta charset="UTF-8" />  
 		<meta name="author" content="Alejandro Domenech Vicedo, Alberto Berenguer pastor" /> 
 		<meta name="keywords" content="HTML5, web" /> 
 		<meta name="description" content="Sitio web de gestión de álbumes de fotos" /> 
 		<title>PI - Pictures & images</title> 
 	</head>
-	<body> 
+	<body>
 		<header>
-			<img src="imagenes/pi.png" alt="Logotipo PI" height="128px" width="128px">
+			<a href="Index.html"><img src="imagenes/pi.png" alt="Logotipo PI" height="128" width="128"></a>
 			<nav>
 				<a href="FormularioBusqueda.html">Buscar</a> |
 				<a href="registro.html">Registrarse</a> |
@@ -18,14 +18,16 @@
 			</nav><br>
 		</header>
 		<main>
-			<h1>Formulario de busqueda</h1>
-			<form>
-				Titulo: <input type="text" name="tituloFoto" placeholder="Titulo"><br>
-				Fecha entre: <input type="text" name="fechaInicial" placeholder="Fecha inicial"> y:
-				<input type="text" name="fechaFinal" placeholder="Fecha final"><br>
-				Pais: <input type="text" name="pais" placeholder="Pais"><br>
-				<input type="submit" name="busqueda" value="Buscar">
-			</form>
+			<section id="formBusqueda">
+				<h1>Formulario de busqueda</h1>
+				<form action="resultado_busqueda.html">	
+					<label for="tituloFoto">Título: </label><input type="text" name="tituloFoto" id="tituloFoto" placeholder="Titulo" required><br>
+					<label for="fechaInicial">Fecha entre: </label><input type="date" name="fechaInicial" id="fechaInicial" placeholder="Fecha inicial">
+					<label for="fechaFinal"> y: </label><input type="date" name="fechaFinal" id="fechaFinal" placeholder="Fecha final"><br>
+					<label for="pais">Pais: </label><input type="text" name="pais" id="pais" placeholder="Pais"><br>
+					<input type="submit" name="busqueda" value="Buscar">
+				</form>
+			</section>
 		</main>
 	</body> 
 </html>
