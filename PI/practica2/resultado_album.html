@@ -2,18 +2,45 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8" />
-	<title>Solicitud álbumv- Pictures & images</title>
+	<title>Solicitud álbum - Pictures & images</title>
 </head>
 <body>
+	<header>
+		<h1><a href="index.html"><img src="imagenes/pi.png" alt="Logotipo PI" height="128" width="128"></a></h1>
+	</header>
+		<nav>
+		<a href="formulario_busqueda.html">Buscar</a>
+		<a href="menu_usuario.html">Mi perfil</a>
+	</nav>
 	<main>
+		<h1>Resumen del pedido</h1>
 		<fieldset>
 			<legend>Datos de solicitud</legend>
-			<p>Nombre : Chocu</p>
-			<p>Título del álbum : Carnaval 2017</p>
-			<p>Texto adicional : JAJA SI SOI IO</p>
-			<p>Color : #fffffff</p>
-			<p>Número de copias : 1</p>
+			<p>Nombre : <input type="text" name="nombre" value="Chocu" readonly></p>
+			<p>Correo: <input type="text" name="correo" value="chocu@email.com" readonly></p>
+			<p>Título del álbum : <input type="text" name="titulo_album" value="Carnaval 2017" readonly></p>
+			<p>Álbum : <input type="text" name="album" value="Carnaval" readonly></p> 
+			<p>Texto adicional :  <textarea rows="4" cols="50">JAJA SI SOI IO EL CHUCO</textarea></p>
+			<p>Color : <input type="text" name="color" value="#ffffff" readonly></p>
+			<p>Número de copias : <input type="text" name="copias" value="1" readonly size="3"></p>
+			<p>Resolución: <input type="text" name="resolucion" value="900dpi" readonly size="3"></p>
+			<p>Tipo de impresión : <input type="text" name="tipo_impresion" value="A color" readonly></p>
+			<p>Fecha de recepción: <input type="text" name="recepcion" value="21/11/2017" readonly></p>
+			<fieldset>
+				<legend>Dirección de envio</legend>
+				<p>Calle: <input type="text" name="calle" value="C/Falsa" readonly>
+					Número: <input type="text" name="numero" value="123" readonly size="3">
+					Piso: <input type="text" name="piso" value="1" readonly size="3">
+					Puerta: <input type="text" name="puerta" value="A" readonly size="3">
+				</p>
+				<p>Código postal: <input type="text" name="cp" value="03690" readonly size="4">
+				 Localidad: <input type="text" name="localidad" value="San Vicente del Raspeig" readonly>
+				 Provincia: <input type="text" name="provincia" value="Alicante" readonly>
+				 País: <input type="text" name="pais" value="España" readonly></p>
+			</fieldset>
+			<h2>Coste total: 12,35€</h2>
 		</fieldset>
+		<button>Confirmar pedido</button> <button>Cancelar</button>
 	</main>
 </body>
 </html>
