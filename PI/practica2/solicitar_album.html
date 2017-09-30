@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Solicitar Album - Pictures & Images</title>
+</head>
+<body>
+	<header>
+			<h1><a href="index.html"><img src="imagenes/pi.png" alt="Logotipo PI" height="128" width="128"></a></h1>
+	</header>
+	<nav>
+		<a href="formulario_busqueda.html">Buscar</a>
+		<a href="menu_usuario.html">Mi perfil</a>
+	</nav>
+	<main>
+		<section id="texto_descripcion">
+			<h1>Solicitar álbum</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</section>
+		<section id="formulario_solicitud">
+			<h2>Formulario de solicitud</h2>
+			<form method="GET" action="resultado_album.html">
+				<p><label for="nombreUsuario">Nombre: </label><input type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Su nombre (max. 200 carácteres)" maxlength="200" size="40" autofocus required=""></p>
+				<p><label for="tituloAlbum">Título: </label><input type="text" name="tituloAlbum" id="tituloAlbum" placeholder="Titulo (max. 200 carácteres)" maxlength="200" size="40" required=""></p>
+				<p><label for="textoAdicional">Texto adicional: </label><textarea rows="4" cols="50" name="textoAdicional" id="textoAdicional" placeholder="dedicatoria, descripcion, etc. (max. 4000 carácteres)" maxlength="4000" ></textarea>
+				<p><label for="email">Email: </label><input type="email" name="email" id="email" placeholder="email (max. 200 carácteres)" maxlength="200" size="40" required=""></p>
+				<h3>Dirección</h3>
+				<p>
+					<label for="calle">Calle: </label><input type="text" name="calle" id="calle" placeholder="calle, avenida, etc. (max. 200 carácteres)" maxlength="200" size="40" required=""> 
+					<label for="numeroCalle">Número: </label><input type="number" name="numeroCalle" id="numeroCalle" placeholder="Nº calle" min="1" max="1000" required="">
+					<label for="numeroPiso">Piso: </label><input type="number" name="numeroPiso" id="numeroPiso" placeholder="Nº piso" min="1" max="100" required="">
+					<label for="numeroPuerta">Puerta: </label><input type="number" name="numeroPuerta" id="numeroPuerta" placeholder="Nº puerta" min="1" max="1000" required="">
+					
+				</p>
+				<p>
+					<label for="codigoPostal">Código postal: </label><input type="text" name="codigoPostal" id="codigoPostal" placeholder="codigo postal" maxlength="5" size="10" required="">
+					<label for="localidad">Localidad: </label>
+						<select id="localidad" required=""> 
+							<option value="Cañada">Cañada</option>
+						  	<option value="Palencia">Palencia</option>
+						 	<option value="Agost">Agost</option>
+						 	<option value="Alcoy">Alcoy</option>
+						</select>
+						<label for="provincia">Provincia: </label>
+						<select id="provincia" required=""> 
+							<option value="Cañada">Cañada</option>
+						  	<option value="Palencia">Palencia</option>
+						 	<option value="Agost">Agost</option>
+						 	<option value="Alcoy">Alcoy</option>
+						</select>
+						<label for="pais">Pais: </label>
+						<select id="pais" required=""> 
+							<option value="Cañada">Cañada</option>
+						  	<option value="Palencia">Palencia</option>
+						 	<option value="Agost">Agost</option>
+						 	<option value="Alcoy">Alcoy</option>
+						</select>
+				</p>
+				<p><label for="telefono">Teléfono: </label><input type="tel" name="telefono" id="telefono" placeholder="Teléfono de contacto (8 dígitos)" maxlength="8" size="10"></p>
+				<p><label for="colorPortada">Color de portada: </label><input type="color" name="colorPortada" id="colorPortada" placeholder="Elige tu color"></p>
+				<p><label for="numeroCopias">Copias: </label><input type="number" name="numeroCopias" id="numeroCopias" min="1" max="100" value="1"></p>
+				<p><label for="resolucion">Resolución de impresión: </label>
+						<select id="resolucion"> 
+							<option value="150">150 dpi</option>
+						  	<option value="300">300 dpi</option>
+						 	<option value="450">450 dpi</option>
+						 	<option value="600">600 dpi</option>
+						 	<option value="750">750 dpi</option>
+						 	<option value="900">900 dpi</option>
+						</select>
+				</p>
+				<p><label for="albumUsuario">Álbum de PI: </label>
+						<select id="albumUsuario" required="">
+							<option value="1">Album1</option>
+							<option value="2">Album2</option>
+							<option value="3">Album3</option>
+						</select>
+				</p>
+				<p><label for="fechaRececpcion">Fecha de recepción: </label><input type="date" name="fechaRececpcion" id="fechaRececpcion" placeholder="dd/mm/aaaa" size="15"></p>
+				<p>
+					<fieldset>
+						<legend>Tipo de impresión:</legend>
+						<p><label><input type="radio" name="tipoImpresion" id="tipoImpresion" value="Color">Color</label></p> 
+						<p><label><input type="radio" name="tipoImpresion" id="tipoImpresion" value="Blanco/Negro">Blanco/Negro</label></p>
+					</fieldset>
+				</p>
+			<input type="submit" value="Enviar">
+			</form>
+		</section>
+		<aside id="precio_tarifas">
+			
+		</aside>
+	</main>
+</body>
+</html>
