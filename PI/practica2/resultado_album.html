@@ -15,33 +15,39 @@
 	<main>
 		<h1>Resumen del pedido</h1>
 		<fieldset>
-			<legend>Datos de solicitud</legend>
-			<p>Nombre : <input type="text" name="nombre" value="Chocu" readonly></p>
-			<p>Correo: <input type="text" name="correo" value="chocu@email.com" readonly></p>
-			<p>Téléfono: <input type="text" name="telefono" value="645675432" readonly></p>
-			<p>Título del álbum : <input type="text" name="titulo_album" value="Carnaval 2017" readonly></p>
-			<p>Álbum : <input type="text" name="album" value="Carnaval" readonly></p> 
-			<p>Texto adicional :  <textarea rows="4" cols="50" readonly>JAJA SI SOI IO EL CHUCO</textarea></p>
-			<p>Color : <input type="text" name="color" value="#ffffff" readonly></p>
-			<p>Número de copias : <input type="text" name="copias" value="1" readonly size="3"></p>
-			<p>Resolución: <input type="text" name="resolucion" value="900dpi" readonly size="3"></p>
-			<p>Tipo de impresión : <input type="text" name="tipo_impresion" value="A color" readonly></p>
-			<p>Fecha de recepción: <input type="text" name="recepcion" value="21/11/2017" readonly></p>
+			<legend><h3>Datos de solicitud</h3></legend>
 			<fieldset>
-				<legend>Dirección de envio</legend>
-				<p>Calle: <input type="text" name="calle" value="C/Falsa" readonly>
-					Número: <input type="text" name="numero" value="123" readonly size="3">
-					Piso: <input type="text" name="piso" value="1" readonly size="3">
-					Puerta: <input type="text" name="puerta" value="A" readonly size="3">
-				</p>
-				<p>Código postal: <input type="text" name="cp" value="03690" readonly size="4">
-				 Localidad: <input type="text" name="localidad" value="San Vicente del Raspeig" readonly>
-				 Provincia: <input type="text" name="provincia" value="Alicante" readonly>
-				 País: <input type="text" name="pais" value="España" readonly></p>
+				<legend>Información de contacto</legend>
+					<p><label for="nombre">Nombre : </label><input type="text" name="nombre" id="nombre" value="Chocu" readonly></p>
+					<p><label for="correo">Correo: </label><input type="text" name="correo" id="correo" value="chocu@email.com" readonly></p>
+					<p><label for="telefono">Téléfono: </label><input type="text" name="telefono" id="telefono" value="645675432" readonly></p>
+			</fieldset>
+			<fieldset>
+				<legend><h3>Detalles de álbum</h3></legend>
+					<p><label for="titulo_album">Título del álbum : </label><input type="text" name="titulo_album" id="titulo_album" value="Carnaval 2017" readonly></p>
+					<p><label for="album">Álbum : </label><input type="text" name="album" id="album" value="Carnaval" readonly></p> 
+					<p><label for="texto">Texto adicional : </label> <textarea rows="4" cols="50" id="texto" readonly>JAJA SI SOI IO EL CHUCO</textarea></p>
+					<p><label for="color">Color : </label><input type="text" name="color" value="#ffffff" id="color" readonly></p>
+					<p><label for="copias">Número de copias : </label><input type="text" name="copias" id="copias" value="1" readonly size="3"></p>
+					<p><label for="resolucion"> Resolución: </label><input type="text" name="resolucion" id="resolucion" value="900dpi" readonly size="3"></p>
+					<p><label for="tipo_impresion">Tipo de impresión : </label><input type="text" name="tipo_impresion" id="tipo_impresion" value="A color" readonly></p>
+			</fieldset>
+			<fieldset>
+				<legend><h3>Detalles de envio</h3></legend>
+					<p><label for="calle">Calle: </label><input type="text" name="calle" id="calle" value="C/Falsa" readonly>
+					<label for="numero"> Número: </label><input type="text" name="numero" id="numero" value="123" readonly size="3">
+					<label for="piso">Piso: </label><input type="text" name="piso" id="piso" value="1" readonly size="3">
+					<label for="puerta">Puerta: </label><input type="text" name="puerta" id="puerta" value="A" readonly size="3">
+					</p>
+					<p><label for="cp">Código postal: </label><input type="text" name="cp" id="cp" value="03690" readonly size="4">
+					 <label for="localidad">Localidad: </label><input type="text" name="localidad" id="localidad" value="San Vicente del Raspeig" readonly>
+					 <label for="provincia">Provincia: </label><input type="text" name="provincia" id="provincia" value="Alicante" readonly>
+				 	<label for="pais">País: </label><input type="text" name="pais" id="pais" value="España" readonly></p>
+				 	<p><label for="recepcion">Fecha de recepción: </label><input type="text" name="recepcion" id="recepcion" value="21/11/2017" readonly></p>
 			</fieldset>
 			<h2>Coste total: 12,35€</h2>
 		</fieldset>
-		<button>Confirmar pedido</button> <button>Cancelar</button>
+		<a href="menu_usuario.html">Volver a mi perfil</a>
 	</main>
 </body>
 </html>
