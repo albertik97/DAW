@@ -4,29 +4,32 @@
 	<head> 
 		<meta charset="UTF-8" />
 		<title>PI - Pictures & images</title>
-		<link href="css/general.css" rel="stylesheet" type="text/css"> 
+		<link href="css/estilo_index.css" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	</head>
 	<body> 
 		<header>
-			<h1><a href="index.html"><img src="imagenes/pi.png" alt="Logotipo PI" height="256" width="256"></a></h1>
+			<h1><a href="index.html"><img src="imagenes/pi.png" id="logo" alt="Logotipo PI" height="128" width="128"></a></h1>
 		</header>
 		<main>
 			<section id="login">
-				<h2>Registrate</h2>
+				<h2>Inicia Sesión</h2>
 				<form method="POST" action="menu_usuario.html">
-					<p><label for="userName">Usuario: </label><input type="text" name="userName" id="userName" placeholder="Usuario" required></p>
-					<p><label for="Password">Contraseña: </label><input type="password" name="Password" id="Password" placeholder="Contraseña" required></p>
+					<label for="userName">Usuario</label>
+					<input type="text" name="userName" id="userName" placeholder="Introduce tu usuario" required>
+					<label for="Password">Contraseña</label>
+					<input type="password" name="Password" id="Password" placeholder="Introduce tu contraseña" required>
 					<input type="submit" value="Iniciar sesion">
 				</form>
-				<a href="registro.html">Registrarse</a>
+				<p><a href="registro.html">Registrarse</a></p>
 			</section>
 			<section id="UltimasFotos">
 				<h2>Ultimas fotos subidas</h2>
-				<a href="detalles_foto.html" ><img src="imagenes/ejemplo_imagen.jpg" alt="Logotipo PI" height="256" width="256"></a>
-				<a href="detalles_foto.html" ><img src="imagenes/ejemplo_imagen.jpg" alt="Logotipo PI" height="256" width="256"></a>
-				<a href="detalles_foto.html" ><img src="imagenes/ejemplo_imagen.jpg" alt="Logotipo PI" height="256" width="256"></a>
-				<a href="detalles_foto.html" ><img src="imagenes/ejemplo_imagen.jpg" alt="Logotipo PI" height="256" width="256"></a>
-				<a href="detalle_foto.html" ><img src="imagenes/ejemplo_imagen.jpg" alt="Logotipo PI" height="256" width="256"></a>
+				<a href="detalles_foto.html" ><img src="imagenes/ejemplo_imagen.jpg" alt="Logotipo PI" height="164" width="164"></a>
+				<a href="detalles_foto.html" ><img src="imagenes/ejemplo_imagen.jpg" alt="Logotipo PI" height="164" width="164"></a>
+				<a href="detalles_foto.html" ><img src="imagenes/ejemplo_imagen.jpg" alt="Logotipo PI" height="164" width="164"></a>
+				<a href="detalles_foto.html" ><img src="imagenes/ejemplo_imagen.jpg" alt="Logotipo PI" height="164" width="164"></a>
+				<a href="detalle_foto.html" ><img src="imagenes/ejemplo_imagen.jpg" alt="Logotipo PI" height="164" width="164"></a>
 				<br>
 				<a href="formulario_busqueda.html">Buscar más</a>
 			</section>
