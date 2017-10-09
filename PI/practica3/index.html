@@ -4,11 +4,12 @@
 	<head> 
 		<meta charset="UTF-8" />
 		<title>PI - Pictures & images</title>
-		<link href="css/general.css" rel="stylesheet" type="text/css"> 
+		<link href="css/general.css" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Stalinist+One" rel="stylesheet"> 
 	</head>
 	<body> 
 		<header>
-			<h1><a href="index.html"><img src="imagenes/pi.png" alt="Logotipo PI" height="256" width="256"></a></h1>
+			<h1><a href="index.html"><img src="imagenes/pi.png" alt="Logotipo PI" id="logo"></a></h1>
 		</header>
 		<main>
 			<section id="login">
@@ -16,7 +17,7 @@
 				<form method="POST" action="menu_usuario.html">
 					<p><label for="userName">Usuario: </label><input type="text" name="userName" id="userName" placeholder="Usuario" required></p>
 					<p><label for="Password">Contraseña: </label><input type="password" name="Password" id="Password" placeholder="Contraseña" required></p>
-					<input type="submit" value="Iniciar sesion">
+					<input type="submit" id="boton_iniciar_sesion"value="Iniciar sesion">
 				</form>
 				<a href="registro.html">Registrarse</a>
 			</section>

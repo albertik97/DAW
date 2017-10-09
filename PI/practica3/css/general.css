@@ -1,10 +1,35 @@
 header{
-	background-color: #2196F3;
-	opacity: 70%;
-	margin: 0;
-	padding: 0;
+	text-align: center;
+}
+#login{
+	text-align: center;
+	border: 2px solid;
+	margin: 0 auto;
+	padding: 0 auto;
+	background: #ddd;
+display:inline-block;
+justify-content:center;
+border-radius: 4px;
 
 }
-body{
-	background: url("/imagenes/fondo.jpg");
+#logo{
+	height: 10%;
+	width: 10%;
 }
+body{
+	background: #D32F2F;
+}
+#boton_iniciar_sesion{
+	background: #8BC34A;
+	border-radius: 4px;
+	border: 1px solid;
+	width: 100%;
+}
+#boton_iniciar_sesion:hover{
+	background: #AED581;
+}
+h2{
+
+	font-family: 'Stalinist One', cursive;
+}
+	
