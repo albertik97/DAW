@@ -100,3 +100,7 @@ body{
 	vertical-align: middle;
 	font-family: 'Pacifico',sans-serif;
 }
+#obligatorio{
+	padding-left: 5%;
+	font-weight: bold;
+}
