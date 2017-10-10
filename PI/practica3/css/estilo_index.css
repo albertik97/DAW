@@ -1,3 +1,4 @@
+
 body
 {
 	width: 100%;
@@ -8,7 +9,7 @@ body
 }
 header
 {
-	height: 5%;
+	height: 20%;
 }
 #logo
 {
@@ -20,7 +21,7 @@ header
 main
 {
 	width: auto;
-	height: 70%;
+	height:80%;
 }
 #login
 {
@@ -94,14 +95,15 @@ label
 h2
 {
 	margin-bottom: 8px;
-	color: #ccc;
+	color: black;
 }
 #UltimasFotos
 {
+	height: auto;
 	margin:	auto;
-	width: 	70%;
 	text-align: center;
-	
+	background-color: #EEEEEE;	
+	margin: 20px;
 }
 #UltimasFotos img
 {
