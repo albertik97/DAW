@@ -167,7 +167,6 @@ li a:hover {
     background-color: #555;
     color: white;
 }
-<<<<<<< HEAD
 
 article{
 	display: inline-block;
@@ -220,8 +219,8 @@ fieldset{
 	margin: 10px;
 	-webkit-transition-duration: 0.2s;
     transition-duration: 0.2s;
-=======
-p#FechaPais
+}
+#FechaPais
 {
 	display: inline;
 	float: right;
@@ -231,5 +230,4 @@ p#FechaPais
 {
 	display: block;
     margin: auto;
->>>>>>> 9373fcc052fe19db06941871ecea5e8306ef1b88
 }
