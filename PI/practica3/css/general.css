@@ -166,3 +166,56 @@ li a:hover {
     background-color: #555;
     color: white;
 }
+
+article{
+	display: inline-block;
+	background: red;
+}
+section{
+	float:left;
+}
+aside{
+	float: right;
+	padding: 10px;
+}
+footer{
+	clear:left;
+	position: absolute;
+  	right: 0;
+  	bottom: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.15);
+ 	text-align: center;
+}
+
+/*PARA EL ASIDE DEL FILTRO*/
+fieldset{
+	border-radius: 8px;
+	background: #fff;
+	width: 250px;
+}
+
+
+.titulo_filtro{
+	font-weight: bold;
+}
+/*arreglo textos busquedas*/
+#texto_resultado{
+	margin-left: 20px;
+	font-size: 2em;
+	font-family: 'Ubuntu', sans-serif;
+}
+.pasar{
+	display: inline-block;
+	width: 80px;
+ 	height: 30px;
+ 	vertical-align: middle;
+ 	 background-color: #F44336;
+    border-radius: 8px;
+	box-shadow: 0 2px 3px #aaa;
+	border:	none;
+	color:	#ddd;
+	margin: 10px;
+	-webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+}

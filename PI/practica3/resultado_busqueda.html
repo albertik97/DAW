@@ -12,16 +12,18 @@
 		<a href="index.html"><img id="logo" src="imagenes/logo_cabecera.png" alt="Logotipo PI" width="256" height="256">
 			<p id="letras_logo">Pictures & Images</p></a>
 	</header>
+	<nav>
+			<ul>
+				<li><a href="registro.html">Registrarse</a></li>
+				<li><a href="index.html">Iniciar sesion</a></li>
+			</ul>
+	</nav>
 	<form id="formulario_busqueda" method="GET" action="resultado_busqueda.html"> <!-- Como no esta la pagina php ponemos esta en action -->
 			<input type="search" name="busqueda" id="barra_busqueda" placeholder="Fotos divertidas, paisaje , playa ..." size="40">
 			<input id="boton_buscar" type="submit" value="Buscar">			
 	</form>
-	<nav>
-				<a href="registro.html">Registrarse</a> 
-				<a href="index.html">Iniciar sesion</a>
-	</nav>
 	<section>
-		<h3>Resultado de búsqueda de "Visita,vacaciones,viajando"</h3>
+		<h3 id="texto_resultado">Resultado de búsqueda de "Visita,vacaciones,viajando"</h3>
 		<article>
 			<figure>
 			<a href="detalles_foto.html"><img src="imagenes/ejemplo_imagen.jpg" alt="Descripcion de imagen" width="256" height="256"></a>
@@ -57,15 +59,17 @@
 			<p>País : Alemania</p>
 		</article>
 	</section>
-	<p> <input type="button" name="anterior" value="Anterior">Página 1 de 3 <input type="button" name="siguiente" value="Siguiente"></p>
 	<aside>
 			<fieldset>
 				<legend><h3>Filtros</h3></legend>
-				<p>Fecha:</p>
+				<p class="titulo_filtro">Fecha:</p>
 				<p>Entre 01/02/2005 y 01/02/2017</p>
-				<p>País :</p>
+				<p class="titulo_filtro">País :</p>
 				<p>España, Alemania</p>
 			</fieldset>
-	</aside>	
+	</aside>
+	<footer>
+		 <p><input class="pasar" type="button" name="anterior" value="Anterior">Página 1 de 3<input class="pasar" type="button" name="siguiente" value="Siguiente"></p>
+	</footer>
 </body>
 </html>
