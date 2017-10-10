@@ -104,3 +104,6 @@ body{
 	padding-left: 5%;
 	font-weight: bold;
 }
+a{
+	text-decoration: none;
+}
