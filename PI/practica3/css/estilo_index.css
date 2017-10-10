@@ -30,6 +30,9 @@ header
 	height:10%;
 	position: relative;
 	left: 45%;
+
+
+
 }
 main
 {
@@ -118,6 +121,8 @@ input[type="submit"]
 
 	-webkit-transition-duration: 0.2s;
     transition-duration: 0.2s;
+
+    font-family: 'Ubuntu', sans-serif;
 }
 input[type="submit"]:focus,input[type="submit"]:hover
 {

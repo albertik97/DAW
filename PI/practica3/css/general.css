@@ -1,5 +1,8 @@
 body{
 	height:100%;
+	margin: 0;
+	padding: 0;
+	background-color:#ECEFF1;
 }
 p,legend{
 	font-family: 'Ubuntu', sans-serif;
@@ -8,10 +11,6 @@ label ,fieldset{
 	width: 90%;
 	display: block;
 	margin: auto;
-}
-
-body{
-	background-color:#ECEFF1;
 }
 main{
 
@@ -88,10 +87,6 @@ img{
 }
 header{
 		background: #EF5350;
-}
-body{
-	margin: 0;
-	padding: 0;
 }
 #letras_logo{
 	color: white;
