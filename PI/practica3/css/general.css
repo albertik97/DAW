@@ -4,7 +4,7 @@ body{
 	padding: 0;
 	background-color:#ECEFF1;
 }
-p,legend{
+p,legend, figcaption{
 	font-family: 'Ubuntu', sans-serif;
 }
 label ,fieldset{
@@ -166,4 +166,15 @@ li a {
 li a:hover {
     background-color: #555;
     color: white;
+}
+p#FechaPais
+{
+	display: inline;
+	float: right;
+	margin: 0;
+}
+.imagen
+{
+	display: block;
+    margin: auto;
 }
