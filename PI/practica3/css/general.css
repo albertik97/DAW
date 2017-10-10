@@ -1,5 +1,8 @@
 body{
 	height:100%;
+	margin: 0;
+	padding: 0;
+	background-color:#ECEFF1;
 }
 p,legend{
 	font-family: 'Ubuntu', sans-serif;
@@ -10,11 +13,7 @@ label ,fieldset{
 	margin: auto;
 }
 
-body{
-	background-color:#ECEFF1;
-}
 main{
-
 	border-radius: 8px;
 	background: white;
 	width: 50%;
@@ -54,12 +53,18 @@ input[type="text"]:focus, input[type="password"]:focus,input[type="email"]:focus
     border: 1px solid #555;
 }
 
+input[type="search"]{
+	margin: auto;
+	position: relative;
+	left: 40%;
+	display: inline-block;
+	padding: 0;
+}
+
 #titulo_registro{
 	padding-top: 10px;
 	padding-left: 20px;
 	font-family: 'Pacifico', cursive;
-}
-#logo{
 }
 #boton_registro{
     background-color: #F44336;
@@ -80,7 +85,7 @@ input[type="text"]:focus, input[type="password"]:focus,input[type="email"]:focus
 #boton_registro:active{
 	box-shadow: none;
 }
-img{
+#logo{
 	height: 70px;
 	width: 85px;
 	padding-left: 10px;
@@ -89,10 +94,7 @@ img{
 header{
 		background: #EF5350;
 }
-body{
-	margin: 0;
-	padding: 0;
-}
+
 #letras_logo{
 	color: white;
 	font-size: 2em;
@@ -106,4 +108,15 @@ body{
 }
 a{
 	text-decoration: none;
+}
+#boton_buscar{
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	left: 40%;
+}
+#formulario_busqueda{
+	margin-top: 2%;
+	width: 500px;
+ 	 height: 41px;
 }
