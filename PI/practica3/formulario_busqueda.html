@@ -2,28 +2,43 @@
 <html lang="es"> 
 	<head> 
 		<meta charset="UTF-8" />
-		<title>PI - Pictures & images</title> 
+		<title>PI - Pictures & images</title>
+		<link rel="stylesheet" type="text/css" href="css/general.css">
+		<link href="https://fonts.googleapis.com/css?family=Pacifico|Ubuntu" rel="stylesheet"> 
 	</head>
 	<body>
 		<header>
-			<h1><a href="index.html"><img src="imagenes/pi.png" alt="Logotipo PI" height="128" width="128"></a></h1>
+			<a href="index.html"><img id="logo" src="imagenes/logo_cabecera.png" alt="Logotipo PI" height="128" width="128">
+			<p id="letras_logo">Pictures & Images</p></a>
 		</header>
 		<nav>
-				<a href="formulario_busqueda.html">Buscar</a> |
-				<a href="registro.html">Registrarse</a> |
-				<a href="index.html">Iniciar sesion</a>
+			<ul>
+				<li><a href="formulario_busqueda.html">Buscar</a></li>
+				<li><a href="registro.html">Registrarse</a> </li>
+				<li><a href="index.html">Iniciar sesion</a></li>
+			</ul>
 		</nav>
 		<main>
-			<section id="formBusqueda">
-				<h1>Formulario de búsqueda</h1>
-				<form method="GET" action="resultado_busqueda.html">	
-					<p><label for="tituloFoto">Título: </label><input type="text" name="tituloFoto" id="tituloFoto" placeholder="Titulo" autofocus></p>
-					<p><label for="fechaInicial">Fecha entre: </label><input type="date" name="fechaInicial" id="fechaInicial">
-					<label for="fechaFinal"> y: </label><input type="date" name="fechaFinal" id="fechaFinal" ></p>
-					<p><label for="pais">Pais: </label><input type="text" name="pais" id="pais" placeholder="Pais"></p>
-					<input type="submit" value="Buscar">
-				</form>
-			</section>
+			<h1 id="titulo_busqueda">Formulario de búsqueda</h1>
+		<form method="POST" action="resultado_busqueda.html">
+			<p><label for="tituloFoto">Título</label><input type="text" name="tituloFoto" id="tituloFoto" placeholder="Título" autofocus></p>
+			<p><label for="fechaInicial">Fecha inicial </label><input type="date" name="fechaInicial" id="fechaInicial"></p>
+			<p><label for="fechaFinal"> Fecha final </label><input type="date" name="fechaFinal" id="fechaFinal" ></p>
+			<p><label for="pais">Pais: </label><input type="text" name="pais" id="pais" placeholder="Pais"></p>
+			<p><input id="boton_buscar" type="submit" value="Buscar"></p>
+		</form>
+			<!---<section id="contenedor_principal">
+				<section id="formBusqueda">
+					<h2>Formulario de búsqueda</h2>
+					<form method="GET" action="resultado_busqueda.html">	
+						<p><label for="tituloFoto">Título</label><input type="text" name="tituloFoto" id="tituloFoto" placeholder="Título" autofocus></p>
+						<p><label for="fechaInicial">Fecha inicial </label><input type="date" name="fechaInicial" id="fechaInicial">
+						<label for="fechaFinal"> Fecha final </label><input type="date" name="fechaFinal" id="fechaFinal" ></p>
+						<p><label for="pais">Pais: </label><input type="text" name="pais" id="pais" placeholder="Pais"></p>
+						<input type="submit" value="Buscar">
+					</form>
+				</section>
+			</section>-->
 		</main>
 	</body> 
 </html>

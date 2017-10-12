@@ -37,7 +37,7 @@ input[type="file"]{
 	padding: 6px 10px;
 	width: 90%;
 }
-input[type="text"], input[type="password"],input[type="email"],input[type="date"]{
+input[type="text"], input[type="password"],input[type="email"],input[type="date"], input[type="tel"], input[type="number"],  input[type="color"], textarea, select{
 	display: block;
 	margin: auto;
 	margin-top: 8px;
@@ -53,7 +53,7 @@ input[type="text"], input[type="password"],input[type="email"],input[type="date"
 	-webkit-transition: 0.5s;
     transition: 0.5s;
 }
-input[type="text"]:focus, input[type="password"]:focus,input[type="email"]:focus,input[type="date"]:focus {
+input[type="text"]:focus, input[type="password"]:focus,input[type="email"]:focus,input[type="date"]:focus, input[type="tel"]:focus, input[type="number"]:focus, input[type="color"]:focus, textarea:focus, select:focus {
     border: 1px solid #555;
 }
 
@@ -66,14 +66,13 @@ input[type="search"]{
 	width: 500px;
  	height: 41px;
  	font-size: 14px;
- 	white-space: unwrap;
  	vertical-align: middle;
 }
 input[type="search"]:focus{
 	border:2px solid red;
 }
 
-#titulo_registro{
+#titulo_registro, #titulo_busqueda, #titulo_solicitar_album{
 	padding-top: 10px;
 	padding-left: 20px;
 	font-family: 'Pacifico', cursive;
@@ -91,11 +90,15 @@ button{
 	-webkit-transition-duration: 0.2s;
     transition-duration: 0.2s;
 }
+<<<<<<< HEAD
 button:hover{
 	background-color: #EF5350;
 }
 button:active{
 	box-shadow: none;
+}
+#boton_registro:hover{
+	background-color: #EF5350;
 }
 #logo{
 	height: 70px;
@@ -121,7 +124,23 @@ header{
 a{
 	text-decoration: none;
 }
-#boton_buscar{
+#boton_buscar, #boton_solicitar_album{
+	/*display: block;
+	margin: auto;
+	margin-top:	24px;
+	box-shadow: 0 2px 3px #aaa;
+
+	background-color: #F44336;
+	border:	none;
+	color:	#ddd;
+
+	padding: 6px 20px;
+	border-radius: 8px;
+
+	-webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+
+    font-family: 'Ubuntu', sans-serif;*/
 	display: inline-block;
 	position: relative;
 	left: 35%;
@@ -136,10 +155,10 @@ a{
 	-webkit-transition-duration: 0.2s;
     transition-duration: 0.2s;
 }
-#boton_buscar:hover{
+#boton_buscar:focus, #boton_buscar:hover, #boton_solicitar_album:focus, #boton_solicitar_album:hover{
 	background-color: #EF5350;
 }
-#boton_buscar:active{
+#boton_buscar:active, #boton_solicitar_album:active{
 	box-shadow: none;
 }
 #formulario_busqueda{
@@ -238,6 +257,7 @@ fieldset{
 	display: block;
     margin: auto;
 }
+<<<<<<< HEAD
 span{
 	font-weight: bold;
 }
@@ -308,4 +328,59 @@ main fieldset{
 }
 .resultado_album{
 	width: 90%;
+}
+
+/*	CSS de detalles-fotos.html	*/
+
+#formBusqueda
+{
+	margin: auto;
+	margin-bottom: 20px;
+	width: 30%;
+	height: 275px;
+	background-color: #f1f1f1;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+	border-radius:8px;
+}
+#formBusqueda h2
+{
+	margin: 0px;
+	text-align: center;
+	padding-top:10px;
+	color: black;
+	font-family: 'Pacifico', cursive;
+}
+#principal
+{
+	width: auto;
+	height: 75%;
+}
+#contenedor_principal
+{
+	height: 80%;
+}
+
+
+#tipo_impresion /* Para elegir el tipo de impresion en solicitar */
+{
+	text-align: left;
+	margin: auto;
+	width: 90%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #F44336;
+    color: white;
 }
