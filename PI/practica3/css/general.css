@@ -78,7 +78,7 @@ input[type="search"]:focus{
 	padding-left: 20px;
 	font-family: 'Pacifico', cursive;
 }
-button{
+button,#boton_registro{
     background-color: #F44336;
     border-radius: 8px;
     width: 150px;
@@ -100,6 +100,11 @@ button:active{
 #boton_registro:hover{
 	background-color: #EF5350;
 }
+#boton_registro:active{
+	box-shadow: none;
+	
+}
+
 #logo{
 	height: 70px;
 	width: 85px;
