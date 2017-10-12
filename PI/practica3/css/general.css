@@ -15,6 +15,7 @@ label ,fieldset{
 	width: 90%;
 	display: block;
 	margin: auto;
+	margin-bottom: 10px;
 }
 main{
 	border-radius: 8px;
@@ -199,11 +200,12 @@ article{
 	margin: 10px;
 }
 article p{
-	padding: 2%;
+	padding: 1%;
 }
 section{
 	float:left;
-	width: 80%;
+	width: 75%;
+	margin-left: 3%;
 }
 figure{
 	padding: 0;
@@ -215,7 +217,7 @@ figure img{
 }
 aside{
 	float: right;
-	width: 15%;
+	width: 20%;
 }
 footer{
 	clear:left;
@@ -231,7 +233,7 @@ footer{
 fieldset{
 	border-radius: 8px;
 	background: #fff;
-	width: 200px;
+	width: 250px;
 	font-family: 'Ubuntu',sans-serif;
 }
 
@@ -257,7 +259,6 @@ fieldset{
 	display: block;
     margin: auto;
 }
-<<<<<<< HEAD
 span{
 	font-weight: bold;
 }
@@ -270,7 +271,6 @@ p{
 }
 #misdatos{
 	width: auto;
-	background-image: url("img/prueba.jpg");
 	border: 0;
 	background-size: 100% 100%;
 }
@@ -324,10 +324,9 @@ main fieldset{
 	width: 90%;
 }
 .peque{
-	width: 25%;
-}
-.resultado_album{
-	width: 90%;
+	width: 15%;
+	display:inline-block;
+	padding-left: 5%
 }
 
 /*	CSS de detalles-fotos.html	*/
@@ -359,7 +358,11 @@ main fieldset{
 {
 	height: 80%;
 }
-
+#volver{
+	color: black;
+	padding: 10px;
+	background:#CFD8DC;
+}
 
 #tipo_impresion /* Para elegir el tipo de impresion en solicitar */
 {
@@ -383,4 +386,8 @@ tr:nth-child(even){background-color: #f2f2f2}
 th {
     background-color: #F44336;
     color: white;
+}
+
+#precio_total{
+	text-decoration: underline; 
 }
