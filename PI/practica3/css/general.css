@@ -4,7 +4,7 @@ body{
 	padding: 0;
 	background-color:#ECEFF1;
 }
-p,legend, .botones_perfil{
+p,legend, .botones_perfil, h3{
 	font-family: 'Ubuntu', sans-serif;
 }
 figcaption{
@@ -37,7 +37,7 @@ input[type="file"]{
 	margin-bottom: 8px;
 	padding: 6px 10px;
 	width: 90%;
-}
+}	
 input[type="text"], input[type="password"],input[type="email"],input[type="date"], input[type="tel"], input[type="number"],  input[type="color"], textarea, select{
 	display: block;
 	margin: auto;
@@ -91,7 +91,6 @@ button{
 	-webkit-transition-duration: 0.2s;
     transition-duration: 0.2s;
 }
-<<<<<<< HEAD
 button:hover{
 	background-color: #EF5350;
 }
@@ -379,6 +378,7 @@ table {
 th, td {
     text-align: left;
     padding: 8px;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 tr:nth-child(even){background-color: #f2f2f2}
