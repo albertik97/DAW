@@ -2,34 +2,51 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8" />
-	<title>Menú usuario - Pictures & images</title> 
+	<title>Menú usuario - Pictures & images</title>
+	<link href="css/general.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
 </head>
 <body>
 	<header>
-			<h1><a href="index.html"><img src="imagenes/pi.png" alt="Logotipo PI" height="128" width="128"></a></h1>
+			<a href="index.html"><img img id="logo" src="imagenes/logo_cabecera.png" alt="Logotipo PI" height="128" width="128">
+				<p id="letras_logo">Pictures & Images</p></a>
 	</header>
 	<nav>
-		<a href="formulario_busqueda.html">Buscar</a>
-		<a href="menu_usuario.html">Mi perfil</a>
+		<ul>
+		<li><a href="formulario_busqueda.html">Buscar</a></li>
+		<li><a href="menu_usuario.html">Mi perfil</a></li>
+		</ul>
 	</nav>
-	<main>
-		<fieldset>
+	<main id="main_usuario">
+		<fieldset id="misdatos">
 			<legend><h2>Mis datos</h2></legend>
-			<p><img src="imagenes/chocu.jpg" alt="foto perfil" width="100" height="100"></p>
-			<p>Usuario: el_chocu</p>
-			<p>Nombre : Chocu Martínez de la Selva</p>
-			<p>Sexo : Hombre</p>
-			<p>Fecha de Nacimiento : 12/04/1990</p>
-			<p>Pais de residencia : Tailandia</p>
-			<p>Ciudad : Lopburi</p>
-			<p><a href="#" >Modificar datos</a></p>
-		</fieldset>
-		<p><a href="#" >Darse de baja</a></p>
-		<p><a href="#" >Mis álbumes</a></p>
-		<p><a href="#" >Crear álbum nuevo</a></p>
-		<p><a href="solicitar_album.html" >Solicitar álbum impreso</a></p>
-		<p><a href="index.html" >Salir</a></p>
-	</main>
+			<p><img id="imagen_perfil" src="imagenes/chocu.jpg" alt="foto perfil" width="100" height="100"></p>
+			<table>
+				<tr>
+					<td>Usuario</td> <td>el_chocu</td>
+				</tr>
 
+				<tr><td>Nombre :</td> <td>Chocu Martínez de la Selva</td>
+				</tr>
+				<tr><td>Sexo :</td><td>Hombre</td>
+				</tr>
+				<tr><td>Fecha de Nacimiento :</td> <td>12/04/1990</td>
+				</tr>
+				<tr><td>Pais de residencia : </td><td>Tailandia</td>
+				</tr>
+				<tr><td>Ciudad :</td> <td>Lopburi</td></tr>
+			</table>
+			<p><button id="edit_perfil" href="#" >Modificar datos</button></p>
+
+		</fieldset>
+		<hr>
+		<a class="botones_perfil" href="#" ><img src="imagenes/delete.png">Darse de baja</a>
+		<a class="botones_perfil" href="#" ><img src="imagenes/add.png">Crear álbum nuevo</a>
+		<a class="botones_perfil" href="#" ><img src="imagenes/album.png">Mis álbumes</a>
+		<a class="botones_perfil" href="solicitar_album.html" ><img src="imagenes/print.png">Solicitar álbum impresion</a>
+		<a class="botones_perfil" href="index.html"><img src="imagenes/exit.png">Salir</a>
+	</main>
 </body>
 </html>

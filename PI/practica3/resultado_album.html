@@ -3,20 +3,26 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>Solicitud álbum - Pictures & images</title>
+	<link href="css/general.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 </head>
 <body>
 	<header>
-		<h1><a href="index.html"><img src="imagenes/pi.png" alt="Logotipo PI" height="128" width="128"></a></h1>
+		<a href="index.html"><img img id="logo" src="imagenes/logo_cabecera.png" alt="Logotipo PI" height="128" width="128">
+				<p id="letras_logo">Pictures & Images</p></a>
 	</header>
 		<nav>
-		<a href="formulario_busqueda.html">Buscar</a>
-		<a href="menu_usuario.html">Mi perfil</a>
+			<ul>
+				<li><a href="formulario_busqueda.html">Buscar</a></li>
+				<li><a href="menu_usuario.html">Mi perfil</a></li>
+			</ul>
 	</nav>
-	<main>
+	<main  class="resultado_album">
 		<h1>Resumen del pedido</h1>
 		<fieldset>
 			<legend><h3>Datos de solicitud</h3></legend>
-			<fieldset>
+			<fieldset class="resultado_album">
 				<legend>Información de contacto</legend>
 					<p><label for="nombre">Nombre : </label><input type="text" name="nombre" id="nombre" value="Chocu" readonly></p>
 					<p><label for="correo">Correo: </label><input type="text" name="correo" id="correo" value="chocu@email.com" readonly></p>
@@ -28,9 +34,9 @@
 					<p><label for="album">Álbum : </label><input type="text" name="album" id="album" value="Carnaval" readonly></p> 
 					<p><label for="texto">Texto adicional : </label> <textarea rows="4" cols="50" id="texto" readonly>JAJA SI SOI IO EL CHUCO</textarea></p>
 					<p><label for="color">Color : </label><input type="text" name="color" value="#ffffff" id="color" readonly></p>
-					<p><label for="copias">Número de copias : </label><input type="text" name="copias" id="copias" value="1" readonly size="3"></p>
-					<p><label for="resolucion"> Resolución: </label><input type="text" name="resolucion" id="resolucion" value="900dpi" readonly size="3"></p>
-					<p><label for="tipo_impresion">Tipo de impresión : </label><input type="text" name="tipo_impresion" id="tipo_impresion" value="A color" readonly></p>
+					<p><label for="copias">Número de copias : </label><input type="text" name="copias" class="peque" id="copias" value="1" readonly size="3"></p>
+					<p><label for="resolucion"> Resolución: </label><input type="text" name="resolucion" class="peque" id="resolucion" value="900dpi" readonly size="3"></p>
+					<p><label for="tipo_impresion">Tipo de impresión : </label><input type="text" name="tipo_impresion"  class="peque"id="tipo_impresion" value="A color" readonly></p>
 			</fieldset>
 			<fieldset>
 				<legend><h3>Detalles de envio</h3></legend>
