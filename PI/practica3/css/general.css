@@ -125,25 +125,9 @@ a{
 	text-decoration: none;
 }
 #boton_buscar, #boton_solicitar_album{
-	/*display: block;
-	margin: auto;
-	margin-top:	24px;
-	box-shadow: 0 2px 3px #aaa;
-
-	background-color: #F44336;
-	border:	none;
-	color:	#ddd;
-
-	padding: 6px 20px;
-	border-radius: 8px;
-
-	-webkit-transition-duration: 0.2s;
-    transition-duration: 0.2s;
-
-    font-family: 'Ubuntu', sans-serif;*/
 	display: inline-block;
 	position: relative;
-	left: 35%;
+	left:35%;
 	width: 100px;
  	height: 41px;
  	vertical-align: middle;
