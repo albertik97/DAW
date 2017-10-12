@@ -125,6 +125,23 @@ a{
 	text-decoration: none;
 }
 #boton_buscar, #boton_solicitar_album{
+	display: block;
+	margin: auto;
+	/*position: relative;
+	left:40%;*/
+	width: 100px;
+ 	height: 41px;
+ 	vertical-align: middle;
+ 	background-color: #F44336;
+    border-radius: 8px;
+	box-shadow: 0 2px 3px #aaa;
+	border:	none;
+	color:	#ddd;
+	-webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+}
+#boton_barra_busqueda
+{
 	display: inline-block;
 	position: relative;
 	left:35%;
