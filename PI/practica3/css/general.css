@@ -70,7 +70,7 @@ input[type="search"]{
  	vertical-align: middle;
 }
 input[type="search"]:focus{
-	border:2px solid red;
+	outline:2px solid red;
 }
 
 #titulo_registro, #titulo_busqueda, #titulo_solicitar_album{
@@ -217,7 +217,6 @@ figure{
 	margin: 0;
 }
 figure img{
-	width: 100%;
 	padding: 0;
 }
 aside{
