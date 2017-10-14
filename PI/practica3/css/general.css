@@ -52,7 +52,7 @@ input[type="text"], input[type="password"],input[type="email"],input[type="date"
 
 	box-sizing: border-box;
 	/*-webkit-transition: 0.5s;*/
-    transition: 0.5s;
+    /*transition: 0.5s;*/
 }
 input[type="text"]:focus, input[type="password"]:focus,input[type="email"]:focus,input[type="date"]:focus, input[type="tel"]:focus, input[type="number"]:focus, input[type="color"]:focus, textarea:focus, select:focus {
     border: 1px solid #555;
@@ -224,14 +224,16 @@ aside{
 	width: 20%;
 }
 footer{
+
 	clear:left;
-	position: fixed;
+	position: relative;
   	right: 0;
   	bottom: 0;
 	left: 0;
+	margin-top:10px;
 	background-color: rgba(0,0,0,0.15);
  	text-align: center;
-}
+} 
 
 /*PARA EL ASIDE DEL FILTRO*/
 fieldset{
