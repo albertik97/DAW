@@ -231,8 +231,10 @@ footer{
   	bottom: 0;
 	left: 0;
 	margin-top:10px;
-	background-color: rgba(0,0,0,0.15);
+	background-color: #333;
  	text-align: center;
+ 	margin-bottom: 0;
+ 	padding-bottom:0;
 } 
 
 /*PARA EL ASIDE DEL FILTRO*/
@@ -274,6 +276,7 @@ p{
 .pasar{
 	display: inline;
 	margin: 10px;
+	box-shadow: none;
 }
 #misdatos{
 	width: auto;
@@ -397,4 +400,10 @@ th {
 
 #precio_total{
 	text-decoration: underline; 
+}
+.cantidad{
+	color:white;
+}
+footer p{
+	margin:0;
 }
