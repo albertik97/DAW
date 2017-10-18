@@ -23,7 +23,7 @@ main{
 	width: 50%;
 	display:block;
 	margin: auto;
-	padding: 0;
+	padding: 10px;
 }
 form{
 	padding: 5%;
@@ -397,7 +397,6 @@ th {
     background-color: #F44336;
     color: white;
 }
-
 #precio_total{
 	text-decoration: underline; 
 }
@@ -406,4 +405,10 @@ th {
 }
 footer p{
 	margin:0;
+}
+#copy{
+	visibility: hidden;
+}
+.imprimir{
+	display: none;
 }

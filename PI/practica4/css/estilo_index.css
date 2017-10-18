@@ -166,3 +166,6 @@ hr
 	width: 35%;
 	color: #ddd;
 }
+#copy{
+	display: none;
+}
