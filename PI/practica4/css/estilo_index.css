@@ -25,7 +25,6 @@ header
 }
 #logo
 {
-<<<<<<< HEAD
 	display: block;
 	margin: auto;
 	/*margin-top: 5px;*/
@@ -33,14 +32,6 @@ header
 	width:128px;
 	height:128px;
 	
-=======
-	margin-top: 20px;
-	width:10%;
-	height:10%;
-	position: relative;
-	left: 45%;
-
->>>>>>> c47bf829bfeb418c93eddcd064173d2f69fab5c6
 }
 
 main
@@ -50,11 +41,7 @@ main
 }
 #contenedor_principal
 {
-<<<<<<< HEAD
 	height: auto;
-=======
-	height: 45%;
->>>>>>> c47bf829bfeb418c93eddcd064173d2f69fab5c6
 }
 #login
 {
@@ -79,20 +66,16 @@ a
 {
 	color: #ddd;
 }
-
 #login a
 {
 	color: black;
 }
- #login a:focus, #login a:active, #login a:hover
+ #login a:focus, #login a:active,  #login a:hover
 {
 	color: red;
 	-webkit-transition: 0.2s;
     transition: 0.2s;
-    }
- #login a:focus {
-   	outline: 2px solid black;
-   }
+}
 a:focus, a:active, a:hover
 {
 	color: red;
@@ -145,12 +128,7 @@ input[type="submit"]
 input[type="submit"]:focus,input[type="submit"]:hover
 {
 	background-color: #EF5350;
-	
 }
-
-input[type="submit"]:focus{
-		outline: 2px solid black;
-	}
 input[type="submit"]:active
 {
 	box-shadow: none;
@@ -170,13 +148,10 @@ h2
 }
 #UltimasFotos
 {
-	background-color: rgba(0,0,0,0.70);
+	background-color: rgba(0,0,0,0.30);
 	margin:	auto;
 	/*width: 	70%;*/
-<<<<<<< HEAD
 	height: auto;
-=======
->>>>>>> c47bf829bfeb418c93eddcd064173d2f69fab5c6
 	text-align: center;
 	padding-bottom: 2.5%;
 	
@@ -184,12 +159,9 @@ h2
 #UltimasFotos img
 {
 	width:15%;
-	height:90%;
+	height:auto;
 	margin-left: 5px;
 	margin-right: 5px;
-	transition: 0.5s;
-	vertical-align: middle;
-	padding-bottom: 10px;
 }
 
 @media screen and (max-width: 1050px) 
@@ -263,16 +235,4 @@ hr
 	width: 35%;
 	color: #ddd;
 }
-<<<<<<< HEAD
 
-=======
-#copy{
-	display: none;
-}
-
-#UltimasFotos img:hover,#UltimasFotos a:focus img{
-	height: 100%;
-	width: 20%;
-	transition: 0.5s;
-}
->>>>>>> c47bf829bfeb418c93eddcd064173d2f69fab5c6
