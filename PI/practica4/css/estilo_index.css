@@ -21,19 +21,19 @@ h1
 }
 header
 {
-	height: 25%;
+	height: auto;
 }
 #logo
 {
-	margin-top: 20px;
-	width:10%;
-	height:10%;
-	position: relative;
-	left: 45%;
-
-
-
+	display: block;
+	margin: auto;
+	/*margin-top: 5px;*/
+	margin-bottom: 5px;
+	width:128px;
+	height:128px;
+	
 }
+
 main
 {
 	width: auto;
@@ -41,7 +41,7 @@ main
 }
 #contenedor_principal
 {
-	height: 55%;
+	height: auto;
 }
 #login
 {
@@ -53,6 +53,7 @@ main
 	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 	border-radius:8px;
 }
+
 #login h2
 {
 	margin: 0px;
@@ -150,8 +151,9 @@ h2
 	background-color: rgba(0,0,0,0.30);
 	margin:	auto;
 	/*width: 	70%;*/
-	height: 45%;
+	height: auto;
 	text-align: center;
+	padding-bottom: 2.5%;
 	
 }
 #UltimasFotos img
@@ -161,8 +163,76 @@ h2
 	margin-left: 5px;
 	margin-right: 5px;
 }
+
+@media screen and (max-width: 1050px) 
+{
+	#UltimasFotos img
+	{
+		width: 157px;
+		margin-top: 5px;
+	}
+	#UltimasFotos
+	{
+		/*height: 490px;*/
+	}
+}
+@media screen and (max-height: 640px)
+{
+		main
+	{
+		width: auto;
+		height: 90%;
+	}
+}
+@media screen and (max-height: 680px)
+{
+		main
+	{
+		width: auto;
+		height: 80%;
+	}
+}
+@media screen and (max-width: 615px) 
+{
+	#login
+	{
+		width: 185px;
+	}
+	#logo
+	{
+		width: 12.5%;
+		height: auto;
+	}
+}
+@media screen and (max-width: 397px)
+{
+
+
+	#login
+	{
+
+	}
+	#UltimasFotos h2
+	{
+		font-size: 1em;
+		padding: 5px;
+	}
+	#UltimasFotos
+	{
+		height: 550px;
+	}
+}
+@media screen and (max-width: 347px)
+{
+
+	#UltimasFotos
+	{
+		height: 800px;
+	}
+}
 hr
 {
 	width: 35%;
 	color: #ddd;
 }
+
