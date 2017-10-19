@@ -23,7 +23,7 @@ main{
 	width: 50%;
 	display:block;
 	margin: auto;
-	padding: 10px;
+	/*padding: 10px;*/
 }
 form{
 	padding: 5%;
@@ -258,13 +258,13 @@ fieldset{
 #FechaPais
 {
 	display: inline;
-	float: right;
 	margin: 0;
 }
 .imagen
 {
 	display: block;
     margin: auto;
+    width: 90%;
 }
 span{
 	font-weight: bold;
@@ -291,11 +291,11 @@ td{
 	border-bottom: 1px solid #ddd;
 }
 #imagen_perfil{
-	width: 20%;
-	height: 20%;
+	width: 150px;
+	height: 150px;
 }
 #main_usuario{
-	margin-top: 3%;
+	margin-top: 20px;
 }
 
 #edit_perfil{
@@ -318,8 +318,8 @@ td{
 	box-shadow: none;
 }
 .botones_perfil  img{
-	width: 2%;
-	height: 2%;
+	width: 15px;
+	height: 15px;
 	vertical-align: middle;
 	margin: 1%;
 }
@@ -389,7 +389,10 @@ th, td {
     padding: 8px;
     font-family: 'Ubuntu', sans-serif;
 }
-
+#fila_tarifas
+{
+	width: 50%;
+}
 tr:nth-child(even){background-color: #f2f2f2}
 
 th {
@@ -405,9 +408,136 @@ th {
 footer p{
 	margin:0;
 }
+
+
+	/* Media Queries para Registro */
+
+
+	/* Para Moviles */
+
+@media screen and (max-width: 365px)
+{
+	#logo
+	{
+		height: 60px;
+		width: 75px;
+		/*padding-left: 10px;
+		vertical-align: middle;*/
+	}
+	#letras_logo
+	{
+		font-size: 1.5em; 
+	}
+	main
+	{
+		width: 95%;
+	}
+	#titulo_registro, #titulo_busqueda
+	{
+		font-size: 1.5em;
+	}
+	#obligatorio
+	{
+		font-size: 0.8em;
+	}
+	li a
+	{
+		font-size: 80%;
+	}
+	.peque
+	{
+		width: auto;
+		display: block;
+	}
+	#barra_busqueda
+	{
+		left: 0%;
+		width: 200px;
+	}
+	#boton_barra_busqueda
+	{
+		left: 0%;
+		width: 55px;
+	}
+	aside
+	{
+		float: none;
+	}
+	#texto_resultado
+	{
+		margin-left: 0px;
+		font-size: 1em;
+	}
+	.pasar
+	{
+		width: auto;
+	}
+
+}
+@media screen and (max-width: 750px)
+{
+	main
+	{
+		width: 95%;
+	}
+	#barra_busqueda
+	{
+		left: 0%;
+		width: 60%;
+	}
+	#boton_barra_busqueda
+	{
+		left: 0%;
+	}
+	aside
+	{
+		float: none;
+	}
+	#texto_resultado
+	{
+		margin-left: 0px;
+		font-size: 1.5em;
+		width: 100%;
+	}
+	section
+	{
+		width: auto;
+	}
+	.pasar
+	{
+		width: auto;
+	}
+}
+
+
+@media screen and (max-width: 1260px)
+{
+	.peque
+	{
+		width: auto;
+		display: block;
+	}
+	#barra_busqueda
+	{
+		left: 0%;
+	}
+	#boton_barra_busqueda
+	{
+		left: 0%;
+	}
+	aside
+	{
+		float: none;
+	}
+	section
+	{
+		width: auto;
+	}
+}
 #copy{
 	visibility: hidden;
 }
 .imprimir{
 	display: none;
 }
+
