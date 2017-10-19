@@ -3,14 +3,13 @@ body{
 	margin: 0;
 	padding: 0;
 	background-color:#ECEFF1;
+	font-family: sans-serif;
+	font-size: 2em;
 }
 p,legend, .botones_perfil, h3{
 	font-family: 'Ubuntu', sans-serif;
 }
-figcaption{
-	font-family: 'Pacifico', sans-serif;
-	padding: 2%;
-}
+
 label ,fieldset{
 	width: 90%;
 	display: block;
@@ -55,7 +54,8 @@ input[type="text"], input[type="password"],input[type="email"],input[type="date"
     /*transition: 0.5s;*/
 }
 input[type="text"]:focus, input[type="password"]:focus,input[type="email"]:focus,input[type="date"]:focus, input[type="tel"]:focus, input[type="number"]:focus, input[type="color"]:focus, textarea:focus, select:focus {
-    border: 1px solid #555;
+   /* border: 1px solid #555;*/
+    outline: 4px solid black;
 }
 
 input[type="search"]{
@@ -70,13 +70,12 @@ input[type="search"]{
  	vertical-align: middle;
 }
 input[type="search"]:focus{
-	outline:2px solid red;
+	outline:4px solid red;
 }
 
 #titulo_registro, #titulo_busqueda, #titulo_solicitar_album{
 	padding-top: 10px;
 	padding-left: 20px;
-	font-family: 'Pacifico', cursive;
 }
 button,#boton_registro{
     background-color: #F44336;
@@ -128,21 +127,27 @@ header{
 a{
 	text-decoration: none;
 }
+a:hover,a:focus{
+    background-color: #EF5350;
+    color: white;
+}
+
 #boton_buscar, #boton_solicitar_album{
 	display: block;
 	margin: auto;
 	/*position: relative;
 	left:40%;*/
-	width: 100px;
- 	height: 41px;
+	width: 200px;
+ 	height: 82px;
  	vertical-align: middle;
  	background-color: #F44336;
     border-radius: 8px;
 	box-shadow: 0 2px 3px #aaa;
 	border:	none;
-	color:	#ddd;
+	color:white;
 	/*-webkit-transition-duration: 0.2s;*/
     transition-duration: 0.2s;
+    font-size: 2em;
 }
 #boton_barra_busqueda
 {
@@ -162,6 +167,7 @@ a{
 }
 #boton_buscar:focus, #boton_buscar:hover, #boton_solicitar_album:focus, #boton_solicitar_album:hover{
 	background-color: #EF5350;
+	border: 4px solid black;
 }
 #boton_buscar:active, #boton_solicitar_album:active{
 	box-shadow: none;
@@ -192,9 +198,8 @@ li a {
     padding: 14px 16px;
     text-decoration: none;
 }
-li a:hover {
-    background-color: #555;
-    color: white;
+li a:hover ,a:focus{
+    background-color: #EF5350;
 }
 
 article{
@@ -322,10 +327,6 @@ td{
 	height: 2%;
 	vertical-align: middle;
 	margin: 1%;
-}
-
-h1{
-	font-family: 'Pacifico','sans-serif';
 }
 
 main fieldset{

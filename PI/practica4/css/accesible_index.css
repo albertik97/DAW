@@ -9,11 +9,10 @@ body
 	width: 100%;
 	height: 100%;
 	margin: 0px;
-	font-family: 'Roboto', sans-serif;
 	background: url("img/asd2.jpg");
 	background-size: 1920px 1080px;
-	font-family: 'Ubuntu', sans-serif;
-	/*background-color:#EF5350;*/
+	font-family: sans-serif;
+	font-size: 2em;
 }
 h1
 {
@@ -39,14 +38,14 @@ main
 }
 #contenedor_principal
 {
-	height: 45%;
+	height: 65%;
 }
 #login
 {
 	margin: auto;
 	margin-bottom: 20px;
 	width: 30%;
-	height: 275px;
+	height: 95%;
 	background-color: #f1f1f1;
 	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 	border-radius:8px;
@@ -57,28 +56,26 @@ main
 	text-align: center;
 	padding-top:10px;
 	color: black;
-	font-family: 'Pacifico', cursive;
 }
 a
 {
 	color: #ddd;
+}
+h2 a:hover ,h2 a:focus{
+	outline: 5px solid red;
+	color: red;
+	-webkit-transition: 0.2s;
+    transition: 0.2s;
 }
 
 #login a
 {
 	color: black;
 }
- #login a:focus, #login a:active, #login a:hover
+
+#login a:focus, #login a:active, #login a:hover
 {
-	color: red;
-	-webkit-transition: 0.2s;
-    transition: 0.2s;
-    }
- #login a:focus {
-   	outline: 2px solid black;
-   }
-a:focus, a:active, a:hover
-{
+	outline: 5px solid red;
 	color: red;
 	-webkit-transition: 0.2s;
     transition: 0.2s;
@@ -95,17 +92,14 @@ input[type="text"], input[type="password"]
 	margin-bottom: 8px;
 	padding: 6px 10px;
 	width: 90%;
-
 	border-radius: 4px;
 	border: 1px solid #ccc;
 	box-shadow: inset 0 2px 3px #ddd;
-
 	box-sizing: border-box;
-	/*-webkit-transition: 0.5s;
-    transition: 0.5s;*/
+	font-size: 1em;
 }
 input[type="text"]:focus, input[type="password"]:focus {
-    border: 1px solid #555;
+    border: 4px solid #555;
 }
 input[type="submit"]
 {
@@ -113,28 +107,25 @@ input[type="submit"]
 	margin: auto;
 	margin-top:	24px;
 	box-shadow: 0 2px 3px #aaa;
-
 	background-color: #F44336;
 	border:	none;
 	color:	#ddd;
-
+	width: 300px;
+	height: 50px;
 	padding: 6px 20px;
 	border-radius: 8px;
-
-	-webkit-transition-duration: 0.2s;
     transition-duration: 0.2s;
-
-    font-family: 'Ubuntu', sans-serif;
+    font-size: 1em;
+    color: white;
 }
 input[type="submit"]:focus,input[type="submit"]:hover
 {
 	background-color: #EF5350;
+	outline: 5px solid black;
+	
 	
 }
 
-input[type="submit"]:focus{
-		outline: 2px solid black;
-	}
 input[type="submit"]:active
 {
 	box-shadow: none;
@@ -156,7 +147,7 @@ h2
 {
 	background-color: rgba(0,0,0,0.70);
 	margin:	auto;
-	/*width: 	70%;*/
+	margin-bottom: 100px;
 	text-align: center;
 	
 }
@@ -184,3 +175,4 @@ hr
 	width: 20%;
 	transition: 0.5s;
 }
+
