@@ -5,14 +5,16 @@
 		<meta charset="UTF-8" />
 		<title>PI - Pictures & images</title> 
 
-		<link rel="stylesheet" type="text/css" href="css/general.css">
+		<link rel="stylesheet" type="text/css" href="css/general.css" media="screen" title="Estilo predeterminado">
+		<link href="css/imprimible.css" rel="stylesheet" type="text/css" media="print">
+		<link href="css/accesible.css" rel="alternate stylesheet" type="text/css" media="screen" title="Estilo accesible">
 		<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 	</head>
 	<body> 
 		<header>
 			<a href="index.html"><img id="logo" src="imagenes/logo_cabecera.png" alt="Logotipo PI" width="256" height="256">
-			<p id="letras_logo">Pictures & Images</p></a>
+			<p id="letras_logo"><span lang="en">Pictures & Images</span></p></a>
 		</header>
 		<nav>
 				<ul>
@@ -22,18 +24,20 @@
 				</ul>		
 		</nav>
 		<main>
-			<figure>
+			<figure id="detalles">
 				<img src="imagenes/ejemplo_imagen.jpg" class="imagen" alt="Foto de lo que sea"><br>
+<<<<<<< HEAD
 				<figcaption>
 					<p>Mis vacaciones a Polonia</p> 
+=======
+				<figcaption><span class="negrita">Mis vacaciones a Polonia</span>
+>>>>>>> c47bf829bfeb418c93eddcd064173d2f69fab5c6
 					<p id="FechaPais">Tomada el 12/12/2004 en Polonia</p>
 					<p><a href="">Autor</a> - 
 					<a href="">Album</a></p>
 				</figcaption>
 			</figure>
-			
-			
-			
 		</main>
+			<p id="copy">Todos los derechos reservados© 2017</p>
 	</body> 
 </html>

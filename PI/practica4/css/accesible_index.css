@@ -9,11 +9,10 @@ body
 	width: 100%;
 	height: 100%;
 	margin: 0px;
-	font-family: 'Roboto', sans-serif;
 	background: url("img/asd2.jpg");
 	background-size: 1920px 1080px;
-	font-family: 'Ubuntu', sans-serif;
-	/*background-color:#EF5350;*/
+	font-family: sans-serif;
+	font-size: 2em;
 }
 h1
 {
@@ -21,28 +20,17 @@ h1
 }
 header
 {
-	height: auto;
+	height: 25%;
 }
 #logo
 {
-<<<<<<< HEAD
-	display: block;
-	margin: auto;
-	/*margin-top: 5px;*/
-	margin-bottom: 5px;
-	width:128px;
-	height:128px;
-	
-=======
 	margin-top: 20px;
 	width:10%;
 	height:10%;
 	position: relative;
 	left: 45%;
 
->>>>>>> c47bf829bfeb418c93eddcd064173d2f69fab5c6
 }
-
 main
 {
 	width: auto;
@@ -50,51 +38,44 @@ main
 }
 #contenedor_principal
 {
-<<<<<<< HEAD
-	height: auto;
-=======
-	height: 45%;
->>>>>>> c47bf829bfeb418c93eddcd064173d2f69fab5c6
+	height: 65%;
 }
 #login
 {
 	margin: auto;
 	margin-bottom: 20px;
 	width: 30%;
-	height: 275px;
+	height: 95%;
 	background-color: #f1f1f1;
 	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 	border-radius:8px;
 }
-
 #login h2
 {
 	margin: 0px;
 	text-align: center;
 	padding-top:10px;
 	color: black;
-	font-family: 'Pacifico', cursive;
 }
 a
 {
 	color: #ddd;
+}
+h2 a:hover ,h2 a:focus{
+	outline: 5px solid red;
+	color: red;
+	-webkit-transition: 0.2s;
+    transition: 0.2s;
 }
 
 #login a
 {
 	color: black;
 }
- #login a:focus, #login a:active, #login a:hover
+
+#login a:focus, #login a:active, #login a:hover
 {
-	color: red;
-	-webkit-transition: 0.2s;
-    transition: 0.2s;
-    }
- #login a:focus {
-   	outline: 2px solid black;
-   }
-a:focus, a:active, a:hover
-{
+	outline: 5px solid red;
 	color: red;
 	-webkit-transition: 0.2s;
     transition: 0.2s;
@@ -111,17 +92,14 @@ input[type="text"], input[type="password"]
 	margin-bottom: 8px;
 	padding: 6px 10px;
 	width: 90%;
-
 	border-radius: 4px;
 	border: 1px solid #ccc;
 	box-shadow: inset 0 2px 3px #ddd;
-
 	box-sizing: border-box;
-	/*-webkit-transition: 0.5s;
-    transition: 0.5s;*/
+	font-size: 1em;
 }
 input[type="text"]:focus, input[type="password"]:focus {
-    border: 1px solid #555;
+    border: 4px solid #555;
 }
 input[type="submit"]
 {
@@ -129,28 +107,25 @@ input[type="submit"]
 	margin: auto;
 	margin-top:	24px;
 	box-shadow: 0 2px 3px #aaa;
-
 	background-color: #F44336;
 	border:	none;
 	color:	#ddd;
-
+	width: 300px;
+	height: 50px;
 	padding: 6px 20px;
 	border-radius: 8px;
-
-	-webkit-transition-duration: 0.2s;
     transition-duration: 0.2s;
-
-    font-family: 'Ubuntu', sans-serif;
+    font-size: 1em;
+    color: white;
 }
 input[type="submit"]:focus,input[type="submit"]:hover
 {
 	background-color: #EF5350;
+	outline: 5px solid black;
+	
 	
 }
 
-input[type="submit"]:focus{
-		outline: 2px solid black;
-	}
 input[type="submit"]:active
 {
 	box-shadow: none;
@@ -172,13 +147,8 @@ h2
 {
 	background-color: rgba(0,0,0,0.70);
 	margin:	auto;
-	/*width: 	70%;*/
-<<<<<<< HEAD
-	height: auto;
-=======
->>>>>>> c47bf829bfeb418c93eddcd064173d2f69fab5c6
+	margin-bottom: 100px;
 	text-align: center;
-	padding-bottom: 2.5%;
 	
 }
 #UltimasFotos img
@@ -191,81 +161,11 @@ h2
 	vertical-align: middle;
 	padding-bottom: 10px;
 }
-
-@media screen and (max-width: 1050px) 
-{
-	#UltimasFotos img
-	{
-		width: 157px;
-		margin-top: 5px;
-	}
-	#UltimasFotos
-	{
-		/*height: 490px;*/
-	}
-}
-@media screen and (max-height: 640px)
-{
-		main
-	{
-		width: auto;
-		height: 90%;
-	}
-}
-@media screen and (max-height: 680px)
-{
-		main
-	{
-		width: auto;
-		height: 80%;
-	}
-}
-@media screen and (max-width: 615px) 
-{
-	#login
-	{
-		width: 185px;
-	}
-	#logo
-	{
-		width: 12.5%;
-		height: auto;
-	}
-}
-@media screen and (max-width: 397px)
-{
-
-
-	#login
-	{
-
-	}
-	#UltimasFotos h2
-	{
-		font-size: 1em;
-		padding: 5px;
-	}
-	#UltimasFotos
-	{
-		height: 550px;
-	}
-}
-@media screen and (max-width: 347px)
-{
-
-	#UltimasFotos
-	{
-		height: 800px;
-	}
-}
 hr
 {
 	width: 35%;
 	color: #ddd;
 }
-<<<<<<< HEAD
-
-=======
 #copy{
 	display: none;
 }
@@ -275,4 +175,4 @@ hr
 	width: 20%;
 	transition: 0.5s;
 }
->>>>>>> c47bf829bfeb418c93eddcd064173d2f69fab5c6
+

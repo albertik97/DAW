@@ -3,7 +3,9 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>Menú usuario - Pictures & images</title>
-	<link href="css/general.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="css/general.css" media="screen" title="Estilo predeterminado">
+	<link href="css/imprimible.css" rel="stylesheet" type="text/css" media="print">
+	<link href="css/accesible.css" rel="alternate stylesheet" type="text/css" media="screen" title="Estilo accesible">
 	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 
@@ -11,7 +13,7 @@
 <body>
 	<header>
 			<a href="index.html"><img id="logo" src="imagenes/logo_cabecera.png" alt="Logotipo PI" height="128" width="128">
-				<p id="letras_logo">Pictures & Images</p></a>
+				<p id="letras_logo"><span lang="en">Pictures & Images</span></p></a>
 	</header>
 	<nav>
 		<ul>
@@ -39,7 +41,6 @@
 				<tr><td>Ciudad :</td> <td>Lopburi</td></tr>
 			</table>
 			<p><button id="edit_perfil" >Modificar datos</button></p>
-
 		</fieldset>
 		<hr>
 		<a class="botones_perfil" href="#" ><img src="imagenes/delete.png" alt="Darse de baja">Darse de baja</a>
@@ -48,5 +49,6 @@
 		<a class="botones_perfil" href="solicitar_album.html" ><img src="imagenes/print.png" alt="Solicitar la impresión de un álbum">Solicitar álbum impresion</a>
 		<a class="botones_perfil" href="index.html"><img src="imagenes/exit.png" alt="Salir">Salir</a>
 	</main>
+	<p id="copy">Todos los derechos reservados© 2017</p>
 </body>
 </html>
