@@ -1,0 +1,119 @@
+@media screen and (max-width: 365px)
+{
+	#logo
+	{
+		height: 60px;
+		width: 75px;
+		/*padding-left: 10px;
+		vertical-align: middle;*/
+	}
+	#letras_logo
+	{
+		font-size: 1.5em; 
+	}
+	main
+	{
+		width: 95%;
+	}
+	#titulo_registro, #titulo_busqueda
+	{
+		font-size: 1.5em;
+	}
+	#obligatorio
+	{
+		font-size: 0.8em;
+	}
+	li a
+	{
+		font-size: 80%;
+	}
+	.peque
+	{
+		width: auto;
+		display: block;
+	}
+	#barra_busqueda
+	{
+		left: 0%;
+		width: 200px;
+	}
+	#boton_barra_busqueda
+	{
+		left: 0%;
+		width: 55px;
+	}
+	aside
+	{
+		float: none;
+	}
+	#texto_resultado
+	{
+		margin-left: 0px;
+		font-size: 1em;
+	}
+	.pasar
+	{
+		width: auto;
+	}
+
+}
+@media screen and (max-width: 750px)
+{
+	main
+	{
+		width: 95%;
+	}
+	#barra_busqueda
+	{
+		left: 0%;
+		width: 60%;
+	}
+	#boton_barra_busqueda
+	{
+		left: 0%;
+	}
+	aside
+	{
+		float: none;
+	}
+	#texto_resultado
+	{
+		margin-left: 0px;
+		font-size: 1.5em;
+		width: 100%;
+	}
+	section
+	{
+		width: auto;
+	}
+	.pasar
+	{
+		width: auto;
+	}
+}
+
+
+@media screen and (max-width: 1260px)
+{
+	.peque
+	{
+		width: auto;
+		display: block;
+	}
+	#barra_busqueda
+	{
+		left: 0%;
+	}
+	#boton_barra_busqueda
+	{
+		left: 0%;
+	}
+	aside
+	{
+		float: none;
+	}
+	section
+	{
+		width: auto;
+	}
+}
