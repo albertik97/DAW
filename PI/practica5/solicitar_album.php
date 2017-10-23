@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width; initial-scale=1.0">
+	<title>Solicitar Album - Pictures & Images</title>
+	<link rel="stylesheet" type="text/css" href="css/general.css" media="screen" title="Estilo predeterminado">
+	<link href="css/imprimible.css" rel="stylesheet" type="text/css" media="print">
+	<link href="css/accesible.css" rel="alternate stylesheet" type="text/css" media="screen" title="Estilo accesible">
+	<link rel="stylesheet" type="text/css" href="css/adaptable.css" media="screen">
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+</head>
+<body>
+	<header>
+			<a href="index.html"><img id="logo" src="imagenes/logo_cabecera.png" alt="Logotipo PI" width="256" height="256">
+			<p id="letras_logo"><span lang="en">Pictures & Images</span></p></a>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="formulario_busqueda.html">Buscar</a></li>
+			<li><a href="registro.html">Registrarse</a> </li>
+		</ul>		
+	</nav>
+	<main id="solbum">
+		<h1 id="titulo_solicitar_album">Solicitar álbum</h1>
+			<p style="text-align: center;">En esta sección de la web podrás rellenar los datos necesarios (Información de contacto, detalles del álbum y de envio) para recibir en tu casa tus álbumes de PI - Pictures & Images. Puedes consultar las diferentes tarifas al final de la página.</p>
+			<form method="GET" action="resultado_album.html">
+				<fieldset>
+					<legend><h3>Información de contacto</h3></legend>
+
+						<p><label for="nombreUsuario">Nombre (*)</label><input type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Ej. Alejandro (max. 200 carácteres)" maxlength="200" size="40" autofocus required=""></p>
+						<p><label for="email">Email (*)</label><input type="email" name="email" id="email" placeholder="Ej. email@gmail.com (max. 200 carácteres)" maxlength="200" size="40" required=""></p>
+						<p><label for="telefono">Teléfono (*)</label><input type="tel" name="telefono" id="telefono" placeholder="Teléfono de contacto (8 dígitos)" maxlength="8" size="40"></p>
+				</fieldset>
+				<fieldset>
+					<legend><h3>Detalles del álbum</h3></legend>
+						<p><label for="tituloAlbum">Título (*)</label><input type="text" name="tituloAlbum" id="tituloAlbum" placeholder="Ej. Vacaciones (max. 200 carácteres)" maxlength="200" size="40" required="">
+						</p>
+						<p><label for="albumUsuario">Álbum de PI (*)</label>
+							<select id="albumUsuario" required="">
+								<option value="">Elige una opción</option>
+								<option value="1">Album1</option>
+								<option value="2">Album2</option>
+								<option value="3">Album3</option>
+							</select>
+						 </p>
+						<p><label for="textoAdicional">Texto adicional</label><textarea rows="4" cols="50" name="textoAdicional" id="textoAdicional" placeholder="dedicatoria, descripcion, etc. (max. 4000 carácteres)" maxlength="4000" ></textarea></p>
+						<p><label for="colorPortada">Color de portada</label><input type="color" name="colorPortada" id="colorPortada" ></p>
+						<p><label for="numeroCopias">Copias: </label><input type="number" name="numeroCopias" id="numeroCopias" min="1" max="100" value="1"></p>
+						<p><label for="resolucion">Resolución de impresión</label>
+							<select id="resolucion"> 
+								<option value="150">150 dpi</option>
+							  	<option value="300">300 dpi</option>
+							 	<option value="450">450 dpi</option>
+							 	<option value="600">600 dpi</option>
+							 	<option value="750">750 dpi</option>
+							 	<option value="900">900 dpi</option>
+							</select>
+						</p>
+						<fieldset id="tipo_impresion">
+							<legend>Tipo de impresión</legend>
+							<p><label><input type="radio" name="tipoImpresion" id="ImpresionColor" value="Color">Color</label></p> 
+							<p><label><input type="radio" name="tipoImpresion" id="ImpresionBlancoNegro" value="Blanco/Negro" checked="">Blanco/Negro</label></p>
+						</fieldset>
+					</fieldset>
+					<fieldset>
+					<legend><h3>Detalles de envio (*)</h3></legend>
+						<p>
+							<label for="calle">Calle</label><input type="text" name="calle" id="calle" placeholder="calle, avenida, etc. (max. 200 carácteres)" maxlength="200" size="40" required=""> 
+							<label for="numeroCalle">Número</label><input type="number" name="numeroCalle" id="numeroCalle" placeholder="Nº calle" min="1" max="1000" required="">
+							<label for="numeroPiso">Piso</label><input type="number" name="numeroPiso" id="numeroPiso" placeholder="Nº piso" min="0" max="100" required="">
+							<label for="numeroPuerta">Puerta</label><input type="text" name="numeroPuerta" id="numeroPuerta" placeholder="Ej. 1,2,3, A,B,C..." maxlength="3" required="">
+						</p>
+						<p>
+							<label for="codigoPostal">Código postal: </label><input type="text" name="codigoPostal" id="codigoPostal" placeholder="Ej. 03698" maxlength="5" size="10" required="">
+							<label for="localidad">Localidad: </label>
+								<select id="localidad" required="">
+								 	<option value="">Elige una opción</option>
+									<option value="localidad1">Localidad1</option>
+								  	<option value="localidad2">Localidad2</option>
+								 	<option value="localidad3">Localidad3</option>
+								 	<option value="localidad4">Localidad4</option>
+								</select>
+								<label for="provincia">Provincia</label>
+								<select id="provincia" required="">
+									<option value="">Elige una opción</option>
+									<option value="provincia1">Provncia1</option>
+								  	<option value="provincia2">Provincia2</option>
+								 	<option value="provincia3">Provincia3</option> 
+								 	<option value="provincia4">Provincia4</option>
+								</select>
+								<label for="pais">Pais</label>
+								<select id="pais" required=""> 
+									<option value="">Elige una opción</option>
+									<option value="pais1">País1</option>
+								  	<option value="pais2">País2</option>
+								 	<option value="pais3">País3</option>
+								 	<option value="pais4">País4</option>
+								</select>
+						</p>
+						<p><label for="fechaRececpcion">Fecha de recepción (dd/mm/aaaa)</label><input type="date" name="fechaRececpcion" id="fechaRececpcion" size="15"></p>
+					</fieldset>
+
+					<h3>Tarifas</h3>
+				 	<table>
+						  <tr>
+						    <th>Concepto</th>
+						    <th id="fila_tarifas">Tarifa</th>
+						  </tr>
+						  <tr>
+						  	<td> menos de 5 páginas</td>
+						  	<td>0.10 € por pág.</td>
+						  </tr>
+						  <tr>
+						  	<td>entre 5 y 10 páginas</td>
+						  	<td>0.08 € por pág.</td>
+						  </tr>
+						  <tr>
+						  	<td>más de 10 páginas</td>
+
+						  	<td>0.07 € por pág.</td>
+						  </tr>
+						  <tr>
+						  	<td>Blanco y negro</td>
+						  	<td>0 €</td>
+						  </tr>
+						  <tr>
+						  	<td>Color</td>
+						  	<td>0.05 € por foto</td>
+						  </tr>
+						  <tr>
+						  	<td>Resolución > 300 dpi</td>
+						  	<td>0.02 € por foto</td>
+						  </tr> 
+					</table>
+				<p><input id="boton_solicitar_album" type="submit" value="Enviar"></p>
+				</form>
+	</main>
+	<p id="copy">Todos los derechos reservados© 2017</p>
+</body>
+</html>

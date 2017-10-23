@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width; initial-scale=1.0">
+	<title>Menú usuario - Pictures & images</title>
+	<link rel="stylesheet" type="text/css" href="css/general.css" media="screen" title="Estilo predeterminado">
+	<link href="css/imprimible.css" rel="stylesheet" type="text/css" media="print">
+	<link href="css/accesible.css" rel="alternate stylesheet" type="text/css" media="screen" title="Estilo accesible">
+	<link rel="stylesheet" type="text/css" href="css/adaptable.css" media="screen">
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+</head>
+<body>
+	<header>
+			<a href="index.php"><img id="logo" src="imagenes/logo_cabecera.png" alt="Logotipo PI" height="128" width="128">
+				<p id="letras_logo"><span lang="en">Pictures & Images</span></p></a>
+	</header>
+	<nav>
+		<ul>
+		<li><a href="formulario_busqueda.php">Buscar</a></li>
+		<li><a href="menu_usuario.php">Mi perfil</a></li>
+		</ul>
+	</nav>
+	<main id="main_usuario">
+		<fieldset id="misdatos">
+			<legend><h2>Mis datos</h2></legend>
+			<p><img id="imagen_perfil" src="imagenes/chocu.jpg" alt="foto perfil" width="100" height="100"></p>
+			<table>
+				<tr>
+					<td>Usuario</td> <td>el_chocu</td>
+				</tr>
+
+				<tr><td>Nombre :</td> <td>Chocu Martínez de la Selva</td>
+				</tr>
+				<tr><td>Sexo :</td><td>Hombre</td>
+				</tr>
+				<tr><td>Fecha de Nacimiento :</td> <td>12/04/1990</td>
+				</tr>
+				<tr><td>Pais de residencia : </td><td>Tailandia</td>
+				</tr>
+				<tr><td>Ciudad :</td> <td>Lopburi</td></tr>
+			</table>
+			<p><button id="edit_perfil" >Modificar datos</button></p>
+		</fieldset>
+		<hr>
+		<a class="botones_perfil" href="#" ><img src="imagenes/delete.png" alt="">Darse de baja</a>
+		<a class="botones_perfil" href="#" ><img src="imagenes/add.png" alt="">Crear álbum nuevo</a>
+		<a class="botones_perfil" href="#" ><img src="imagenes/album.png" alt="">Mis álbumes</a>
+		<a class="botones_perfil" href="solicitar_album.php" ><img src="imagenes/print.png" alt="">Solicitar álbum impresion</a>
+		<a class="botones_perfil" href="index.php"><img src="imagenes/exit.png" alt="">Salir</a>
+	</main>
+	<p id="copy">Todos los derechos reservados© 2017</p>
+</body>
+</html>

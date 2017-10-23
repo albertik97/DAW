@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width; initial-scale=1.0">
+	<title>Solicitud álbum - Pictures & images</title>
+	<link rel="stylesheet" type="text/css" href="css/general.css" media="screen" title="Estilo predeterminado">
+	<link href="css/imprimible.css" rel="stylesheet" type="text/css" media="print">
+	<link href="css/accesible.css" rel="alternate stylesheet" type="text/css" media="screen" title="Estilo accesible">
+	<link rel="stylesheet" type="text/css" href="css/adaptable.css" media="screen">
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<a href="index.html"><img id="logo" src="imagenes/logo_cabecera.png" alt="Logotipo PI" height="128" width="128">
+				<p id="letras_logo"><span lang="en">Pictures & Images</span></p></a>
+	</header>
+		<nav>
+			<ul>
+				<li><a href="formulario_busqueda.html">Buscar</a></li>
+				<li><a href="menu_usuario.html">Mi perfil</a></li>
+			</ul>
+	</nav>
+	<main  class="resultado_album">
+		<h1>Resumen del pedido</h1>
+		
+			<h3>Datos de solicitud</h3>
+			<fieldset class="resultado_album">
+				<legend><h3>Información de contacto</h3></legend>
+					<p><label for="nombre">Nombre : </label><input type="text" name="nombre" id="nombre" value="Chocu" readonly></p>
+					<p><label for="correo">Correo: </label><input type="text" name="correo" id="correo" value="chocu@email.com" readonly></p>
+					<p><label for="telefono">Teléfono: </label><input type="text" name="telefono" id="telefono" value="645675432" readonly></p>
+			</fieldset>
+			<fieldset>
+				<legend><h3>Detalles de álbum</h3></legend>
+					<p><label for="titulo_album">Título del álbum : </label><input type="text" name="titulo_album" id="titulo_album" value="Carnaval 2017" readonly></p>
+					<p><label for="album">Álbum : </label><input type="text" name="album" id="album" value="Carnaval" readonly></p> 
+					<p><label for="texto">Texto adicional : </label> <textarea rows="4" cols="50" id="texto" readonly>JAJA SI SOI IO EL CHUCO</textarea></p>
+					<p class="peque"><label for="color">Color : </label><input type="text" name="color" value="#ffffff" id="color" readonly></p>
+					<p class="peque"><label for="copias">Número de copias : </label><input type="text" name="copias" id="copias" value="1" readonly size="3"></p>
+					<p class="peque"><label for="resolucion"> Resolución: </label><input type="text" name="resolucion" id="resolucion" value="900dpi" readonly size="3"></p>
+					<p class="peque"><label for="tipo_impresion">Tipo de impresión : </label><input type="text" name="tipo_impresion"  id="tipo_impresion" value="A color" readonly></p>
+			</fieldset>
+			<fieldset>
+				<legend><h3>Detalles de envio</h3></legend>
+					<p class="peque"><label for="calle">Calle: </label><input type="text" name="calle" id="calle" value="C/Falsa" readonly></p>
+					<p class="peque"><label for="numero"> Número: </label><input type="text" name="numero" id="numero" value="123" readonly size="3"></p>
+					<p class="peque"><label for="piso">Piso: </label><input type="text" name="piso" id="piso" value="1" readonly size="3"></p>
+					<p class="peque"><label for="puerta">Puerta: </label><input type="text" name="puerta" id="puerta" value="A" readonly size="3"></p>
+					 <label for="localidad">Localidad: </label><input type="text" name="localidad" id="localidad" value="San Vicente del Raspeig" readonly>
+					 <p class="peque"><label for="cp">Código postal: </label><input type="text" name="cp" id="cp" value="03690" readonly size="4"></p>
+					<p class="peque"> <label for="provincia">Provincia: </label><input type="text" name="provincia" id="provincia" value="Alicante" readonly></p>
+				 <p class="peque">	<label for="pais">País: </label><input type="text" name="pais" id="pais" value="España" readonly></p>
+				<p class="peque"><label for="recepcion">Fecha de recepción: </label><input type="text" name="recepcion" id="recepcion" value="21/11/2017" readonly></p>
+			</fieldset>
+			<h2><span id="precio_total">Coste total:</span> 12,35€</h2>
+			<a id="volver" href="menu_usuario.html">Volver a mi perfil</a>
+	</main>
+	<p id="copy">Todos los derechos reservados© 2017</p>
+</body>
+</html>
