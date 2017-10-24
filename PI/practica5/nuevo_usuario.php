@@ -1,21 +1,8 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-	<title>Registro - PI - Pictures & images</title>
-	<meta name="viewport" content="width=device-width; initial-scale=1.0">
-	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="css/general.css" media="screen" title="Estilo predeterminado">
-	<link href="css/imprimible.css" rel="stylesheet" type="text/css" media="print">
-	<link href="css/accesible.css" rel="alternate stylesheet" type="text/css" media="screen" title="Estilo accesible">
-	<link rel="stylesheet" type="text/css" href="css/adaptable.css" media="screen">
-	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-</head>
-<body>
-	<header>
-		<a href="index.php"><img id="logo" src="imagenes/logo_cabecera.png" alt="Logotipo PI" width="256" height="256">
-		<p id="letras_logo"><span lang="en">Pictures & Images</span></p></a>
-	</header>
+<?php
+	$title = "Registro - PI - Pictures & images";
+	require_once('plantillas/cabecera.inc');
+	require_once('plantillas/logotipo.inc');
+?>
 	<main>
 		<!--Gestion de la peticion -->
 		<?php

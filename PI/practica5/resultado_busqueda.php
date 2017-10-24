@@ -1,27 +1,10 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-	<title>Resultados de búsqueda - PI - Pictures & images</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width; initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="css/general.css" media="screen" title="Estilo predeterminado">
-	<link href="css/imprimible.css" rel="stylesheet" type="text/css" media="print">
-	<link href="css/accesible.css" rel="alternate stylesheet" type="text/css" media="screen" title="Estilo accesible">
-	<link rel="stylesheet" type="text/css" href="css/adaptable.css" media="screen">
-	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-</head>
-<body>
-	<header>
-		<a href="index.html"><img id="logo" src="imagenes/logo_cabecera.png" alt="Logotipo PI" width="256" height="256">
-			<p id="letras_logo"><span lang="en">Pictures & Images</span></p></a>
-	</header>
-	<nav>
-			<ul>
-				<li><a href="registro.html">Registrarse</a></li>
-				<li><a href="index.html">Iniciar sesion</a></li>
-			</ul>
-	</nav>
+<?php
+	$title = "Resultados de búsqueda - PI - Pictures & Images";
+	require_once('plantillas/cabecera.inc');
+	require_once('plantillas/logotipo.inc');
+	require_once('plantillas/nav_usuario_no_identificado.inc');
+?>
+
 	<form id="formulario_busqueda" method="GET" action=""> <!-- Como no esta la pagina php ponemos esta en action -->
 			<input type="search" name="busqueda" id="barra_busqueda" placeholder="Fotos divertidas, paisaje , playa ..." size="40">
 			<input id="boton_barra_busqueda" type="submit" value="Buscar">			
@@ -58,7 +41,7 @@
 
 		<article>
 			<figure>
-			<a href="detalles_foto.html"><img src="imagenes/ejemplo_imagen.jpg" alt="Descripcion de imagen" width="256" height="256"></a>
+			<a href="detalles_foto.php"><img src="imagenes/ejemplo_imagen.jpg" alt="Descripcion de imagen" width="256" height="256"></a>
 			<figcaption>Mis vacaiones</figcaption>
 			</figure>
 			<p><span>Fecha :</span> 02/04/2017</p>
@@ -66,7 +49,7 @@
 		</article>
 		<article>
 			<figure>
-			<a href="detalles_foto.html"><img src="imagenes/ejemplo_imagen.jpg" alt="Descripcion de imagen" width="256" height="256"></a>
+			<a href="detalles_foto.php"><img src="imagenes/ejemplo_imagen.jpg" alt="Descripcion de imagen" width="256" height="256"></a>
 			<figcaption>Viajando</figcaption>
 			</figure>
 			<p><span>Fecha :</span> 02/04/2017</p>
@@ -75,7 +58,7 @@
 
 		<article>
 			<figure>
-			<a href="detalles_foto.html"><img src="imagenes/ejemplo_imagen.jpg" alt="Descripcion de imagen" width="256" height="256"></a>
+			<a href="detalles_foto.php"><img src="imagenes/ejemplo_imagen.jpg" alt="Descripcion de imagen" width="256" height="256"></a>
 			<figcaption>Visita a Valencia</figcaption>
 			</figure>
 			<p><span>Fecha :</span> 02/04/2017</p>
@@ -84,7 +67,7 @@
 
 		<article>
 			<figure>
-			<a href="detalles_foto.html"><img src="imagenes/ejemplo_imagen.jpg" alt="Descripcion de imagen" width="256" height="256"></a>
+			<a href="detalles_foto.php"><img src="imagenes/ejemplo_imagen.jpg" alt="Descripcion de imagen" width="256" height="256"></a>
 			<figcaption>Visita a Berlín</figcaption>
 			</figure>
 			<p><span>Fecha :</span> 20/04/2015</p>

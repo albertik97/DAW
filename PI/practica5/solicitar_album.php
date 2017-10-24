@@ -1,27 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width; initial-scale=1.0">
-	<title>Solicitar Album - Pictures & Images</title>
-	<link rel="stylesheet" type="text/css" href="css/general.css" media="screen" title="Estilo predeterminado">
-	<link href="css/imprimible.css" rel="stylesheet" type="text/css" media="print">
-	<link href="css/accesible.css" rel="alternate stylesheet" type="text/css" media="screen" title="Estilo accesible">
-	<link rel="stylesheet" type="text/css" href="css/adaptable.css" media="screen">
-	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-</head>
-<body>
-	<header>
-			<a href="index.php"><img id="logo" src="imagenes/logo_cabecera.png" alt="Logotipo PI" width="256" height="256">
-			<p id="letras_logo"><span lang="en">Pictures & Images</span></p></a>
-	</header>
-	<nav>
-		<ul>
-			<li><a href="formulario_busqueda.php">Buscar</a></li>
-			<li><a href="registro.php">Registrarse</a> </li>
-		</ul>		
-	</nav>
+<?php  
+	$title = "Menú usuario - Pictures & images";
+	require_once('plantillas/cabecera.inc');
+	require_once('plantillas/logotipo.inc');
+	require_once('plantillas/nav_usuario_identificado.inc');
+?>
 	<main id="solbum">
 		<h1 id="titulo_solicitar_album">Solicitar álbum</h1>
 			<p style="text-align: center;">En esta sección de la web podrás rellenar los datos necesarios (Información de contacto, detalles del álbum y de envio) para recibir en tu casa tus álbumes de PI - Pictures & Images. Puedes consultar las diferentes tarifas al final de la página.</p>
