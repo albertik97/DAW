@@ -41,7 +41,7 @@
 
 		<article>
 			<figure>
-			<a href="detalles_foto.php"><img src="imagenes/ejemplo_imagen.jpg" alt="Descripcion de imagen" width="256" height="256"></a>
+			<a href="detalles_foto.php?id=1"><img src="imagenes/chocu.jpg" alt="Descripcion de imagen" width="256" height="256"></a>
 			<figcaption>Mis vacaiones</figcaption>
 			</figure>
 			<p><span>Fecha :</span> 02/04/2017</p>
@@ -49,7 +49,7 @@
 		</article>
 		<article>
 			<figure>
-			<a href="detalles_foto.php"><img src="imagenes/ejemplo_imagen.jpg" alt="Descripcion de imagen" width="256" height="256"></a>
+			<a href="detalles_foto.php?id=2"><img src="imagenes/ejemplo_imagen.jpg" alt="Descripcion de imagen" width="256" height="256"></a>
 			<figcaption>Viajando</figcaption>
 			</figure>
 			<p><span>Fecha :</span> 02/04/2017</p>
@@ -58,7 +58,7 @@
 
 		<article>
 			<figure>
-			<a href="detalles_foto.php"><img src="imagenes/ejemplo_imagen.jpg" alt="Descripcion de imagen" width="256" height="256"></a>
+			<a href="detalles_foto.php?id=3"><img src="imagenes/chocu.jpg" alt="Descripcion de imagen" width="256" height="256"></a>
 			<figcaption>Visita a Valencia</figcaption>
 			</figure>
 			<p><span>Fecha :</span> 02/04/2017</p>
@@ -67,7 +67,7 @@
 
 		<article>
 			<figure>
-			<a href="detalles_foto.php"><img src="imagenes/ejemplo_imagen.jpg" alt="Descripcion de imagen" width="256" height="256"></a>
+			<a href="detalles_foto.php?id=4"><img src="imagenes/ejemplo_imagen.jpg" alt="Descripcion de imagen" width="256" height="256"></a>
 			<figcaption>Visita a Berlín</figcaption>
 			</figure>
 			<p><span>Fecha :</span> 20/04/2015</p>
