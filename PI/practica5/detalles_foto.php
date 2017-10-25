@@ -6,8 +6,8 @@
 
 	$img = array
 	(
-		array('"imagenes/ejemplo_imagen.jpg"', "Mis vacaciones en Polonia", "12/12/2004", "Polonia", "Alejandro Domenech", "Viajes"),
-		array('"imagenes/chocu.jpg"', "Programando", "23/10/2004", "España", "Alejandro Domenech", "Dia a dia")
+		array('"imagenes/playa.jpg"', "Mis vacaciones en Hawai", "12/12/2004", "Hawai", "Alejandro Domenech", "Viajes"),
+		array('"imagenes/delfin.jpg"', "Un delfín en el mar", "23/10/2004", "España", "Alejandro Domenech", "Viajes")
 	);
 
 

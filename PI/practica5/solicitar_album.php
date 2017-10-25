@@ -6,7 +6,7 @@
 ?>
 	<main id="solbum">
 		<h1 id="titulo_solicitar_album">Solicitar álbum</h1>
-			<p style="text-align: center;">En esta sección de la web podrás rellenar los datos necesarios (Información de contacto, detalles del álbum y de envio) para recibir en tu casa tus álbumes de PI - Pictures & Images. Puedes consultar las diferentes tarifas al final de la página.</p>
+			<p id="instrucciones">En esta sección de la web podrás rellenar los datos necesarios (Información de contacto, detalles del álbum y de envio) para recibir en tu casa tus álbumes de PI - Pictures & Images. Puedes consultar las diferentes tarifas al final de la página.</p>
 			<form method="POST" action="resultado_album.php">
 				<fieldset>
 					<legend><h3>Información de contacto</h3></legend>
