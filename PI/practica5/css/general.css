@@ -73,7 +73,7 @@ input[type="search"]:focus{
 	outline:2px solid red;
 }
 
-#titulo_registro, #titulo_busqueda, #titulo_solicitar_album{
+#titulo_registro, #titulo_busqueda, #titulo_solicitar_album, #titulo_crear_album{
 	padding-top: 10px;
 	padding-left: 20px;
 	font-family: 'Pacifico', cursive;
@@ -128,7 +128,7 @@ header{
 a{
 	text-decoration: none;
 }
-#boton_buscar, #boton_solicitar_album{
+#boton_buscar, #boton_solicitar_album, #boton_crear{
 	display: block;
 	margin: auto;
 	/*position: relative;
@@ -408,13 +408,11 @@ th {
 footer p{
 	margin:0;
 }
-
-
-	/* Media Queries para Registro */
-
-
-	/* Para Moviles */
-
+#instrucciones
+{
+	margin-left: 10px;
+	margin-right: 10px;
+}
 
 #copy{
 	visibility: hidden;
