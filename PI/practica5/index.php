@@ -39,11 +39,11 @@
 			<section id="UltimasFotos">
 				<h2>Últimas fotos subidas - <a href="formulario_busqueda.php">Buscar más</a></h2>
 				<hr>				
-				<a href="detalles_foto.php?id=1" ><img src="imagenes/chocu.jpg" alt="Imagen1" height="164" width="164" ></a>
-				<a href="detalles_foto.php?id=2" ><img src="imagenes/ejemplo_imagen.jpg" alt="Imagen2" height="164" width="164" ></a>
-				<a href="detalles_foto.php?id=3" ><img src="imagenes/chocu.jpg" alt="Imagen3" height="164" width="164" ></a>
-				<a href="detalles_foto.php?id=4" ><img src="imagenes/ejemplo_imagen.jpg" alt="Imagen4" height="164" width="164" ></a>
-				<a href="detalles_foto.php?id=5" ><img src="imagenes/chocu.jpg" alt="Imagen5" height="164" width="164" ></a>
+				<a href="detalles_foto.php?id=1" ><img src="imagenes/delfin.jpg" alt="Imagen1" height="164" width="164" ></a>
+				<a href="detalles_foto.php?id=2" ><img src="imagenes/playa.jpg" alt="Imagen2" height="164" width="164" ></a>
+				<a href="detalles_foto.php?id=3" ><img src="imagenes/delfin.jpg" alt="Imagen3" height="164" width="164" ></a>
+				<a href="detalles_foto.php?id=4" ><img src="imagenes/playa.jpg" alt="Imagen4" height="164" width="164" ></a>
+				<a href="detalles_foto.php?id=5" ><img src="imagenes/delfin.jpg" alt="Imagen5" height="164" width="164" ></a>
 			</section>
 		</main>
 	</body> 
