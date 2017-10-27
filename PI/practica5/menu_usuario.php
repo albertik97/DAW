@@ -1,8 +1,8 @@
 <?php  
 	$title = "Menú usuario - Pictures & images";
-	require_once('plantillas/cabecera.inc');
-	require_once('plantillas/logotipo.inc');
-	require_once('plantillas/nav_usuario_identificado.inc');
+	require_once('plantillas/cabecera.php');
+	require_once('plantillas/logotipo.php');
+	require_once('plantillas/nav_usuario_identificado.php');
 ?>
 	<main id="main_usuario">
 		<fieldset id="misdatos">

@@ -1,8 +1,8 @@
 <?php
 	$title = "Detalles imagen - Pictures & images";
-	require_once('plantillas/cabecera.inc');
-	require_once('plantillas/logotipo.inc');
-	require_once('plantillas/nav_usuario_no_identificado.inc');
+	require_once('plantillas/cabecera.php');
+	require_once('plantillas/logotipo.php');
+	require_once('plantillas/nav_usuario_no_identificado.php');
 
 	$img = array
 	(

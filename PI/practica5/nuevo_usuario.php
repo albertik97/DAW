@@ -1,7 +1,7 @@
 <?php
 	$title = "Registro - PI - Pictures & images";
-	require_once('plantillas/cabecera.inc');
-	require_once('plantillas/logotipo.inc');
+	require_once('plantillas/cabecera.php');
+	require_once('plantillas/logotipo.php');
 ?>
 	<main>
 		<!--Gestion de la peticion -->

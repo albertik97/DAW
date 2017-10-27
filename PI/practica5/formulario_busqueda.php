@@ -1,8 +1,8 @@
 <?php
 	$title = "PI - Pictures & images";
-	require_once('plantillas/cabecera.inc');
-	require_once('plantillas/logotipo.inc');
-	require_once('plantillas/nav_usuario_no_identificado.inc');
+	require_once('plantillas/cabecera.php');
+	require_once('plantillas/logotipo.php');
+	require_once('plantillas/nav_usuario_no_identificado.php');
 ?>
 		<main>
 				<h1 id="titulo_busqueda">Formulario de búsqueda</h1>
