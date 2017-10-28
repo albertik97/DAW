@@ -1,7 +1,7 @@
 <?php
 	$title = "Registro - PI - Pictures & images";
-	include_once('plantillas/cabecera.php');
-	include_once('plantillas/logotipo.php');
+	require_once('plantillas/cabecera.php');
+	require_once('plantillas/logotipo.php');
 ?>
 	<main>
 		<!--Gestion de la peticion -->
@@ -39,4 +39,6 @@
 			</p>
 			<a id="volver" href="index.php">Volver al Inicio</a>
 	</main>
-<?php include_once('plantillas/pie_pagina.php'); ?>
+	<p id="copy">Todos los derechos reservados© 2017</p>
+</body>
+</html>

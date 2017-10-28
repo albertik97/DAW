@@ -1,8 +1,8 @@
 <?php  
 	$title = "Menú usuario - Pictures & images";
-	include_once('plantillas/cabecera.php');
-	include_once('plantillas/logotipo.php');
-	include_once('plantillas/nav_usuario_identificado.php');
+	require_once('plantillas/cabecera.php');
+	require_once('plantillas/logotipo.php');
+	require_once('plantillas/nav_usuario_identificado.php');
 ?>
 	<main id="main_usuario">
 		<fieldset id="misdatos">
@@ -32,4 +32,6 @@
 		<a class="botones_perfil" href="solicitar_album.php" ><img src="imagenes/print.png" alt="">Solicitar álbum impresion</a>
 		<a class="botones_perfil" href="index.php"><img src="imagenes/exit.png" alt="">Salir</a>
 	</main>
-<?php include_once('plantillas/pie_pagina.php'); ?>
+	<p id="copy">Todos los derechos reservados© 2017</p>
+</body>
+</html>

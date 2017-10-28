@@ -1,8 +1,8 @@
 <?php  
 	$title = "Crear álbum - Pictures & images";
-	include_once('plantillas/cabecera.php');
-	include_once('plantillas/logotipo.php');
-	include_once('plantillas/nav_usuario_identificado.php');
+	require_once('plantillas/cabecera.php');
+	require_once('plantillas/logotipo.php');
+	require_once('plantillas/nav_usuario_identificado.php');
 ?>
 
 		<main>
@@ -15,4 +15,6 @@
 				<p><input id="boton_crear" type="submit" value="Crear álbum"></p>
 			</form>
 		</main>
-<?php include_once('plantillas/pie_pagina.php'); ?>
+		<p id="copy">Todos los derechos reservados© 2017</p>
+	</body>
+</html>

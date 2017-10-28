@@ -1,8 +1,8 @@
 <?php  
 	$title = "Menú usuario - Pictures & images";
-	include_once('plantillas/cabecera.php');
-	include_once('plantillas/logotipo.php');
-	include_once('plantillas/nav_usuario_identificado.php');
+	require_once('plantillas/cabecera.php');
+	require_once('plantillas/logotipo.php');
+	require_once('plantillas/nav_usuario_identificado.php');
 ?>
 	<main id="solbum">
 		<h1 id="titulo_solicitar_album">Solicitar álbum</h1>
@@ -119,4 +119,6 @@
 				<p><input id="boton_solicitar_album" type="submit" value="Enviar"></p>
 				</form>
 	</main>
-<?php include_once('plantillas/pie_pagina.php'); ?>
+	<p id="copy">Todos los derechos reservados© 2017</p>
+</body>
+</html>
