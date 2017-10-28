@@ -1,8 +1,8 @@
 <?php
 	$title = "PI - Pictures & images";
-	require_once('plantillas/cabecera.php');
-	require_once('plantillas/logotipo.php');
-	require_once('plantillas/nav_usuario_no_identificado.php');
+	include_once('plantillas/cabecera.php');
+	include_once('plantillas/logotipo.php');
+	include_once('plantillas/nav_usuario_no_identificado.php');
 ?>
 		<main>
 				<h1 id="titulo_busqueda">Formulario de búsqueda</h1>
@@ -14,6 +14,4 @@
 				<p><input id="boton_buscar" type="submit" value="Buscar"></p>
 			</form>
 		</main>
-		<p id="copy">Todos los derechos reservados© 2017</p>
-	</body>
-</html>
+<?php include_once('plantillas/pie_pagina.php'); ?>

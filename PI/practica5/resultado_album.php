@@ -1,8 +1,8 @@
 <?php  
 	$title = "Menú usuario - Pictures & images";
-	require_once('plantillas/cabecera.php');
-	require_once('plantillas/logotipo.php');
-	require_once('plantillas/nav_usuario_identificado.php');
+	include_once('plantillas/cabecera.php');
+	include_once('plantillas/logotipo.php');
+	include_once('plantillas/nav_usuario_identificado.php');
 ?>
 	<main  class="resultado_album">
 		<h1>Resumen del pedido</h1>
@@ -81,6 +81,4 @@
 			<h2><span id="precio_total">Coste total:</span><?php echo $total;?>€</h2>
 			<a id="volver" href="menu_usuario.php">Volver a mi perfil</a>
 	</main>
-	<p id="copy">Todos los derechos reservados© 2017</p>
-</body>
-</html>
+<?php include_once('plantillas/pie_pagina.php'); ?>

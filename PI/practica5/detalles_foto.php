@@ -1,8 +1,8 @@
 <?php
 	$title = "Detalles imagen - Pictures & images";
-	require_once('plantillas/cabecera.php');
-	require_once('plantillas/logotipo.php');
-	require_once('plantillas/nav_usuario_no_identificado.php');
+	include_once('plantillas/cabecera.php');
+	include_once('plantillas/logotipo.php');
+	include_once('plantillas/nav_usuario_no_identificado.php');
 
 	$img = array
 	(
@@ -28,5 +28,4 @@
 				</figcaption>
 			</figure>	
 		</main>
-	</body> 
-</html>
+<?php include_once('plantillas/pie_pagina.php'); ?>

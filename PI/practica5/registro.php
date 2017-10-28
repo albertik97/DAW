@@ -1,7 +1,7 @@
 <?php
 	$title = "Registro - PI - Pictures & images";
-	require_once('plantillas/cabecera.php');
-	require_once('plantillas/logotipo.php');
+	include_once('plantillas/cabecera.php');
+	include_once('plantillas/logotipo.php');
 ?>
 	<main>
 		<h1 id="titulo_registro">Formulario de registro</h1>
@@ -46,6 +46,4 @@
 			</p>
 		</form>
 	</main>
-	<p id="copy">Todos los derechos reservados© 2017</p>
-</body>
-</html>
+<?php include_once('plantillas/pie_pagina.php'); ?>

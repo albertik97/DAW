@@ -1,8 +1,8 @@
 <?php
 	$title = "Resultados de búsqueda - PI - Pictures & Images";
-	require_once('plantillas/cabecera.php');
-	require_once('plantillas/logotipo.php');
-	require_once('plantillas/nav_usuario_no_identificado.php');
+	include_once('plantillas/cabecera.php');
+	include_once('plantillas/logotipo.php');
+	include_once('plantillas/nav_usuario_no_identificado.php');
 ?>
 
 	<form id="formulario_busqueda" method="GET" action=""> <!-- Como no esta la pagina php ponemos esta en action -->
