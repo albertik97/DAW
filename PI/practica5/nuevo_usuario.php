@@ -39,10 +39,6 @@
 			</p>
 			<a id="volver" href="index.php">Volver al Inicio</a>
 	</main>
-<<<<<<< HEAD
-	<p id="copy">Todos los derechos reservados© 2017</p>
-=======
 	<?php require_once('plantillas/footer.php');?>
->>>>>>> 4709f6ca3c09111f14b307f841fbdadafbd3817a
 </body>
 </html>

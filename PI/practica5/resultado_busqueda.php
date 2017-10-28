@@ -84,11 +84,7 @@
 			</fieldset>
 	</aside>
 	<footer>
-<<<<<<< HEAD
-		<p id="copy">Todos los derechos reservados© 2017</p>
-=======
 		<?php require_once('plantillas/footer.php');?>
->>>>>>> 4709f6ca3c09111f14b307f841fbdadafbd3817a
 		<p><button class="pasar" value="Anterior">Anterior</button><span class="cantidad">Página 1 de 3</span><button class="pasar" value="Anterior">Siguiente</button></p>
 	</footer>
 	

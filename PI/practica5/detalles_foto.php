@@ -28,9 +28,6 @@
 				</figcaption>
 			</figure>	
 		</main>
-<<<<<<< HEAD
-=======
 		<?php require_once('plantillas/footer.php');?>
->>>>>>> 4709f6ca3c09111f14b307f841fbdadafbd3817a
 	</body> 
 </html>
