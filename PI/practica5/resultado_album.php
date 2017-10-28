@@ -81,6 +81,10 @@
 			<h2><span id="precio_total">Coste total:</span><?php echo $total;?>€</h2>
 			<a id="volver" href="menu_usuario.php">Volver a mi perfil</a>
 	</main>
+<<<<<<< HEAD
 	<p id="copy">Todos los derechos reservados© 2017</p>
+=======
+	<?php require_once('plantillas/footer.php');?>
+>>>>>>> 4709f6ca3c09111f14b307f841fbdadafbd3817a
 </body>
 </html>
