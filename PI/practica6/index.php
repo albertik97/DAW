@@ -1,6 +1,9 @@
 <?php
 session_start();
-
+$current_visit_date = date("d/m/y");
+$current_visit_hour = date("H:i:s");
+setcookie("last_visit_date",$current_visit_date,time()+60*60*24*30);
+setcookie("last_visit_hour",$current_visit_hour,time()+60*60*24*30);
 ?>
 <!DOCTYPE html> 
 <html lang="es"> 	 
@@ -23,9 +26,18 @@ session_start();
 			<div id="contenedor_principal">
 				<section id="login">
 					<?php
-						if(isset($_COOKIE['user'])&&isset($_COOKIE['pass'])){
-							echo "jaja si";
 
+						if(isset($_COOKIE['user'])){
+						
+							if(isset($_COOKIE['last_visit_date'])){
+									$last_visit_date = $_COOKIE['last_visit_date'];
+									$last_visit_hour = $_COOKIE['last_visit_hour'];
+								echo "Hola, " . $_COOKIE['user'] . " su última visita fue el " .$last_visit_date . " a las " .$last_visit_hour ;
+							}else{
+								echo "Hola, " . $_SESSION['user'] . " hoy es tu primera visita ;)";
+							}
+							
+							
 						}else{
 								echo '<h2>Iniciar Sesión</h2>';
 								echo '<form method="POST" action="control_usuarios.php">';
