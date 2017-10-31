@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html> 
 <html lang="es"> 	 
 	<head> 
@@ -18,22 +22,30 @@
 		<main>
 			<div id="contenedor_principal">
 				<section id="login">
-					<h2>Iniciar Sesión</h2>
-					<form method="POST" action="control_usuarios.php">
-						<label for="userName">Usuario</label>
-						<input type="text" name="userName" id="userName" placeholder="Introduce tu usuario" required>
-						<label for="Password">Contraseña</label>
-						<input type="password" name="Password" id="Password" placeholder="Introduce tu contraseña" required>
-						<span id="error_sesion"><?php
-								if(isset($_GET['error'])==true && $_GET['error']=='si'){
-									echo "Usuario y/o contraseña incorrectos";
-								}
-						 ?>
-						</span>
-						<input type="submit" value="Iniciar sesión">
-						<p><a href="registro.php">Registrarse</a></p>
-					</form>
-					
+					<?php
+						if(isset($_COOKIE['user'])&&isset($_COOKIE['pass'])){
+							echo "jaja si";
+
+						}else{
+								echo '<h2>Iniciar Sesión</h2>';
+								echo '<form method="POST" action="control_usuarios.php">';
+								echo '<label for="userName">Usuario</label>';
+								echo '<input type="text" name="userName" id="userName" placeholder="Introduce tu usuario" required>';
+								echo '<label for="Password">Contraseña</label>';
+								echo '<input type="password" name="Password" id="Password" placeholder="Introduce tu contraseña" required>';
+								echo '<input type="checkbox" name="recordar" id="recordar" value="Recordar mis datos">Recordar mis datos';
+								echo '<span id="error_sesion">';
+								
+										if(isset($_GET["error"])==true&&isset($_GET["error"])=="si"){
+											 echo "Usuario y/o contraseña incorrectos";
+										}
+								
+								echo '</span>';
+								echo '<input type="submit" value="Iniciar sesión">';
+								echo '<p><a href="registro.php">Registrarse</a></p>';
+							echo '</form>';
+						}
+					?>
 				</section>
 			</div>
 			<section id="UltimasFotos">

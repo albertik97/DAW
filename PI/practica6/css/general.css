@@ -421,3 +421,12 @@ footer p{
 	display: none;
 }
 
+#iniciado{
+	display: block;
+	color:white;
+	text-align: right;
+	padding: 14px 16px;
+}
+.derecha{
+	float: right;
+}

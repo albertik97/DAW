@@ -1,5 +1,5 @@
 <?php
-//usuarios
+session_start();
 $acces = false;
 $acceso ="Usuario y/o contraseña incorrectos";
 $usuarios =array( array('usuario'=>'user1',
@@ -12,7 +12,14 @@ $usuarios =array( array('usuario'=>'user1',
 for($i=0;$i<count($usuarios);$i++){
 	if($_POST['userName']==$usuarios[$i]['usuario'] && $_POST['Password']==$usuarios[$i]['contraseña']){
 		$acces =true;
-		header('Location: menu_usuario.php');
+		 $_SESSION['user'] = $_POST['userName'];
+		 // Caduca en 1 hora
+		 if(isset($_POST['recordar'])&& $_POST['recordar']=="Recordar mis datos"){
+			setcookie('user', $_POST['userName'], time() + 20);
+			setcookie('pass', $_POST['Password'], time() + 20);  
+			
+		}
+			header('Location: menu_usuario.php');
 	}
 }
 
