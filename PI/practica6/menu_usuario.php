@@ -1,5 +1,6 @@
 <?php
 session_start();
+	require_once('validar.php'); 
 	$title = "Menú usuario - Pictures & images";
 	require_once('plantillas/cabecera.php');
 	require_once('plantillas/logotipo.php');
