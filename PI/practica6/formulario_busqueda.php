@@ -1,8 +1,12 @@
 <?php
+	session_start();
 	$title = "PI - Pictures & images";
 	require_once('plantillas/cabecera.php');
 	require_once('plantillas/logotipo.php');
-	require_once('plantillas/nav_usuario_no_identificado.php');
+	if(isset($_COOKIE['user']) || isset($_SESSION['user']))
+		require_once('plantillas/nav_usuario_identificado.php');
+	else
+		require_once('plantillas/nav_usuario_no_identificado.php');
 ?>
 		<main>
 				<h1 id="titulo_busqueda">Formulario de búsqueda</h1>

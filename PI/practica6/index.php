@@ -26,7 +26,7 @@ $current_visit_hour = date("H:i:s");
 				<section id="login">
 					<?php
 					
-					print_r ($usuarios);	
+					
 
 						if(isset($_COOKIE['id_session'])){
 							//if(hash_equals ( id_session ,crypt($usuarios['id_session']))){
@@ -37,6 +37,7 @@ $current_visit_hour = date("H:i:s");
 								}else{
 									echo "<span class=\"ultima_visita\">Hola, " . $_SESSION['user'] . " hoy es tu primera visita ;)<a href=\"cierra_sesion.php\">Salir</a></span>";
 								}
+								
 								setcookie("last_visit_date",$current_visit_date,time()+60*60*24*30);
 								setcookie("last_visit_hour",$current_visit_hour,time()+60*60*24*30);
 						//	}

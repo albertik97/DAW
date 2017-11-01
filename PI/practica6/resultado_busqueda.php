@@ -1,8 +1,12 @@
 <?php
-	$title = "Resultados de búsqueda - PI - Pictures & Images";
+	session_start();
+	$title = "PI - Pictures & images";
 	require_once('plantillas/cabecera.php');
 	require_once('plantillas/logotipo.php');
-	require_once('plantillas/nav_usuario_no_identificado.php');
+	if(isset($_COOKIE['user']) || isset($_SESSION['user']))
+		require_once('plantillas/nav_usuario_identificado.php');
+	else
+		require_once('plantillas/nav_usuario_no_identificado.php');
 ?>
 
 	<form id="formulario_busqueda" method="GET" action=""> <!-- Como no esta la pagina php ponemos esta en action -->
