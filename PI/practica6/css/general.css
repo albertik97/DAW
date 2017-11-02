@@ -422,6 +422,7 @@ footer p{
 }
 
 #iniciado{
+	text-decoration: underline;
 	display: block;
 	color:white;
 	text-align: right;

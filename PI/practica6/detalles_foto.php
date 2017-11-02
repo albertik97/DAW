@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	require_once('validar.php');
 	$title = "PI - Pictures & images";
 	require_once('plantillas/cabecera.php');
 	require_once('plantillas/logotipo.php');

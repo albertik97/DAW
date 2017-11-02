@@ -16,6 +16,7 @@
 				$_SESSION['user']=$_COOKIE['user'];
 			}
 		}
+
 		if($login==false){//si se acaba el tiempo de sesion o la cookie no conincide con los datos almacenados , se cierra la sesion
 				
 			// Borra todas las variables de sesión 
@@ -31,6 +32,7 @@
 		  } 
 		  // Finalmente, destruye la sesión 
 		  session_destroy();
+
 		  header('Location: index.php');
 		}
 	}

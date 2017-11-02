@@ -1,4 +1,5 @@
 <?php
+	require_once('validar.php');
 	$title = "Registro - PI - Pictures & images";
 	require_once('plantillas/cabecera.php');
 	require_once('plantillas/logotipo.php');
