@@ -14,7 +14,7 @@
 	{
 		require_once('plantillas/nav_usuario_no_identificado.php');
 		require_once('plantillas/error_test.php');
-	}*
+	}
 
 ?>
 
