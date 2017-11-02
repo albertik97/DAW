@@ -1,8 +1,8 @@
 <?php
 	session_start();
+	require_once('validar.php'); 
 	$current_visit_date = date("d/m/y");
 	$current_visit_hour = date("H:i:s");
-	require_once('validar.php'); 
 ?>
 <!DOCTYPE html> 
 <html lang="es">
@@ -30,12 +30,8 @@
 										$last_visit_date = $_COOKIE['last_visit_date'];
 										$last_visit_hour = $_COOKIE['last_visit_hour'];
 									echo "<span class=\"ultima_visita\">Hola, " . $_SESSION['user'] . " su última visita fue el " .$last_visit_date . " a las " . $last_visit_hour . "<br><a href=\"menu_usuario.php\">Acceder</a><br><a href=\"cierra_sesion.php\">Salir</a></span></span>";
-								}else{
-									echo "<span class=\"ultima_visita\">Hola, " . $_SESSION['user'] . " hoy es tu primera visita ;)<br><a href=\"menu_usuario.php\">Acceder</a><br><a href=\"cierra_sesion.php\">Salir</a></span>";
 								}
 								
-								setcookie("last_visit_date",$current_visit_date,time()+60*60*24*30);
-								setcookie("last_visit_hour",$current_visit_hour,time()+60*60*24*30);
 						}else{
 								echo '<h2>Iniciar Sesión</h2>';
 								echo '<form method="POST" action="control_usuarios.php">';
@@ -55,6 +51,9 @@
 								echo '<p><a href="registro.php">Registrarse</a></p>';
 							echo '</form>';
 						}
+
+								setcookie("last_visit_date",$current_visit_date,time()+60*60*24*30);
+								setcookie("last_visit_hour",$current_visit_hour,time()+60*60*24*30);
 					?>
 				</section>
 			</div>
