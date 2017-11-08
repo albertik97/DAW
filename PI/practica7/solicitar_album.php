@@ -7,6 +7,15 @@
 	if(isset($_SESSION['user']))
 	{
 			require_once('plantillas/nav_usuario_identificado.php');
+			$mysqli = @new mysqli('localhost','root','','pibd');
+			if($mysqli->connect_errno){
+				echo "Se ha producido un error al conectar con la base de datos :" . $mysqli->connect_error;
+			}
+			$usuario = $_SESSION['user'];
+			$consulta = 'select * from albumes,usuarios where NomUsuario="'. $usuario. '" AND IdUsuario=Usuario';
+			if(!($res=$mysqli->query($consulta))){
+				echo "Error al realizar la consulta " . $mysqli->error;
+			}
 ?>
 	<main id="solbum">
 		<h1 id="titulo_solicitar_album">Solicitar álbum</h1>
@@ -25,10 +34,11 @@
 						</p>
 						<p><label for="albumUsuario">Álbum de PI (*)</label>
 							<select id="albumUsuario" name="albumUsuario" required="">
-								<option value="">Elige una opción</option>
-								<option value="Album1">Album1</option>
-								<option value="Album2">Album2</option>
-								<option value="Album3">Album3</option>
+								<?php
+									while($fila=$res->fetch_assoc()){
+										echo "<option value=" . $fila[Titulo] . ">" . $fila[Titulo] . "</option>";
+									}
+								?>								
 							</select>
 						 </p>
 						<p><label for="textoAdicional">Texto adicional</label><textarea rows="4" cols="50" name="textoAdicional" id="textoAdicional" placeholder="dedicatoria, descripcion, etc. (max. 4000 carácteres)" maxlength="4000" ></textarea></p>
@@ -133,4 +143,8 @@
 		require_once('plantillas/nav_usuario_no_identificado.php');
 		require_once('plantillas/error_test.php');
 	}
+	
+				$res->close();
+				$mysqli->close();	
+	
 ?>

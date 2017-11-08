@@ -9,28 +9,29 @@
 	else
 		require_once('plantillas/nav_usuario_no_identificado.php');
 
-	$img = array
-	(
-		array('"imagenes/playa.jpg"', "Mis vacaciones en Hawai", "12/12/2004", "Hawai", "Alejandro Domenech", "Viajes"),
-		array('"imagenes/delfin.jpg"', "Un delfín en el mar", "23/10/2004", "España", "Alejandro Domenech", "Viajes")
-	);
-
-	$n_img;
-	if (isset($_GET['id']))
-		if(intval($_GET['id'])%2==0) $n_img=0;
-			else $n_img=1;
+	$id_foto=$_GET['id'];
+	$usuario = $_SESSION['user'];
+	$mysqli = @new mysqli('localhost','root','','pibd');
+	if($mysqli->connect_errno){
+		echo "No se ha podido establecer conxión con la base de datos";
+	}
 
 	if(isset($_SESSION['user']))
 	{
+		$consulta = 'select Fichero,f.Titulo as titulo_foto,f.Fecha,NomPais,NomUsuario,a.Titulo from fotos f,usuarios,albumes a,paises where f.Album = IdAlbum and Usuario=IdUsuario and f.Pais=IdPais and IdFoto="' . $id_foto . '"';
+		if(!($resultado=$mysqli->query($consulta))){
+			echo "Error al realizar consulta";
+		}
+		$res=$resultado->fetch_assoc();	
 ?>
 		<main>
 			<figure>
-				<img src=<?php echo $img[$n_img][0]; ?> class="imagen" alt="Foto de lo que sea"><br>
+				<img src="fotos/<?php echo $res['Fichero']?>" class="imagen" alt=""><br>
 				<figcaption>
-					<p class="negrita"> <?php echo $img[$n_img][1]; ?> </p> 
-					<p id="FechaPais">Tomada el <?php echo $img[$n_img][2]; ?> en <?php echo $img[$n_img][3]; ?></p>
-					<p><a href=""><?php echo $img[$n_img][4]; ?></a> - 
-					<a href=""><?php echo $img[$n_img][5]; ?></a></p>
+					<p class="negrita"><?php echo $res['titulo_foto'];?> </p> 
+					<p id="FechaPais">Tomada el <?php if($res['Fecha']!='null'){echo $res['Fecha'];}else echo "?";?> en <?php if($res['NomPais']!='null'){echo $res['NomPais'];}else echo "?";?></p>
+					<p><a href=""><?php echo $res['NomUsuario']; ?></a> - 
+					<a href=""><?php echo  $res['Titulo'];?></a></p>
 				</figcaption>
 			</figure>	
 		</main>
@@ -42,6 +43,10 @@
 	else
 		require_once('plantillas/error_test.php');
 
+	
+				$resultado->close();
+				$mysqli->close();	
+	
 
 ?>
 		

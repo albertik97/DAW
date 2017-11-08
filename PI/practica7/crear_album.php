@@ -8,6 +8,14 @@
 	if(isset($_SESSION['user']))
 	{
 		require_once('plantillas/nav_usuario_identificado.php');
+		$mysqli = @new mysqli('localhost','root','','pibd');
+		if($mysqli->connect_errno){
+			echo "No se ha podido establecer conxión con la base de datos";
+		}
+		$consulta = 'select * from paises';
+		if(!($res=$mysqli->query($consulta))){
+			echo "Error al procesar la peticion";
+		}
 ?>
 				<main>
 				<h1 id="titulo_crear_album">Formulario de creación de álbum</h1>
@@ -15,7 +23,15 @@
 				<p><label for="tituloAlbum">Título del álbum</label><input type="text" name="tituloAlbum" id="tituloAlbum" placeholder="Ej: Navidades 2016" autofocus required></p>
 				<p><label for="textoDescripcion">Descripción del álbum</label><textarea rows="4" cols="50" name="textoDescripcion" id="textoDescripcion" placeholder="una descripción sobre la temática del álbum" maxlength="4000" ></textarea></p>
 				<p><label for="fechaAlbum">Fecha de las fotos</label><input type="date" name="fechaAlbum" id="fechaAlbum" ></p>
-				<p><label for="paisAlbum">Pais donde se hicieron</label><input type="text" name="paisAlbum" id="paisAlbum" placeholder="Ej: España"></p>
+				<p><label for="paisAlbum">Pais donde se hicieron</label>
+					<input type="text" name="paisAlbum"></p>
+					<select name="paisAlbum" id="paisAlbum">
+						<?php
+							while($fila=$res->fetch_assoc()){
+								echo "<option value=" . $fila[NomPais] . ">" . $fila[NomPais] . "</option>";
+							}
+						?>
+					</select>
 				<p><input id="boton_crear" type="submit" value="Crear álbum"></p>
 			</form>
 		</main>
@@ -23,12 +39,13 @@
 	</body>
 </html>
 <?php
+	$res->close();
+	$mysqli->close();
 	}
 	else
 	{
 		require_once('plantillas/nav_usuario_no_identificado.php');
 		require_once('plantillas/error_test.php');
-	}
-
+	}	
 ?>
 
