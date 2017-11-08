@@ -13,9 +13,9 @@
 		echo "Se ha producido un error al conectar con la base de datos" . $mysqli->connect_error;
 	}
 
-	$query = 'select * from paises';
+	$consulta = 'select * from paises';
 
-	if(!($res=$mysqli->query(query))){
+	if(!($res=$mysqli->query($consulta))){
 		echo "Error al ejecutar la sentencia";
 	}
 ?>
@@ -26,11 +26,13 @@
 				<p><label for="fechaInicial">Fecha inicial </label><input type="date" name="fechaInicial" id="fechaInicial"></p>
 				<p><label for="fechaFinal"> Fecha final </label><input type="date" name="fechaFinal" id="fechaFinal" ></p>
 				<p><label for="pais">Pais: </label>
-				<select> name="pais" id="pais"></p>
+				<select name="pais" id="pais">
 				<?php
-				//le bucle
+					while($fila=$res->fetch_assoc()){
+						echo "<option value='" . $fila['NomPais'] . "'>" . $fila['NomPais'] . "</option>";
+					}
 				?>
-				</select>
+				</select></p>
 				<p><input id="boton_buscar" type="submit" value="Buscar"></p>
 			</form>
 		</main>
