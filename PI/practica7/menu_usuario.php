@@ -35,7 +35,7 @@ session_start();
 		<hr>
 		<a class="botones_perfil" href="#" ><img src="imagenes/delete.png" alt="">Darse de baja</a>
 		<a class="botones_perfil" href="crear_album.php" ><img src="imagenes/add.png" alt="">Crear álbum nuevo</a>
-		<a class="botones_perfil" href="#" ><img src="imagenes/album.png" alt="">Mis álbumes</a>
+		<a class="botones_perfil" href="mis_albumes.php" ><img src="imagenes/album.png" alt="">Mis álbumes</a>
 		<a class="botones_perfil" href="solicitar_album.php" ><img src="imagenes/print.png" alt="">Solicitar álbum impresion</a>
 		<a class="botones_perfil" href="cierra_sesion.php"><img src="imagenes/exit.png" alt="">Salir</a>
 	</main>
