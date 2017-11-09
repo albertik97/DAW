@@ -9,6 +9,7 @@
 	else
 		require_once('plantillas/nav_usuario_no_identificado.php');
 	$mysqli = @new mysqli('localhost','root','','pibd');
+	$mysqli->set_charset('utf8');
 	if($mysqli->connect_errno){
 		echo "Se ha producido un error al conectar con la base de datos" . $mysqli->connect_error;
 	}

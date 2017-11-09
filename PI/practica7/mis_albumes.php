@@ -9,9 +9,10 @@ session_start();
 	{
 		require_once('plantillas/nav_usuario_identificado.php');
 
-$mysqli = @new mysqli('localhost', 'root', '', 'pibd'); 
+$mysqli = @new mysqli('localhost', 'root', '', 'pibd');
+	$mysqli->set_charset('utf8');
  
- if($mysqli->connect_errno) { 
+ if($mysqli->connect_errno){ 
    echo '<p>Error al conectar con la base de datos: ' . $mysqli->connect_error; 
    echo '</p>'; 
    exit; 
@@ -41,7 +42,7 @@ $mysqli = @new mysqli('localhost', 'root', '', 'pibd');
 				   echo '<tr>'; 
 				   echo '<td>' . $fila['Titulo'] . '</td>'; 
 				   echo '<td>' . $fila['Descripcion'] . '</td>'; 
-				   echo '<td><a class="botones_perfil" href="ver_album.php?userId=' . $fila['IdAlbum'] .' "><img src="imagenes/exit.png" alt=""> Ver álbum</a></td>';
+				   echo '<td><a class="botones_perfil" href="ver_album.php?AlbumId=' . $fila['IdAlbum'] .' "><img src="imagenes/exit.png" alt=""> Ver álbum</a></td>';
 				   echo '</tr>'; 
  				}
 				?>

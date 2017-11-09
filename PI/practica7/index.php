@@ -2,7 +2,16 @@
 	session_start();
 	$current_visit_date = date("d/m/y");
 	$current_visit_hour = date("H:i:s");
-	require_once('validar.php'); 
+	require_once('validar.php');
+	$mysqli = @new mysqli('localhost','root','','pibd');
+		if($mysqli->connect_errno){
+			echo "<p>Error al conectar con la base de datos :(</p>";
+		}else{
+			$sentencia = 'select * from fotos order by Fecha DESC';
+			if(!($resultado=$mysqli->query($sentencia))){
+				echo "Error de sentencia";
+			}			
+		}
 ?>
 <!DOCTYPE html> 
 <html lang="es">
@@ -18,20 +27,6 @@
 		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 	</head>
 	<body> 
-
-	<?php
-		//Nos conectamos con la base de datos
-		$mysqli = @new mysqli('localhost','root','','pibd');
-		if(!$mysqli){
-			echo "<p>Error al conectar con la base de datos :(</p>";
-		}else{
-			$sentencia = 'select * from fotos order by Fecha DESC';
-			if(!($resultado=$mysqli->query($sentencia))){
-				echo "Error de sentencia";
-			}
-				
-		}
-	?>
 		<header>
 			<h1><a href="index.php" tabindex="-1"><img src="imagenes/pi.png" id="logo" alt="Logotipo PI" height="128" width="128"></a></h1>
 		</header>
@@ -77,7 +72,7 @@
 				<hr>
 				<?php $res = $resultado->fetch_assoc(); ?>
 
-					<a href="detalles_foto.php?id=<?php echo $res['IdFoto']?>" ><img src="fotos/<?php echo $res['Fichero']?>" alt="Imagen1" height="164" width="164" ></a>";
+					<a href="detalles_foto.php?id=<?php echo $res['IdFoto']?>" ><img src="fotos/<?php echo $res['Fichero']?>" alt="Imagen1" height="164" width="164" ></a>
 					<?php $res = $resultado->fetch_assoc(); ?>
 					<a href="detalles_foto.php?id=<?php echo $res['IdFoto']?>" ><img src="fotos/<?php echo $res['Fichero']?>" alt="Imagen2" height="164" width="164" ></a>
 					<?php $res = $resultado->fetch_assoc(); ?>
@@ -86,7 +81,7 @@
 					<a href="detalles_foto.php?id=<?php echo $res['IdFoto']?>" ><img src="fotos/<?php echo $res['Fichero']?>" alt="Imagen4" height="164" width="164" ></a>
 					<?php $res = $resultado->fetch_assoc(); ?>
 					<a href="detalles_foto.php?id=<?php echo $res['IdFoto']?>" ><img src="fotos/<?php echo $res['Fichero']?>"" alt="Imagen5" height="164" width="164" ></a>
-				?>
+				
 			</section>
 		</main>
 		<?php
