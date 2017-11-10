@@ -137,14 +137,12 @@
 </body>
 </html>
 <?php
+	$res->close();
+	$mysqli->close();	
 	}
 	else
 	{
 		require_once('plantillas/nav_usuario_no_identificado.php');
 		require_once('plantillas/error_test.php');
 	}
-	
-				$res->close();
-				$mysqli->close();	
-	
 ?>
