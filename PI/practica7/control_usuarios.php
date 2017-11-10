@@ -2,16 +2,18 @@
 session_start();
 $acces = false;
 $acceso ="Usuario y/o contraseña incorrectos";
-$usuarios =array( array('usuario'=>'user1',
-					'contraseña'=>'pass',
-					'id_session'=>''
-			),array('usuario'=>'user2',
-					'contraseña'=>'pass2'
-			),array('usuario'=>'user3',
-					'contraseña'=>'pass3'));
+$mysqli = @new mysqli('localhost','root','','pibd');
+if($mysqli->connect_errno){
+	echo "Error al conectarse a la base de datos";
+}
 
-for($i=0;$i<count($usuarios);$i++){
-	if($_POST['userName']==$usuarios[$i]['usuario'] && $_POST['Password']==$usuarios[$i]['contraseña']){
+$consulta= 'select * from usuarios';
+if(!($res=$mysqli->query($consulta))){
+	echo "Error al realziar la consulta";
+}
+
+while($line = $res->fetch_assoc()){
+	if($_POST['userName']==$line['NomUsuario'] && $_POST['Password']==$line['Clave']){
 			$acces =true;
 			$_SESSION['user'] = $_POST['userName'];
 			 if(isset($_POST['recordar'])&& $_POST['recordar']=="Recordar mis datos"){
@@ -27,6 +29,8 @@ for($i=0;$i<count($usuarios);$i++){
 	}
 }
 
+$res->close();
+$mysqli->close();
 if($acces==false){
 	$_SESSION['reiniciar']=false;
 	header('Location: index.php?error=true');
