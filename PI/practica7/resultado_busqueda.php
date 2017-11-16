@@ -49,12 +49,18 @@
 		 }
 
 
-		 $sentencia = "SELECT fotos.*, NomPais FROM fotos, paises where fotos.Pais = paises.IdPais and Titulo = '" . $titulo . "' and paises.NomPais = '" . $pais ."'";
 
-		 if($_GET['fechaInicial'] != "")
-		 	$sentencia .= "and Fecha >= '" . $fecha1 . "'";
-		 if($_GET['fechaFinal'] != "")
-		 	$sentencia .= "and Fecha <= '" . $fecha2 . "'";
+
+		 $sentencia = "SELECT fotos.*, NomPais FROM fotos, paises where fotos.Pais = paises.IdPais and Titulo like '%" . $titulo . "%'";
+		  if(isset($_GET['pais'])){
+		 	$sentencia.= "and paises.NomPais = '" . $pais ."'";
+		 } 
+		 if(isset($_GET['fechaInicial'])){
+			 if($_GET['fechaInicial'] != "")
+			 	$sentencia .= "and Fecha >= '" . $fecha1 . "'";
+			 if($_GET['fechaFinal'] != "")
+			 	$sentencia .= "and Fecha <= '" . $fecha2 . "'";
+			}
 		 /*if($_GET['pais'] != "")
 		 	$sentencia .= "and Pais = (select IdPais from paises where NomPais = '". $pais ."')";*/
 		 
@@ -74,12 +80,14 @@
 		<?php
 
 		while($fila = $resultado->fetch_assoc()) { 
+			$date = new DateTime($fila['Fecha']);
+			$fecha = $date->format('d-m-Y');
 			echo '<article>';
 			echo '<figure>';
 			echo '<a href="detalles_foto.php?id=' . $fila['IdFoto'] . '"><img src="fotos/' . $fila['Fichero'] . '" alt="' . $fila['Descripcion'] . '" width="400" height="290"></a>';
 			echo '<figcaption>' . $fila['Titulo'] . '</figcaption>';
 			echo '</figure>';
-			echo '<p><span>Fecha :</span> ' . $fila['Fecha'] . '</p>';
+			echo '<p><span>Fecha :</span> ' . $fecha . '</p>';
 			echo '<p><span>País :</span>' . $fila['NomPais'] .'</p>';
 			echo '</article>';
 
@@ -97,10 +105,5 @@
 				<p><?php echo $pais;?></p>
 			</fieldset>
 	</aside>
-	<footer>
-		<?php require_once('plantillas/footer.php');?>
-		<p><button class="pasar" value="Anterior">Anterior</button><span class="cantidad">Página 1 de 3</span><button class="pasar" value="Anterior">Siguiente</button></p>
-	</footer>
-	
 </body>
 </html>

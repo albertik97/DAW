@@ -28,14 +28,17 @@
 		if(!$res){
 			echo "No se ha encontrado ninguna foto";
 		}else{
-
+			if($res['Fecha']!='null'){
+				$date = new DateTime($res['Fecha']);
+				$fecha = $date->format('d-m-Y');
+			}
 	?>
 			<main>
 				<figure>
 					<img src="fotos/<?php echo $res['Fichero']?>" class="imagen" alt=""><br>
 					<figcaption>
 						<p class="negrita"><?php echo $res['titulo_foto'];?> </p> 
-						<p id="FechaPais">Tomada el <?php if($res['Fecha']!='null'){echo $res['Fecha'];}else echo "?";?> en <?php if($res['NomPais']!='null'){echo $res['NomPais'];}else echo "?";?></p>
+						<p id="FechaPais">Tomada el <?php if($res['Fecha']!='null'){echo $fecha;}else echo "?";?> en <?php if($res['NomPais']!='null'){echo $res['NomPais'];}else echo "?";?></p>
 						<p><a href=""><?php echo $res['NomUsuario']; ?></a> - 
 						<a href=<?php echo 'ver_album.php?AlbumId='. $res['IdAlbum'].''?>><?php echo $res['Titulo'];?></a></p>
 					</figcaption>

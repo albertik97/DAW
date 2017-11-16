@@ -4,10 +4,11 @@
 	$current_visit_hour = date("H:i:s");
 	require_once('validar.php');
 	$mysqli = @new mysqli('localhost','root','','pibd');
+	$mysqli->set_charset('utf8');
 		if($mysqli->connect_errno){
 			echo "<p>Error al conectar con la base de datos :(</p>";
 		}else{
-			$sentencia = 'select * from fotos order by Fecha DESC';
+			$sentencia = 'select * from fotos,paises where Pais=IdPais order by Fecha DESC';
 			if(!($resultado=$mysqli->query($sentencia))){
 				echo "Error de sentencia";
 			}			
@@ -70,18 +71,20 @@
 			<section id="UltimasFotos">
 				<h2>Últimas fotos subidas - <a href="formulario_busqueda.php">Buscar más</a></h2>
 				<hr>
-				<?php $res = $resultado->fetch_assoc(); ?>
+				<?php 
+				while($fila=$resultado->fetch_assoc()){
+					$date = new DateTime($fila['Fecha']);
+					$fecha = $date->format('d-m-Y');
+					echo "<article>";
+					echo	"<figure>";
+					echo		'<a href="detalles_foto.php?id=' . $fila['IdFoto'] . '" ><img src="fotos/' . $fila['Fichero'] .'" alt="Imagen1" height="164" width="164" ></a>';
+					echo		'<figcaption>' . $fila['Titulo'] . '</figcaption>';
+					echo '<p>Fecha : '. $fecha .'</p>';
+					echo '<p>Pais : '. $fila['NomPais'] .'</p>';
+					echo	'</figure>';
+					echo '</article>';
 
-					<a href="detalles_foto.php?id=<?php echo $res['IdFoto']?>" ><img src="fotos/<?php echo $res['Fichero']?>" alt="Imagen1" height="164" width="164" ></a>
-					<?php $res = $resultado->fetch_assoc(); ?>
-					<a href="detalles_foto.php?id=<?php echo $res['IdFoto']?>" ><img src="fotos/<?php echo $res['Fichero']?>" alt="Imagen2" height="164" width="164" ></a>
-					<?php $res = $resultado->fetch_assoc(); ?>
-					<a href="detalles_foto.php?id=<?php echo $res['IdFoto']?>" ><img src="fotos/<?php echo $res['Fichero']?>" alt="Imagen3" height="164" width="164" ></a>
-					<?php $res = $resultado->fetch_assoc(); ?>
-					<a href="detalles_foto.php?id=<?php echo $res['IdFoto']?>" ><img src="fotos/<?php echo $res['Fichero']?>" alt="Imagen4" height="164" width="164" ></a>
-					<?php $res = $resultado->fetch_assoc(); ?>
-					<a href="detalles_foto.php?id=<?php echo $res['IdFoto']?>" ><img src="fotos/<?php echo $res['Fichero']?>"" alt="Imagen5" height="164" width="164" ></a>
-				
+				} ?>				
 			</section>
 		</main>
 		<?php

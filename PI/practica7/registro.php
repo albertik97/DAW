@@ -33,6 +33,11 @@
 			</p>
 			<p>
 				<label for="ciudad">Ciudad :</label>
+				<input type="text" name="ciudad" id="ciudad" required>
+			</p>
+			<p>
+				<label for="pais">Pais de residencia :</label>
+				
 				<select name="pais" id="pais">
 				<?php
 					while($fila=$res->fetch_assoc()){
@@ -40,10 +45,6 @@
 					}
 				?>
 				</select>
-			</p>
-			<p>
-				<label for="pais">Pais de residencia :</label>
-				<input type="text" name="pais" id="pais" required>
 			</p>
 			<p>
 				<label for="foto">Foto de perfil :</label>
