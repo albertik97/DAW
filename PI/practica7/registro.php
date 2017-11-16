@@ -3,6 +3,7 @@
 	$title = "Registro - PI - Pictures & images";
 	require_once('plantillas/cabecera.php');
 	require_once('plantillas/logotipo.php');
+	require_once('plantillas/datos_paises.php');
 ?>
 	<main>
 		<h1 id="titulo_registro">Formulario de registro</h1>
@@ -32,7 +33,13 @@
 			</p>
 			<p>
 				<label for="ciudad">Ciudad :</label>
-				<input type="text" name="ciudad" id="ciudad" required>
+				<select name="pais" id="pais">
+				<?php
+					while($fila=$res->fetch_assoc()){
+						echo "<option value='" . $fila['NomPais'] . "'>" . $fila['NomPais'] . "</option>";
+					}
+				?>
+				</select>
 			</p>
 			<p>
 				<label for="pais">Pais de residencia :</label>

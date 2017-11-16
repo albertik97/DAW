@@ -9,7 +9,6 @@
 	{
 		require_once('plantillas/nav_usuario_identificado.php');
 		$mysqli = @new mysqli('localhost','root','','pibd');
-			$mysqli->set_charset('utf8');
 		if($mysqli->connect_errno){
 			echo "No se ha podido establecer conxión con la base de datos";
 		}
@@ -25,14 +24,14 @@
 				<p><label for="textoDescripcion">Descripción del álbum</label><textarea rows="4" cols="50" name="textoDescripcion" id="textoDescripcion" placeholder="una descripción sobre la temática del álbum" maxlength="4000" ></textarea></p>
 				<p><label for="fechaAlbum">Fecha de las fotos</label><input type="date" name="fechaAlbum" id="fechaAlbum" ></p>
 				<p><label for="paisAlbum">Pais donde se hicieron</label>
-
+					<input type="text" name="paisAlbum"></p>
 					<select name="paisAlbum" id="paisAlbum">
 						<?php
 							while($fila=$res->fetch_assoc()){
 								echo "<option value=" . $fila[NomPais] . ">" . $fila[NomPais] . "</option>";
 							}
 						?>
-					</select></p>
+					</select>
 				<p><input id="boton_crear" type="submit" value="Crear álbum"></p>
 			</form>
 		</main>

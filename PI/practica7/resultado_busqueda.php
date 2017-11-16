@@ -15,7 +15,6 @@
 			<input id="boton_barra_busqueda" type="submit" value="Buscar">			
 	</form>
 	<section>
-		<!--tratamos la peticion-->
 		<?php
 			$array = getdate();
 			if(isset($_GET['tituloFoto'])==true){
@@ -39,45 +38,55 @@
 				$pais="Todo el mundo";
 			}
 
+
+			$mysqli = @new mysqli('localhost', 'root', '', 'pibd');
+			$mysqli->set_charset('utf8');
+ 
+		 if($mysqli->connect_errno) { 
+		   echo '<p>Error al conectar con la base de datos: ' . $mysqli->connect_error; 
+		   echo '</p>'; 
+		   exit; 
+		 }
+
+
+		 $sentencia = "SELECT fotos.*, NomPais FROM fotos, paises where fotos.Pais = paises.IdPais and Titulo = '" . $titulo . "' and paises.NomPais = '" . $pais ."'";
+
+		 if($_GET['fechaInicial'] != "")
+		 	$sentencia .= "and Fecha >= '" . $fecha1 . "'";
+		 if($_GET['fechaFinal'] != "")
+		 	$sentencia .= "and Fecha <= '" . $fecha2 . "'";
+		 /*if($_GET['pais'] != "")
+		 	$sentencia .= "and Pais = (select IdPais from paises where NomPais = '". $pais ."')";*/
+		 
+		 	//echo $sentencia;
+
+		 if(!($resultado = $mysqli->query($sentencia))) { 
+		   echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error; 
+		   echo '</p>';
+		   exit;
+		 } 
+
 		?>
 
 		<h3 id="texto_resultado">Resultado de búsqueda de "<?php echo $titulo?>"</h3>
 		<p class ="imprimir">Entre 01/02/2005 y 01/02/2017 , España</p>
 
-		<article>
-			<figure>
-			<a href="detalles_foto.php?id=1"><img src="imagenes/delfin.jpg" alt="Descripcion de imagen" width="256" height="256"></a>
-			<figcaption>Mis vacaiones</figcaption>
-			</figure>
-			<p><span>Fecha :</span> 02/04/2017</p>
-			<p><span>País :</span> Alemania</p>
-		</article>
-		<article>
-			<figure>
-			<a href="detalles_foto.php?id=2"><img src="imagenes/playa.jpg" alt="Descripcion de imagen" width="256" height="256"></a>
-			<figcaption>Viajando</figcaption>
-			</figure>
-			<p><span>Fecha :</span> 02/04/2017</p>
-			<p><span>País :</span> España</p>
-		</article>
+		<?php
 
-		<article>
-			<figure>
-			<a href="detalles_foto.php?id=3"><img src="imagenes/delfin.jpg" alt="Descripcion de imagen" width="256" height="256"></a>
-			<figcaption>Visita a Valencia</figcaption>
-			</figure>
-			<p><span>Fecha :</span> 02/04/2017</p>
-			<p><span>País :</span> España</p>
-		</article>
+		while($fila = $resultado->fetch_assoc()) { 
+			echo '<article>';
+			echo '<figure>';
+			echo '<a href="detalles_foto.php?id=' . $fila['IdFoto'] . '"><img src="fotos/' . $fila['Fichero'] . '" alt="' . $fila['Descripcion'] . '" width="400" height="290"></a>';
+			echo '<figcaption>' . $fila['Titulo'] . '</figcaption>';
+			echo '</figure>';
+			echo '<p><span>Fecha :</span> ' . $fila['Fecha'] . '</p>';
+			echo '<p><span>País :</span>' . $fila['NomPais'] .'</p>';
+			echo '</article>';
 
-		<article>
-			<figure>
-			<a href="detalles_foto.php?id=4"><img src="imagenes/playa.jpg" alt="Descripcion de imagen" width="256" height="256"></a>
-			<figcaption>Visita a Berlín</figcaption>
-			</figure>
-			<p><span>Fecha :</span> 20/04/2015</p>
-			<p><span>País :</span> Alemania</p>
-		</article>
+		}
+
+		?>
+		
 	</section>
 	<aside>
 			<fieldset>

@@ -4,22 +4,21 @@ session_start();
 	$title = "Menú usuario - Pictures & images";
 	require_once('plantillas/cabecera.php');
 	require_once('plantillas/logotipo.php');
-	
+
 	if(isset($_SESSION['user']))
 	{
 		require_once('plantillas/nav_usuario_identificado.php');
 
-$mysqli = @new mysqli('localhost', 'root', '', 'pibd');
-	$mysqli->set_charset('utf8');
- 
- if($mysqli->connect_errno){ 
+$mysqli = @new mysqli('localhost', 'root', '', 'pibd'); 
+ $mysqli->set_charset('utf8');
+ if($mysqli->connect_errno) { 
    echo '<p>Error al conectar con la base de datos: ' . $mysqli->connect_error; 
    echo '</p>'; 
    exit; 
  }
 
  // Ejecuta una sentencia SQL 
- $sentencia = 'SELECT * FROM albumes'; 
+ $sentencia = "SELECT DISTINCT albumes.* from albumes, usuarios where albumes.Usuario = (SELECT idUsuario from usuarios where NomUsuario = '" . $_SESSION['user'] . "')"; 
  if(!($resultado = $mysqli->query($sentencia))) { 
    echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error; 
    echo '</p>';
@@ -53,8 +52,5 @@ $mysqli = @new mysqli('localhost', 'root', '', 'pibd');
 
 
 <?php
-}else{
-	require_once('plantillas/nav_usuario_no_identificado.php');
-	require_once('plantillas/error_test.php');
 }
 ?>
