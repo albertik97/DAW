@@ -3,11 +3,11 @@
 	$current_visit_date = date("d/m/y");
 	$current_visit_hour = date("H:i:s");
 	require_once('validar.php');
-	$mysqli = @new mysqli('localhost','root','','pibd');
-	$mysqli->set_charset('utf8');
+	$mysqli = @new mysqli('localhost','web_user','','pibd');
 		if($mysqli->connect_errno){
 			echo "<p>Error al conectar con la base de datos :(</p>";
 		}else{
+			$mysqli->set_charset('utf8');
 			$sentencia = 'select * from fotos,paises where Pais=IdPais order by Fecha DESC';
 			if(!($resultado=$mysqli->query($sentencia))){
 				echo "Error de sentencia";

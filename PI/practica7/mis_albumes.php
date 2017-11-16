@@ -9,7 +9,7 @@ session_start();
 	{
 		require_once('plantillas/nav_usuario_identificado.php');
 
-$mysqli = @new mysqli('localhost', 'root', '', 'pibd'); 
+$mysqli = @new mysqli('localhost','web_user','', 'pibd'); 
  $mysqli->set_charset('utf8');
  if($mysqli->connect_errno) { 
    echo '<p>Error al conectar con la base de datos: ' . $mysqli->connect_error; 
