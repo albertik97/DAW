@@ -46,7 +46,6 @@
 		   exit;
 		 }
 
-/*		CONTROL DE PAGINACION
 
 		 		if (isset($_GET["pagina"])) {
 
@@ -79,7 +78,6 @@
 		$RESULTADOS_PAGINA = 4;
 		$empezar_desde = ($pagina-1) * $RESULTADOS_PAGINA;
 		
-*/
 
 		 $sentencia = "SELECT fotos.*, NomPais FROM fotos, paises where fotos.Pais = paises.IdPais and Titulo like '%" . $titulo . "%'";
 		 
@@ -98,12 +96,14 @@
 			 if($_GET['fechaFinal'] != "")
 			 	$sentencia .= " and Fecha <= '" . $fecha2 . "'";
 			}
-		//$sentencia .= " LIMIT $empezar_desde, $RESULTADOS_PAGINA"; LIMITE PARA PAGINACION
 
 		//echo $sentencia;
 
-		 /*if($_GET['pais'] != "")
-		 	$sentencia .= "and Pais = (select IdPais from paises where NomPais = '". $pais ."')";*/
+		 if( isset($_GET['pais']) && $_GET['pais'] != "")
+		 	$sentencia .= " and Pais = (select IdPais from paises where NomPais = '". $pais ."')";
+
+		 		$sentencia .= " LIMIT $empezar_desde, $RESULTADOS_PAGINA"; //LIMITE PARA PAGINACION
+
 		 
 		 	//echo $sentencia;
 
@@ -113,9 +113,9 @@
 		   exit;
 		 } 
 
-		/* $num_total_fotos = mysqli_num_rows($resultado_sin_filtro);
+		 $num_total_fotos = mysqli_num_rows($resultado_sin_filtro);
 		 //echo "fotos: ".$num_total_fotos;
-		 $total_paginas = ceil($num_total_fotos / $RESULTADOS_PAGINA);*/
+		 $total_paginas = ceil($num_total_fotos / $RESULTADOS_PAGINA);
 		
 
 
@@ -142,8 +142,8 @@
 
 		}
 
-
-	/*	//echo "total paginas: " . $total_paginas;
+/*
+	//echo "total paginas: " . $total_paginas;
 		for ($i=1; $i<=$total_paginas; $i++) {
 	//En el bucle, muestra la paginación
 	echo "<a href='?pagina=".$i."&busqueda='>".$i."</a> | ";

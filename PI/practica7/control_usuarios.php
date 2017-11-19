@@ -2,7 +2,7 @@
 session_start();
 $acces = false;
 $acceso ="Usuario y/o contraseña incorrectos";
-$mysqli = @new mysqli('localhost','web_user','normaluser','pibd');
+$mysqli = @new mysqli('localhost','web_user','','pibd');
 if($mysqli->connect_errno){
 	echo "Error al conectarse a la base de datos";
 }

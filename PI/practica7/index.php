@@ -8,7 +8,7 @@
 			echo "<p>Error al conectar con la base de datos :(</p>";
 		}else{
 			$mysqli->set_charset('utf8');
-			$sentencia = 'select * from fotos,paises where Pais=IdPais order by Fecha DESC';
+			$sentencia = 'select * from fotos,paises where Pais=IdPais order by Fecha DESC LIMIT 0, 5';
 			if(!($resultado=$mysqli->query($sentencia))){
 				echo "Error de sentencia";
 			}			
