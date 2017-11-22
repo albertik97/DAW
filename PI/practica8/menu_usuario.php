@@ -10,6 +10,7 @@ session_start();
 	if(isset($_SESSION['user']))
 	{
 		require_once('plantillas/nav_usuario_identificado.php');
+<<<<<<< HEAD
 
 		$mysqli = @new mysqli('localhost','web_user','','pibd');
 		if($mysqli->connect_errno){
@@ -21,7 +22,17 @@ session_start();
 			echo "Error al realziar la consulta";
 		}
 		$usuario = $res->fetch_assoc();
+=======
+		if(isset($_GET['baja']) && $_GET['baja'] == true)
+		{
+			echo '<section id="confirmar_baja">';
+			echo '<p>¿Estás seguro de querer darte de baja?</p>';
+			echo '<p><a href="dar_baja.php?id='.$_SESSION['id'].'">Si</a> <a href="menu_usuario.php">No</a></p>';
+			echo '</section>';
+		}
+>>>>>>> 54a10f0c1443555285dd7834ab0333f16cccc5eb
 ?>
+	
 	<main id="main_usuario">
 		<fieldset id="misdatos">
 			<legend><h2>Mis datos</h2></legend>
@@ -44,7 +55,11 @@ session_start();
 			<p><a href="mis_datos.php" id="edit_perfil" >Modificar datos</a></p>
 		</fieldset>
 		<hr>
+<<<<<<< HEAD
 		<a class="botones_perfil" href="dar_baja.php" ><img src="imagenes/delete.png" alt="">Darse de baja</a>
+=======
+		<a class="botones_perfil" href="menu_usuario.php?baja=true" ><img src="imagenes/delete.png" alt="">Darse de baja</a>
+>>>>>>> 54a10f0c1443555285dd7834ab0333f16cccc5eb
 		<a class="botones_perfil" href="crear_album.php" ><img src="imagenes/add.png" alt="">Crear álbum nuevo</a>
 		<a class="botones_perfil" href="anyadir_foto.php" ><img src="imagenes/add.png" alt="">  Añadir foto a álbum</a>
 		<a class="botones_perfil" href="mis_albumes.php" ><img src="imagenes/album.png" alt="">Mis álbumes</a>
