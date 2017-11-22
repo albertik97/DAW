@@ -431,3 +431,28 @@ footer p{
 .derecha{
 	float: right;
 }
+#confirmar_baja
+{
+	width: 100%;
+	height: 115%;
+	background-color: rgba(0,0,0,0.9);
+	position: absolute;
+	/*left: 35%;
+	bottom: 50%;*/
+	margin:0;	
+}
+#confirmar_baja p
+{
+	color: white;
+	text-align: center;
+	font-size: 3em;
+}
+#confirmar_baja a
+{
+	color: white;
+	text-align: center;
+}
+#confirmar_baja a:hover, #confirmar_baja a:focus
+{
+	text-decoration:underline;
+}
