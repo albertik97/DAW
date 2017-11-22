@@ -10,7 +10,15 @@ session_start();
 	if(isset($_SESSION['user']))
 	{
 		require_once('plantillas/nav_usuario_identificado.php');
+		if(isset($_GET['baja']) && $_GET['baja'] == true)
+		{
+			echo '<section id="confirmar_baja">';
+			echo '<p>¿Estás seguro de querer darte de baja?</p>';
+			echo '<p><a href="dar_baja.php?id='.$_SESSION['id'].'">Si</a> <a href="menu_usuario.php">No</a></p>';
+			echo '</section>';
+		}
 ?>
+	
 	<main id="main_usuario">
 		<fieldset id="misdatos">
 			<legend><h2>Mis datos</h2></legend>
@@ -33,7 +41,7 @@ session_start();
 			<p><button id="edit_perfil" >Modificar datos</button></p>
 		</fieldset>
 		<hr>
-		<a class="botones_perfil" href="#" ><img src="imagenes/delete.png" alt="">Darse de baja</a>
+		<a class="botones_perfil" href="menu_usuario.php?baja=true" ><img src="imagenes/delete.png" alt="">Darse de baja</a>
 		<a class="botones_perfil" href="crear_album.php" ><img src="imagenes/add.png" alt="">Crear álbum nuevo</a>
 		<a class="botones_perfil" href="anyadir_foto.php" ><img src="imagenes/add.png" alt="">  Añadir foto a álbum</a>
 		<a class="botones_perfil" href="mis_albumes.php" ><img src="imagenes/album.png" alt="">Mis álbumes</a>
