@@ -431,3 +431,11 @@ footer p{
 .derecha{
 	float: right;
 }
+
+.res_album{
+	padding: 10px;
+}
+
+.t_res_album{
+	font-weight: bold;
+}
