@@ -5,34 +5,80 @@ session_start();
 	require_once('plantillas/cabecera.php');
 	require_once('plantillas/logotipo.php');
 
-	
-
 	if(isset($_SESSION['user']))
 	{
 		require_once('plantillas/nav_usuario_identificado.php');
+
+		$mysqli = @new mysqli('localhost','web_user','','pibd');
+		$mysqli->set_charset('utf8');
+		if($mysqli->connect_errno){
+			echo "Error al conectarse a la base de datos";
+		}	
+
+		$consulta= 'select * from usuarios, paises where NomUsuario="'. $_SESSION['user'] .'" and Pais=IdPais';
+		if(!($res=$mysqli->query($consulta))){
+			echo "Error al realziar la consulta" . $mysqli->error;
+		}
+		$usuario = $res->fetch_assoc();
+
+		$consulta2= 'select * from paises';
+		if(!($res2=$mysqli->query($consulta2))){
+			echo "Error al realziar la consulta" . $mysqli->error;
+		}
+		
 ?>
+	
 	<main id="main_usuario">
 		<fieldset id="misdatos">
 			<legend><h2>Mis datos</h2></legend>
-			<p><img id="imagen_perfil" src="imagenes/chocu.jpg" alt="foto perfil" width="100" height="100"></p>
-			<table>
-				<tr>
-					<td>Usuario</td> <td>el_chocu</td>
-				</tr>
-
-				<tr><td>Nombre :</td> <td>Chocu Martínez de la Selva</td>
-				</tr>
-				<tr><td>Sexo :</td><td>Hombre</td>
-				</tr>
-				<tr><td>Fecha de Nacimiento :</td> <td>12/04/1990</td>
-				</tr>
-				<tr><td>Pais de residencia : </td><td>Tailandia</td>
-				</tr>
-				<tr><td>Ciudad :</td> <td>Lopburi</td></tr>
-			</table>
-			<p><a href="res_mis_datos.php" id="edit_perfil" >Modificar</a></p>
+			
+			<form method="post" action="respuesta_mis_datos.php">
+				<p><img id="imagen_perfil" src="imagenes/<?php echo $usuario['Foto'];?>" alt="foto perfil" width="100" height="100"><input type="file" name="foto"></p>
+				<table>
+					<tr>
+						<td>Usuario</td> <td><input type="text" name="usuario" value="<?php echo $usuario['NomUsuario'];?>"></td>
+					</tr>
+					<tr><td>Correo :</td> <td><input type="text" name="email" value="<?php echo $usuario['Email'];?>"></td>
+					</tr>
+					<tr><td>Sexo :</td><td>
+					<select name="sexo">
+						<option <?php 
+					if($usuario['Sexo']==0)
+						echo "selected";?> 
+						value="Hombre">Hombre</option>
+						<option  <?php 
+					if($usuario['Sexo']==1)
+						echo "selected";?>
+						 value="Mujer">Mujer</option>
+						<option <?php 
+					if($usuario['Sexo']==2)
+						echo "selected";?>
+						value="Otro">Otro</option>
+					</select>
+					</td>
+					</tr>
+					<tr><td>Fecha de Nacimiento :</td> <td><input type="date" name="fecha" value="<?php echo  $usuario['FNacimiento'];?>"></td>
+					</tr>
+					<tr><td>País de residencia : </td><td>
+						<select name="pais" id="pais">
+					<?php
+						while($fila=$res2->fetch_assoc()){
+							if($fila['IdPais']==$usuario['Pais']){
+								echo "<option selected value='" . $fila['NomPais'] . "'>" . $fila['NomPais'] . "</option>";
+							}else
+								echo "<option value='" . $fila['NomPais'] . "'>" . $fila['NomPais'] . "</option>";
+						}
+					?>
+					</select>
+							
+						</td>
+					</tr>
+					<tr><td>Ciudad :</td> <td><input type="text" name="ciudad" value="<?php echo $usuario['Ciudad'];?>"></td></tr>
+				</table>
+				<p><input type="submit" id="edit_perfil" value="Modificar datos"></p>
+			</form>
 		</fieldset>
-		<a class="botones_perfil" href="cierra_sesion.php"><img src="imagenes/exit.png" alt="">Salir</a>
+		<hr>
 	</main>
 	<?php require_once('plantillas/footer.php');?>
 </body>
@@ -45,4 +91,3 @@ session_start();
 		require_once('plantillas/error_test.php');
 	}
 ?>
-	
