@@ -431,17 +431,26 @@ footer p{
 .derecha{
 	float: right;
 }
-<<<<<<< HEAD
 
 .res_album{
 	padding: 10px;
 }
+.sin_fotos{
+	font-family: 'Ubuntu',sans-serif;
+	margin: 25px;
+	text-align: center;
+}
+.sin_fotos2{
+	font-family: sans-serif;
+	margin: 5px;
+	text-align: center;
+}
 
 .t_res_album{
 	font-weight: bold;
-=======
-#confirmar_baja
-{
+}
+
+#confirmar_baja{
 	width: 100%;
 	height: 115%;
 	background-color: rgba(0,0,0,0.9);
@@ -464,5 +473,24 @@ footer p{
 #confirmar_baja a:hover, #confirmar_baja a:focus
 {
 	text-decoration:underline;
->>>>>>> 54a10f0c1443555285dd7834ab0333f16cccc5eb
+}
+
+#sin_fotos{
+	margin: 25px;
+	text-align: center;
+}
+.paginacion{
+	font-size: 2em; 
+	background-color: red;
+	color:white;
+	border-radius: 4px;
+	padding: 5px;
+}
+
+.paginacion_s{
+	font-size: 2em; 
+	background-color: #FF5252;
+	color:white;
+	border-radius: 4px;
+	padding: 5px;
 }

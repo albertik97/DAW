@@ -13,11 +13,12 @@
 		<main>
 				<h1 id="titulo_busqueda">Formulario de búsqueda</h1>
 			<form method="GET" action="resultado_busqueda.php">
-				<p><label for="tituloFoto">Título</label><input type="text" name="tituloFoto" id="tituloFoto" placeholder="Título" autofocus required></p>
+				<p><label for="tituloFoto">Título</label><input type="text" name="tituloFoto" id="tituloFoto" placeholder="Título" autofocus></p>
 				<p><label for="fechaInicial">Fecha inicial </label><input type="date" name="fechaInicial" id="fechaInicial"></p>
 				<p><label for="fechaFinal"> Fecha final </label><input type="date" name="fechaFinal" id="fechaFinal" ></p>
 				<p><label for="pais">Pais: </label>
 				<select name="pais" id="pais">
+					<option value="Seleccionar">Seleccionar País</option>
 				<?php
 					while($fila=$res->fetch_assoc()){
 						echo "<option value='" . $fila['NomPais'] . "'>" . $fila['NomPais'] . "</option>";

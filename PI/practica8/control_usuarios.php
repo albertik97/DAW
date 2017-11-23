@@ -18,13 +18,7 @@ while($line = $res->fetch_assoc()){
 			$_SESSION['user'] = $_POST['userName'];
 			$_SESSION['id'] = $line['idUsuario'];
 			 if(isset($_POST['recordar'])&& $_POST['recordar']=="Recordar mis datos"){
-				setcookie('user', $_POST['userName'], time() + 60*60); //1 hora de duracion
-				//se genera un id de sesion 
-			/*	mt_srand (time());
-	      		$id_session = mt_rand(1000000,999999999);
-	    		$id_session =$id_session."|" .time+60*60;//id de sesion compuesta por cadena aleatoria mas fecha de caducidad
-	    	*/
-	      		setcookie('id_session','1234567',time()+60*60);			
+				setcookie('user', $_POST['userName'], time() + 60*60); //1 hora de duracion		
 			}
 		header('Location: menu_usuario.php');
 	}

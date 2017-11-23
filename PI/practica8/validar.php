@@ -1,17 +1,18 @@
 <?php
-	$usuarios =array( array('usuario'=>'user1',
-					'contraseña'=>'pass',
-					'id_session'=>'1234567'
-			),array('usuario'=>'user2',
-					'contraseña'=>'pass2',
-					'id_session'=>'1234567'
-			),array('usuario'=>'user3',
-					'contraseña'=>'pass3',
-					'id_session'=>'1234567'));
+	$mysqli = @new mysqli('localhost','web_user','', 'pibd');
+			$mysqli->set_charset('utf8');
+ 
+	if($mysqli->connect_errno)
+		echo '<p>Error al conectar con la base de datos'; 
+
+	$consulta='select * from usuarios';
+	 if(!($datos=$mysqli->query($consulta))) 
+		   echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error; 
+
 	$login=false;
 	if(isset($_COOKIE['user'])&&isset($_COOKIE['id_session'])){
-		for($i=0;$i<count($usuarios);$i++){
-			if($_COOKIE['user']==$usuarios[$i]['usuario'] && $_COOKIE['id_session']==$usuarios[$i]['id_session']){
+		while($res=$datos->fecth_assoc()){
+			if($_COOKIE['user']==$res['NomUsuario']){
 				$login=true;
 				$_SESSION['user']=$_COOKIE['user'];
 			}

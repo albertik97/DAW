@@ -30,10 +30,16 @@
 				}
 
 			}else{
-				$titulo =$_GET['busqueda'];
+				if(isset($_GET['busqueda'])){
+					$titulo = $_GET['busqueda'];
+				}else
+					$titulo="";
 				$fecha1 = "Origen de los tiempos";
 				$fecha2 = "$array[mday]/$array[mon]/$array[year]";
-				$pais="";
+				if(isset($_GET['pais'])){
+					$pais = $_GET['pais'];
+				}else
+					$pais="";
 			}
 
 
@@ -47,22 +53,15 @@
 		 }
 
 
-		 		if (isset($_GET["pagina"])) {
+		 	if (isset($_GET["pagina"])) {
 
 		//Si el GET de HTTP SÍ es una string / cadena, procede
 		if (is_string($_GET["pagina"])) {
 
 			//Si la string es numérica, define la variable 'pagina'
 			 if (is_numeric($_GET["pagina"])) {
-
-				 //Si la petición desde la paginación es la página uno
-				 //en lugar de ir a 'index.php?pagina=1' se iría directamente a 'index.php'
-				 if ($_GET["pagina"] == 1) {
-					 header("Location: index.php");
-					 die();
-				 } else { //Si la petición desde la paginación no es para ir a la pagina 1, va a la que sea
 					 $pagina = $_GET["pagina"];
-				};
+
 
 			 } else { //Si la string no es numérica, redirige al index (por ejemplo: index.php?pagina=AAA)
 				 header("Location: index.php");
@@ -75,32 +74,34 @@
 		};
 
 
-		$RESULTADOS_PAGINA = 4;
+		$RESULTADOS_PAGINA = 6;
 		$empezar_desde = ($pagina-1) * $RESULTADOS_PAGINA;
-		
+		$busca="";
+		 $sentencia = "SELECT fotos.*, NomPais FROM fotos, paises where Pais=IdPais";
+		 if((isset($_GET['tituloFoto']) && $_GET['tituloFoto']!="")||(isset($_GET['busqueda']) && $_GET['busqueda']!="")){
+		 	$sentencia .=" and Titulo like '%" . $titulo . "%'";
+		 	$busca.="&tituloFoto=" .$titulo ."";
+		 }  
 
-		 $sentencia = "SELECT fotos.*, NomPais FROM fotos, paises where fotos.Pais = paises.IdPais and Titulo like '%" . $titulo . "%'";
-		 
-		 if(!($resultado_sin_filtro = $mysqli->query($sentencia))) { 
+		  if(isset($_GET['pais']) && $_GET['pais']!="Seleccionar"){
+		 	$sentencia.= " and paises.NomPais = '" . $pais ."'";
+		 	$busca.="&pais=" . $pais ."";
+		 } 
+		 if(isset($_GET['fechaInicial'])){
+			 if($_GET['fechaInicial'] != ""){
+			 	$sentencia .= " and Fecha >= '" . $fecha1 . "'";
+			 	$busca.="&fechaInicial=".$fecha1."";
+			 }
+			 if($_GET['fechaFinal'] != ""){
+			 	$sentencia .= " and Fecha <= '" . $fecha2 . "'";
+			 	$busca.="&fechaFinal=" . $fecha2 ."";
+			 }
+		}
+		if(!($resultado_sin_filtro = $mysqli->query($sentencia))) { 
 		   echo "<p>Error al ejecutar la sentencia <b>$sentencia</b>: " . $mysqli->error; 
 		   echo '</p>';
 		   exit;
 		 } 
-
-		  if(isset($_GET['pais'])){
-		 	$sentencia.= " and paises.NomPais = '" . $pais ."'";
-		 } 
-		 if(isset($_GET['fechaInicial'])){
-			 if($_GET['fechaInicial'] != "")
-			 	$sentencia .= " and Fecha >= '" . $fecha1 . "'";
-			 if($_GET['fechaFinal'] != "")
-			 	$sentencia .= " and Fecha <= '" . $fecha2 . "'";
-			}
-
-		//echo $sentencia;
-
-		 if( isset($_GET['pais']) && $_GET['pais'] != "")
-		 	$sentencia .= " and Pais = (select IdPais from paises where NomPais = '". $pais ."')";
 
 		 		$sentencia .= " LIMIT $empezar_desde, $RESULTADOS_PAGINA"; //LIMITE PARA PAGINACION
 
@@ -116,11 +117,6 @@
 		 $num_total_fotos = mysqli_num_rows($resultado_sin_filtro);
 		 //echo "fotos: ".$num_total_fotos;
 		 $total_paginas = ceil($num_total_fotos / $RESULTADOS_PAGINA);
-		
-
-
-		 	
-
 		?>
 
 		<h3 id="texto_resultado">Resultado de búsqueda "<?php echo $titulo?>"</h3>
@@ -141,13 +137,17 @@
 			echo '</article>';
 
 		}
-
-/*
 	//echo "total paginas: " . $total_paginas;
-		for ($i=1; $i<=$total_paginas; $i++) {
-	//En el bucle, muestra la paginación
-	echo "<a href='?pagina=".$i."&busqueda='>".$i."</a> | ";
-}; */
+		if($total_paginas>1){
+			echo "<br>";
+			for($i=1; $i<=$total_paginas; $i++){
+				if($i==$pagina){
+					echo "<a class='paginacion_s' href='?pagina=".$i. $busca ."'>".$i."</a> ";
+				}
+				else
+					echo "<a class='paginacion' href='?pagina=".$i. $busca ."'>".$i."</a> ";
+			}
+		}
 
 		?>
 		
