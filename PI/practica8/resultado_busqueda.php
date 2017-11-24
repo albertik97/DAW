@@ -34,8 +34,20 @@
 					$titulo = $_GET['busqueda'];
 				}else
 					$titulo="";
-				$fecha1 = "Origen de los tiempos";
-				$fecha2 = "$array[mday]/$array[mon]/$array[year]";
+					if(isset($_GET['fechaInicial']))
+						$fecha1 = $_GET['fechaInicial'];
+					else
+					{
+						$fecha1 = "Origen de los tiempos";
+					}
+
+					if(isset($_GET['fechaFinal']))
+						$fecha2 = $_GET['fechaFinal'];
+					else
+					{
+						$fecha2 = "$array[mday]/$array[mon]/$array[year]";
+
+					}
 				if(isset($_GET['pais'])){
 					$pais = $_GET['pais'];
 				}else
