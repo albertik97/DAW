@@ -3,6 +3,13 @@
 	$title = "Registro - PI - Pictures & images";
 	require_once('plantillas/cabecera.php');
 	require_once('plantillas/logotipo.php');
+
+	$mysqli = @new mysqli('localhost','web_user','','pibd');
+		$mysqli->set_charset('utf8');
+			if($mysqli->connect_errno){
+				echo "Se ha producido un error al conectar con la base de datos" . $mysqli->connect_error;
+			}
+
 	require_once('plantillas/datos_paises.php');
 ?>
 	<main>
@@ -40,7 +47,7 @@
 				
 				<select name="pais" id="pais">
 				<?php
-					while($fila=$res->fetch_assoc()){
+					while($fila=$res_paises->fetch_assoc()){
 						echo "<option value='" . $fila['NomPais'] . "'>" . $fila['NomPais'] . "</option>";
 					}
 				?>

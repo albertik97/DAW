@@ -8,6 +8,14 @@
 		require_once('plantillas/nav_usuario_identificado.php');
 	else
 		require_once('plantillas/nav_usuario_no_identificado.php');
+
+$mysqli = @new mysqli('localhost','web_user','','pibd');
+	$mysqli->set_charset('utf8');
+		if($mysqli->connect_errno){
+			echo "Se ha producido un error al conectar con la base de datos" . $mysqli->connect_error;
+		}
+
+
 	require_once('plantillas/datos_paises.php');
 ?>
 		<main>
@@ -20,7 +28,7 @@
 				<select name="pais" id="pais">
 					<option value="Seleccionar">Seleccionar País</option>
 				<?php
-					while($fila=$res->fetch_assoc()){
+					while($fila=$res_paises->fetch_assoc()){
 						echo "<option value='" . $fila['NomPais'] . "'>" . $fila['NomPais'] . "</option>";
 					}
 				?>

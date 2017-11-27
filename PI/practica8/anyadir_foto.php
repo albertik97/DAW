@@ -4,14 +4,24 @@ session_start();
 	$title = "Menú usuario - Pictures & images";
 	require_once('plantillas/cabecera.php');
 	require_once('plantillas/logotipo.php');
+	
+
+
+	$mysqli = @new mysqli('localhost','web_user','','pibd');
+	$mysqli->set_charset('utf8');
+		if($mysqli->connect_errno){
+			echo "Se ha producido un error al conectar con la base de datos" . $mysqli->connect_error;
+		}
+
 	require_once('plantillas/datos_paises.php');
+
 
 
 	if(isset($_SESSION['user']))
 	{
 		require_once('plantillas/nav_usuario_identificado.php');
 
-		$albumes_usuario = "SELECT DISTINCT albumes.* from albumes, usuarios where albumes.Usuario = (SELECT idUsuario from usuarios where NomUsuario = '" . $_SESSION['user'] . "')";
+		$albumes_usuario = "SELECT DISTINCT albumes.* from albumes, usuarios where albumes.Usuario = ". $_SESSION['id'] .";";
 		
 		if(!($res_albumes=$mysqli->query($albumes_usuario))){
 			echo "Error al ejecutar la sentencia";
@@ -27,7 +37,7 @@ session_start();
 				<p><label for="pais">Pais</label>
 				<select name="pais" id="pais">
 				<?php
-					while($fila=$res->fetch_assoc()){
+					while($fila=$res_paises->fetch_assoc()){
 						echo "<option value='" . $fila['NomPais'] . "'>" . $fila['NomPais'] . "</option>";
 					}
 				?>
