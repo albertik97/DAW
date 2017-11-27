@@ -15,8 +15,13 @@ $mysqli = @new mysqli('localhost','web_user','','pibd');
 			echo "Se ha producido un error al conectar con la base de datos" . $mysqli->connect_error;
 		}
 
+		$consulta_paises = 'select * from paises';
 
-	require_once('plantillas/datos_paises.php');
+		if(!($res_paises=$mysqli->query($consulta_paises))){
+			echo "Error al ejecutar la sentencia";
+		}
+
+		
 ?>
 		<main>
 				<h1 id="titulo_busqueda">Formulario de búsqueda</h1>

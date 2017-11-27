@@ -13,8 +13,11 @@ session_start();
 			echo "Se ha producido un error al conectar con la base de datos" . $mysqli->connect_error;
 		}
 
-	require_once('plantillas/datos_paises.php');
+		$consulta_paises = 'select * from paises';
 
+		if(!($res_paises=$mysqli->query($consulta_paises))){
+			echo "Error al ejecutar la sentencia";
+		}
 
 
 	if(isset($_SESSION['user']))
