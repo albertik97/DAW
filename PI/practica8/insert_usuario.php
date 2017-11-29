@@ -1,11 +1,24 @@
 <?php
+<<<<<<< HEAD
 	//session_start();
+=======
+>>>>>>> c2340deebd88780d78e813908db270f161907354
 	require_once('validar.php');
 	require_once("plantillas/conexion.php");
-	
 
+	$nombre_usuarios = "select usuarios.NomUsuario from usuarios;";
+	if(!($res_usuarios=$mysqli->query($nombre_usuarios))){
+				echo "Error al realizar consulta";
+			}
 
-		
+			while($fila=$res_usuarios->fetch_assoc())
+			{
+				if($fila['NomUsuario'] == $_POST['usuario'])
+				{
+					header('Location: registro.php');
+					exit();
+				}
+			}
 			$usuario = $_POST['usuario'];
 			//echo substr($usuario, 1,1);
 		
@@ -86,6 +99,16 @@
 						}
 					}
 				}
+				if($nmbr == false || $uppr == false || $lowr == false)
+				{
+					header('Location: registro.php');
+					exit();
+				}
+			}
+			else
+			{
+				header('Location: registro.php');
+				exit();
 			}
 			$pass2 = $_POST['pass2'];
 			if($pass2 == $pass)
@@ -161,9 +184,17 @@
 			$date = date('Y/m/d', time());
 			//echo $date;
 
+<<<<<<< HEAD
 			if($nacimiento <= $date){
 			//	echo "La fecha es correcta<br>";
 			}else
+=======
+			if($nacimiento <= $date)
+			{
+				/*echo "La fecha es correcta<br>";*/
+			}
+			else
+>>>>>>> c2340deebd88780d78e813908db270f161907354
 			{
 				header('Location: registro.php');
 				exit();
@@ -185,9 +216,9 @@
 
 			$insert = "INSERT INTO `usuarios`(`NomUsuario`, `Clave`, `Email`, `Sexo`, `FNacimiento`, `Ciudad`, `Pais`, `Foto`, `FRegistro`)
 					 VALUES ('".$usuario."', '".$pass."', '".$email."', ".$sexo.", '".$nacimiento."', '".$ciudad."', ".$res1['IdPais'].", '".$foto."', NOW())";
-					 //echo $insert;
+					// echo $insert;
 
 			if(!($res=$mysqli->query($insert))){
-				//echo "Error al ejecutar la sentencia";
+				echo "Error al ejecutar la sentencia";
 			}
 ?>
