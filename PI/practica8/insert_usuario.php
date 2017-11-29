@@ -1,8 +1,5 @@
 <?php
-<<<<<<< HEAD
-	//session_start();
-=======
->>>>>>> c2340deebd88780d78e813908db270f161907354
+
 	require_once('validar.php');
 	require_once("plantillas/conexion.php");
 
@@ -184,17 +181,12 @@
 			$date = date('Y/m/d', time());
 			//echo $date;
 
-<<<<<<< HEAD
-			if($nacimiento <= $date){
-			//	echo "La fecha es correcta<br>";
-			}else
-=======
+
 			if($nacimiento <= $date)
 			{
 				/*echo "La fecha es correcta<br>";*/
 			}
 			else
->>>>>>> c2340deebd88780d78e813908db270f161907354
 			{
 				header('Location: registro.php');
 				exit();
