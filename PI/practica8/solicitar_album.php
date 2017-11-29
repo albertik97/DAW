@@ -7,10 +7,7 @@
 	if(isset($_SESSION['user']))
 	{
 			require_once('plantillas/nav_usuario_identificado.php');
-			$mysqli = @new mysqli('localhost','web_user','','pibd');
-			if($mysqli->connect_errno){
-				echo "Se ha producido un error al conectar con la base de datos :" . $mysqli->connect_error;
-			}
+			require_once("plantillas/conexion.php");
 			$usuario = $_SESSION['user'];
 			$consulta = 'select * from albumes,usuarios where NomUsuario="'. $usuario. '" AND IdUsuario=Usuario';
 			if(!($res=$mysqli->query($consulta))){

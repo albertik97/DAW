@@ -10,12 +10,7 @@ session_start();
 	if(isset($_SESSION['user']))
 	{
 		require_once('plantillas/nav_usuario_identificado.php');
-
-		$mysqli = @new mysqli('localhost','web_user','','pibd');
-		$mysqli->set_charset('utf8');
-		if($mysqli->connect_errno){
-			echo "Error al conectarse a la base de datos";
-		}	
+		require_once("plantillas/conexion.php");
 
 		$consulta= 'select * from usuarios, paises where NomUsuario="'. $_SESSION['user'] .'" and Pais=IdPais';
 		if(!($res=$mysqli->query($consulta))){

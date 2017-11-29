@@ -39,12 +39,7 @@ session_start();
 		if(isset($_POST['foto'])){
 			$foto=$_POST['foto'];
 		}
-
-		$mysqli = @new mysqli('localhost','web_user','','pibd');
-		$mysqli->set_charset('utf8');
-		if($mysqli->connect_errno){
-			echo "Error al conectarse a la base de datos";
-		}
+		require_once("plantillas/conexion.php");
 
 		$consulta_pais='select * from paises where NomPais="' . $pais . '"';
 		if(!($respuesta=$mysqli->query($consulta_pais))){

@@ -4,14 +4,7 @@ session_start();
 	$title = "Menú usuario - Pictures & images";
 	require_once('plantillas/cabecera.php');
 	require_once('plantillas/logotipo.php');
-	
-
-
-	$mysqli = @new mysqli('localhost','web_user','','pibd');
-	$mysqli->set_charset('utf8');
-		if($mysqli->connect_errno){
-			echo "Se ha producido un error al conectar con la base de datos" . $mysqli->connect_error;
-		}
+	require_once("plantillas/conexion.php");
 
 	require_once('plantillas/datos_paises.php');
 
@@ -22,11 +15,12 @@ session_start();
 
 		$albumes_usuario = "SELECT DISTINCT albumes.* from albumes, usuarios where albumes.Usuario = ". $_SESSION['id'] .";";
 		
-		
 		if(!($res_albumes=$mysqli->query($albumes_usuario))){
 			echo "Error al ejecutar la sentencia";
 		}
 ?>
+
+
 		<main>
 				<h1 id="titulo_busqueda">Añadir foto</h1>
 			<form method="POST" action="insert_foto.php">

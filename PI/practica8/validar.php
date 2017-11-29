@@ -1,9 +1,5 @@
 <?php
-	$mysqli = @new mysqli('localhost','web_user','', 'pibd');
-			$mysqli->set_charset('utf8');
- 
-	if($mysqli->connect_errno)
-		echo '<p>Error al conectar con la base de datos'; 
+	require_once("plantillas/conexion.php");
 
 	$consulta='select * from usuarios';
 	 if(!($datos=$mysqli->query($consulta))) 

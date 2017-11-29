@@ -13,39 +13,18 @@
 			$titulo = $_GET['tituloAlbum'];
 		if(isset($_GET['textoDescripcion']))
 			$desc = $_GET['textoDescripcion'];
-		if(isset($_GET['fechaAlbum'])){
+		if(isset($_GET['fechaAlbum']))
 			$fecha=$_GET['fechaAlbum'];
-			$fecha_aux=$_GET['fechaAlbum'];
-		}
 		if(isset($_GET['paisAlbum']))
 			$pais=$_GET['paisAlbum'];
 
-		if($fecha==""){
-			$fecha='NULL';
-		}else{
-			$fecha="'".$fecha."'";
-		}
+		require_once("plantillas/conexion.php");
+		$consulta1= "select * from paises where '" . $pais . "'=NomPais";
+		
+		if(!($res1=$mysqli->query($consulta1)))
+			echo "error consulta" .$mysqli->error;
 
-
-
-		$mysqli = @new mysqli('localhost','web_user','','pibd');
-		$mysqli->set_charset('utf8');
-		if($mysqli->connect_errno){
-			echo "No se ha podido establecer conxión con la base de datos";
-		}
-		//obtenemos pais
-
-		if($pais!="Seleccionar"){
-			$consulta1= "select * from paises where '" . $pais . "'=NomPais";
-			if(!($res1=$mysqli->query($consulta1)))
-				echo "error consulta" .$mysqli->error;
-
-				$codigo_pais=$res1->fetch_assoc();
-				$codigo_pais="'" . $codigo_pais['IdPais'] . "'";
-
-		}else{
-			$codigo_pais='NULL';
-		}
+			$codigo_pais=$res1->fetch_assoc();
 
 		$consulta2 = "select * from usuarios where '" . $_SESSION['user'] . "'=NomUsuario";
 		if(!($res2=$mysqli->query($consulta2)))
@@ -53,14 +32,13 @@
 
 			$user=$res2->fetch_assoc();
 
-		$consultaje = "INSERT INTO albumes(Titulo,Descripcion,Fecha,Pais,Usuario) values('". $titulo ."','" . $desc . "',".$fecha ."," . $codigo_pais . ",'" . $user['IdUsuario'] . "')";
+		$consultaje = "INSERT INTO albumes(Titulo,Descripcion,Fecha,Pais,Usuario) values('". $titulo ."','" . $desc . "','".$fecha ."','" . $codigo_pais['IdPais'] . "','" . $user['IdUsuario'] . "')";
 		if(!($mysqli->query($consultaje))){
 			echo '<h1 id="titulo_crear_album">No se ha podido crear :(</h1>';
 			echo '<a id="volver" href="menu_usuario.php">Volver a mi perfil</a>';
-			echo $consultaje;
 			echo $mysqli->error;
 		}else{
-		$date = new DateTime($fecha_aux);
+		$date = new DateTime($fecha);
 		$fecha_f = $date->format('d-m-Y');
 ?>
 		<main>
@@ -68,8 +46,8 @@
 				<hr>
 				<p class="res_album"><span class="t_res_album">Título del álbum : </span><?php echo $titulo; ?></p>
 				<p class="res_album"><span class="t_res_album">Descripción del álbum : </span><?php echo $desc; ?></p>
-				<p class="res_album"><span class="t_res_album">Fecha de las fotos : </span><?php if($fecha_aux==""){ echo "Desconocida"; }else echo  $fecha_aux; ?></p>
-				<p class="res_album"><span class="t_res_album">Pais : </span><?php if($pais=="Seleccionar"){ echo "Desconocido"; }else echo $pais;?></p>
+				<p class="res_album"><span class="t_res_album">Fecha de las fotos : </span><?php echo $fecha_f; ?></p>
+				<p class="res_album"><span class="t_res_album">Pais : </span><?php echo $pais; ?></p>
 		
 		</main>
 

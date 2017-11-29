@@ -8,14 +8,7 @@ session_start();
 	if(isset($_SESSION['user']))
 	{
 		require_once('plantillas/nav_usuario_identificado.php');
-
-$mysqli = @new mysqli('localhost','web_user','', 'pibd'); 
- $mysqli->set_charset('utf8');
- if($mysqli->connect_errno) { 
-   echo '<p>Error al conectar con la base de datos: ' . $mysqli->connect_error; 
-   echo '</p>'; 
-   exit; 
- }
+		require_once("plantillas/conexion.php");
 
  // Ejecuta una sentencia SQL 
  $sentencia = "SELECT DISTINCT albumes.* from albumes, usuarios where albumes.Usuario = (SELECT idUsuario from usuarios where NomUsuario = '" . $_SESSION['user'] . "')"; 

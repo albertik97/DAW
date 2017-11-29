@@ -1,12 +1,8 @@
 <?php
-	require_once('validar.php');
-
 	session_start();
-	$mysqli = @new mysqli('localhost','web_user','','pibd');
-	$mysqli->set_charset('utf8');
-		if($mysqli->connect_errno){
-			echo "Se ha producido un error al conectar con la base de datos" . $mysqli->connect_error;
-		}
+	require_once('validar.php');
+	require_once("plantillas/conexion.php");
+	
 
 
 		echo $_POST['usuario'];

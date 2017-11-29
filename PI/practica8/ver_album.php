@@ -6,12 +6,7 @@
 	require_once('plantillas/logotipo.php');
 	if(isset($_COOKIE['user']) || isset($_SESSION['user'])){
 		require_once('plantillas/nav_usuario_identificado.php');
-
-		$mysqli = @new mysqli('localhost','web_user','','pibd');
-	$mysqli->set_charset('utf8');
-	if($mysqli->connect_error){
-		echo "Error al conectar con la base de datos ".  $mysqli->connect_error;
-	}
+	require_once("plantillas/conexion.php");
 	$id_album = $_GET['AlbumId'];
 	$consulta='select a.Titulo as tituloAlbum,f.Titulo,f.Fecha,Fichero,NomPais,IdFoto from albumes a, fotos f,paises where f.Album=IdAlbum and IdAlbum = "' . $id_album . '" and f.Pais=IdPais';
 

@@ -2,10 +2,7 @@
 session_start();
 $acces = false;
 $acceso ="Usuario y/o contraseña incorrectos";
-$mysqli = @new mysqli('localhost','web_user','','pibd');
-if($mysqli->connect_errno){
-	echo "Error al conectarse a la base de datos";
-}
+require_once("plantillas/conexion.php");
 
 $consulta= 'select * from usuarios';
 if(!($res=$mysqli->query($consulta))){

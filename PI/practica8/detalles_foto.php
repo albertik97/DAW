@@ -14,11 +14,8 @@
 
 		$id_foto=$_GET['id'];
 		$usuario = $_SESSION['user'];
-		$mysqli = @new mysqli('localhost','web_user','','pibd');
-		$mysqli->set_charset('utf8');
-		if($mysqli->connect_errno){
-			echo "No se ha podido establecer conxión con la base de datos";
-		}
+		require_once("plantillas/conexion.php");
+		
 		$consulta = 'select Fichero,f.Titulo as titulo_foto,f.Fecha,NomPais,NomUsuario,a.Titulo,IdAlbum from fotos f,usuarios,albumes a,paises where f.Album = IdAlbum and Usuario=IdUsuario and f.Pais=IdPais and IdFoto="' . $id_foto . '"';
 		if(!($resultado=$mysqli->query($consulta))){
 			echo "Error al realizar consulta";
