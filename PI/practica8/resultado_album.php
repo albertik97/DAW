@@ -4,6 +4,7 @@
 	$title = "Menú usuario - Pictures & images";
 	require_once('plantillas/cabecera.php');
 	require_once('plantillas/logotipo.php');
+	require_once("plantillas/conexion.php");
 	
 	if(isset($_SESSION['user']))
 	{
@@ -38,7 +39,32 @@
 			$recepcion = $_POST['fechaRecepcion'];
 
 			//calculamos costes
-			$paginas=3;
+
+			//obtenemos id del pais
+
+			$sentencia1="select IdPais from paises where NomPais='".$pais."'";
+			if(!$res=$mysqli->query($sentencia1)){
+				echo "Error al ejecutar sentencia";
+			}
+			$paisId=$res->fetch_assoc();
+
+			//obtenemos el id del Album
+			$sentencia2="select IdAlbum from albumes where Titulo='".$album."' and Usuario='".$_SESSION['id']."'";
+		
+			if(!$res2=$mysqli->query($sentencia2)){
+				echo "Error al ejecutar sentencia";
+			}
+			$AlbumId=$res2->fetch_assoc();
+
+			//obtenemos pagina a imprimir
+			$sentencia3="select count(*) as total from fotos where Album='".$AlbumId['IdAlbum']."'";
+			if(!$res3=$mysqli->query($sentencia3)){
+				echo "Error al ejecutar sentencia";
+			}
+			$paginas=$res3->fetch_assoc();
+
+			$paginas=ceil($paginas['total']/4); //vamos a suponer que pondriamos 4 fotos en cada pagina
+		
 			$fotos=7;
 				if($paginas<5){
 					$total=$paginas*0.10;
@@ -55,6 +81,19 @@
 				$total = $total + $fotos*0.02;
 			}
 				$total =$total*$copias;
+
+			//determinamos el color
+				if($tipo_impresion="Color"){
+					$tipo_impresion=1;
+				}else
+					$tipo_impresion=0;
+
+			$sentencia4="insert into solicitudes(Album, Nombre, Titulo, Descripcion, Email, Calle, Numero, Piso, Puerta, CodigoPostal, Localidad, Provincia, Pais, Color, Copias, Resolucion, Fecha, IColor, Coste) VALUES('".$AlbumId['IdAlbum']."','".$nombre."','".$titulo."','".$texto_add."','".$email."','".$calle."','".$numero."','".$piso."','".$puerta."','".$postal."','".$localidad."','".$provincia."','".$paisId['IdPais']."','".$color."','".$copias."','".$resolucion."','".$recepcion."','".$tipo_impresion."','".$total."')";
+
+			if(!$res4=$mysqli->query($sentencia4)){
+				echo "Error al ejecutar sentencia".$mysqli->error;
+			}else{
+
 		?>
 			<h3>Datos de solicitud</h3>
 			<fieldset class="resultado_album">
@@ -92,6 +131,7 @@
 </body>
 </html>
 <?php
+	}
 		}
 		else
 			header('Location: solicitar_album.php');

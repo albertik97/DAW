@@ -24,7 +24,7 @@
 		$insert = "INSERT INTO `fotos`( `Titulo`, `Fecha`, `Pais`, `Album`, `Fichero`, `FRegistro`)
 					VALUES ('" . $titulo_foto . "', '" . $fecha_foto . "' ," . $res1['IdPais'] . ", " . $res2['IdAlbum'] . ", '" . $archivo_foto . "', NOW());";
 
-		echo $insert;
+		//echo $insert;
 
 		if(!($res=$mysqli->query($insert))){
 			echo "Error al ejecutar la sentencia";
