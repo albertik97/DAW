@@ -25,9 +25,6 @@ session_start();
 				<a id="volver" href="menu_usuario.php">Volver al Inicio</a>
 		</main>
 
-
-
-
 <?php
 	}
 	else

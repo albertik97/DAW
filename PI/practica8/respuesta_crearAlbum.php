@@ -20,9 +20,11 @@
 			if($fecha_aux!=""){
 				$date = new DateTime($fecha_aux);
 				$fecha_f = $date->format('d-m-Y');
+			}else{
+				$fecha_f = 'Desconocida';
 			}
 			
-			$fecha_f = 'Desconocida';
+			
 
 		}
 		if(isset($_GET['paisAlbum']))
@@ -65,7 +67,7 @@
 				<p class="res_album"><span class="t_res_album">Título del álbum : </span><?php echo $titulo; ?></p>
 				<p class="res_album"><span class="t_res_album">Descripción del álbum : </span><?php echo $desc; ?></p>
 				<p class="res_album"><span class="t_res_album">Fecha de las fotos : </span><?php echo $fecha_f; ?></p>
-				<p class="res_album"><span class="t_res_album">Pais : </span><?php if($pais="Seleccionar"){echo "Desconocido";}else echo $pais; ?></p>
+				<p class="res_album"><span class="t_res_album">Pais : </span><?php if($pais=="Seleccionar"){echo "Desconocido";}else echo $pais; ?></p>
 		
 		</main>
 

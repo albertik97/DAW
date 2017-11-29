@@ -29,6 +29,13 @@
 			$ciudad = $_POST['ciudad'];
 			$pais = $_POST['pais'];
 			$foto = $_POST['foto'];*/
+
+			if($sexo==0){
+				$sexo="Hombre";
+			}elseif($sexo==1){
+				$sexo="Mujer";
+			}else
+				$sexo="Otro";
 		?>
 
 		<h1 id="titulo_registro">Datos registrados</h1>

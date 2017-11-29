@@ -1,15 +1,7 @@
 <?php
-	//session_start();
-	require_once('validar.php');
-	require_once("plantillas/conexion.php");
-	
 
 
-		
-			$usuario = $_POST['usuario'];
-			//echo substr($usuario, 1,1);
-		
-			if(strlen($usuario)>=3 && strlen($usuario)<=15)
+if(strlen($usuario)>=3 && strlen($usuario)<=15)
 			{
 				for($i = 0; $i < strlen($usuario); $i++)
 				{
@@ -26,7 +18,7 @@
 					else
 					{
 						//echo substr($usuario, $i, 1). "  NO es un caracter correcto <br>";
-						header('Location: registro.php');
+						header('Location: mis_datos.php?error=true');
 						exit();
 					}
 				}
@@ -78,7 +70,7 @@
 								else
 								{
 									//echo substr($pass, $i, 1). " NO es un caracter correcto<br>";
-									header('Location: registro.php');
+									header('Location: mis_datos.php?error=true');
 									exit();
 								}
 							}
@@ -87,39 +79,25 @@
 					}
 				}
 			}
-			$pass2 = $_POST['pass2'];
-			if($pass2 == $pass)
-			{
-				//echo "Se ha repetido la contraseña correctamente";
-			}
-			else
-			{
-				//echo "No se ha repetido la contraseña correctamente";
-				header('Location: registro.php');
-				exit();
-			}
 
-
-
-
-			if(isset($_POST['mail']))
+			if(isset($_POST['email']))
 			{
 				//echo "el email se ha introducido en el formulario <br>";
-				if(filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL) != false)
+				if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) != false)
 				{
 					//echo "el email tiene la estructura correcta <br>";
 					//echo $_POST['mail']."<br>";
-					$dom = substr($_POST['mail'], strpos($_POST['mail'],'@'));
+					$dom = substr($_POST['email'], strpos($_POST['email'],'@'));
 					$dom2 = explode(".", $dom);
 					
 					if((strlen($dom2[0])-1) >= 2 && (strlen($dom2[0])-1) <= 4)
 					{
 						//echo "okey";
-						$email = $_POST['mail'];
+						$email = $_POST['email'];
 					}
 					else
 					{
-						header('Location: registro.php');
+						header('Location: mis_datos.php?error=true');
 						exit();
 					}
 					//echo "dom2 = ".(strlen($dom2[0])-1). "<br>";
@@ -129,7 +107,7 @@
 				else
 				{
 					//echo "El email no tiene la estructura correcta <br>";
-					header('Location: registro.php');
+					header('Location: mis_datos.php?error=true');
 					exit();
 				}
 				
@@ -150,44 +128,20 @@
 			else
 			{
 				//echo "No se ha introducido el sexo correctamente";
-				header('Location: registro.php');
+				header('Location: mis_datos.php?error=true');
 				exit();
 			}
 
-			$nacimiento = $_POST['nacimiento'];
+			$nacimiento = $_POST['fecha'];
 			//echo $nacimiento;
 
 			date_default_timezone_set(date_default_timezone_get());
 			$date = date('Y/m/d', time());
-			//echo $date;
+			if($nacimiento<$date){
 
-			if($nacimiento <= $date){
-			//	echo "La fecha es correcta<br>";
-			}else
-			{
-				header('Location: registro.php');
+			}else{
+				header('Location: mis_datos.php?error=true');
 				exit();
 			}
 
-
-			$ciudad = $_POST['ciudad'];
-
-			$pais			= "select IdPais from paises where NomPais = '" . $_POST['pais'] . "';";
-			if(!($pais_foto=$mysqli->query($pais))){
-			//echo "Error al ejecutar la sentencia";
-			}
-			$res1 = $pais_foto->fetch_assoc();
-
-			if($_POST['foto'] == "")
-				$foto = "defecto.jpg";
-			else
-				$foto = $_POST['foto'];
-
-			$insert = "INSERT INTO `usuarios`(`NomUsuario`, `Clave`, `Email`, `Sexo`, `FNacimiento`, `Ciudad`, `Pais`, `Foto`, `FRegistro`)
-					 VALUES ('".$usuario."', '".$pass."', '".$email."', ".$sexo.", '".$nacimiento."', '".$ciudad."', ".$res1['IdPais'].", '".$foto."', NOW())";
-					 //echo $insert;
-
-			if(!($res=$mysqli->query($insert))){
-				//echo "Error al ejecutar la sentencia";
-			}
-?>
+			?>

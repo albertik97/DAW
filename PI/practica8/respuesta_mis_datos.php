@@ -13,20 +13,10 @@ session_start();
 		if(isset($_POST['usuario'])){
 			$usuario=$_POST['usuario'];
 		}
-		if(isset($_POST['email'])){
-			$correo=$_POST['email'];
+		if(isset($_POST['pass'])){
+			$pass=$_POST['pass'];
 		}
-		if(isset($_POST['sexo'])){
-			$sexo=$_POST['sexo'];
-			if($_POST['sexo']=="Hombre"){
-				$sexo_n=0;
-			}elseif($_POST['sexo']=="Mujer"){
-				$sexo_n=1;
-			}else{
-				$sexo_n=2;
-			}
-			
-		}
+
 		if(isset($_POST['fecha'])){
 			$fecha=$_POST['fecha'];
 		}
@@ -39,25 +29,34 @@ session_start();
 		if(isset($_POST['foto'])){
 			$foto=$_POST['foto'];
 		}
+		if(isset($_POST['sexo'])){
+			$sexo_n=$_POST['sexo'];
+		}
 		require_once("plantillas/conexion.php");
+
+		require_once("plantillas/comprobar.php");
+
+
 
 		$consulta_pais='select * from paises where NomPais="' . $pais . '"';
 		if(!($respuesta=$mysqli->query($consulta_pais))){
 			echo "Error al realziar la consulta" . $mysqli->error;
 		}
 		$pais_c=$respuesta->fetch_assoc();
+		$consulta= "update usuarios set NomUsuario='" . $usuario . "',Email='" . $email ."',Sexo='" . $sexo . "', FNacimiento='" . $nacimiento . "' ,Ciudad='" . $ciudad . "', Pais='" .$pais_c['IdPais'] ."',Clave='".$pass."' ";
 
-		$consulta= "update usuarios set NomUsuario='" . $usuario . "',Email='" . $correo ."',Sexo='" . $sexo_n . "', FNacimiento='" . $fecha . "' ,Ciudad='" . $ciudad . "', Pais='" .$pais_c['IdPais'] ."' ";
 		if(isset($_POST['foto'])&& $foto!=""){
 			$consulta.=", Foto='" . $foto . "' ";
 		}
 		$consulta.="where NomUsuario='" .$_SESSION['user']."'";
+
+		
 		if(!($res=$mysqli->query($consulta))){
 			echo "Error al realziar la consulta" . $mysqli->error;
 			echo "No se han podido modificar sus datos";
 		}else{
 
-			$datos="select * from usuarios where NomUsuario='" .$_SESSION['user'] ."'";
+			$datos="select * from usuarios where IdUsuario='" .$_SESSION['id'] ."'";
 			if(!($info=$mysqli->query($datos)))
 				echo "Error al realziar la consulta" . $mysqli->error;
 				
@@ -73,11 +72,11 @@ session_start();
 					<tr>
 						<td>Usuario</td> <td><?php echo $usuario;?></td>
 					</tr>
-					<tr><td>Correo :</td> <td><?php echo $correo;?></td>
+					<tr><td>Correo :</td> <td><?php echo $email;?></td>
 					</tr>
-					<tr><td>Sexo :</td><td><?php echo $sexo;?></td>
+					<tr><td>Sexo :</td><td><?php echo $sexo_n;?></td>
 					</tr>
-					<tr><td>Fecha de Nacimiento :</td> <td><?php echo $fecha;?></td>
+					<tr><td>Fecha de Nacimiento :</td> <td><?php echo $nacimiento;?></td>
 					</tr>
 					<tr><td>País de residencia : </td><td><?php echo $pais;?></td>
 					</tr>

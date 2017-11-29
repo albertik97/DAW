@@ -25,7 +25,7 @@ session_start();
 				<h1 id="titulo_busqueda">Añadir foto</h1>
 			<form method="POST" action="nueva_foto.php">
 				<p><label for="tituloFoto">Título</label><input type="text" name="tituloFoto" id="tituloFoto" placeholder="Título" autofocus required></p>
-				<p><label for="fechaFoto">Fecha</label><input type="date" name="fechaFoto" id="fechaFoto" required></p>
+				<p><label for="fechaFoto">Fecha</label><input type="date" name="fechaFoto" id="fechaFoto" ></p>
 				<p><label for="pais">Pais</label>
 				<select name="pais" id="pais">
 					<option value="Seleccionar">Seleccionar</option>

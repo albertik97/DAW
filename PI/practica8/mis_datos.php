@@ -20,18 +20,22 @@ session_start();
 		if(!($res2=$mysqli->query($consulta2))){
 			echo "Error al realziar la consulta" . $mysqli->error;
 		}
+
 		
 ?>
 	
 	<main id="main_usuario">
 		<fieldset id="misdatos">
 			<legend><h2>Mis datos</h2></legend>
-			
+			<?php if($_GET['error']=true) echo"<p id='error'>Introduzca unos datos correctos</p>"?>
 			<form method="post" action="respuesta_mis_datos.php">
 				<p><img id="imagen_perfil" src="imagenes/<?php echo $usuario['Foto'];?>" alt="foto perfil" width="100" height="100"><input type="file" name="foto"></p>
 				<table>
 					<tr>
 						<td>Usuario</td> <td><input type="text" name="usuario" value="<?php echo $usuario['NomUsuario'];?>"></td>
+					</tr>
+					<tr>
+						<td>Contraseña</td> <td><input type="password" name="pass" value="<?php echo $usuario['Clave'];?>"</td>
 					</tr>
 					<tr><td>Correo :</td> <td><input type="text" name="email" value="<?php echo $usuario['Email'];?>"></td>
 					</tr>
