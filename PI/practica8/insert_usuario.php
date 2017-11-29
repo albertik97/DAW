@@ -1,11 +1,20 @@
 <?php
-	session_start();
 	require_once('validar.php');
 	require_once("plantillas/conexion.php");
-	
 
+	$nombre_usuarios = "select usuarios.NomUsuario from usuarios;";
+	if(!($res_usuarios=$mysqli->query($nombre_usuarios))){
+				echo "Error al realizar consulta";
+			}
 
-		
+			while($fila=$res_usuarios->fetch_assoc())
+			{
+				if($fila['NomUsuario'] == $_POST['usuario'])
+				{
+					header('Location: registro.php');
+					exit();
+				}
+			}
 			$usuario = $_POST['usuario'];
 			//echo substr($usuario, 1,1);
 		
@@ -21,11 +30,11 @@
 						
 					)
 					{
-						echo ord(substr($usuario, $i, 1)). "  es un caracter correcto<br>";
+						//echo ord(substr($usuario, $i, 1)). "  es un caracter correcto<br>";
 					}
 					else
 					{
-						echo substr($usuario, $i, 1). "  NO es un caracter correcto <br>";
+						//echo substr($usuario, $i, 1). "  NO es un caracter correcto <br>";
 						header('Location: registro.php');
 						exit();
 					}
@@ -86,6 +95,10 @@
 						}
 					}
 				}
+			}
+			else
+			{
+				header('Location: registro.php');
 			}
 			$pass2 = $_POST['pass2'];
 			if($pass2 == $pass)
@@ -161,8 +174,10 @@
 			$date = date('Y/m/d', time());
 			//echo $date;
 
-			/*if($nacimiento <= $date)
-				echo "La fecha es correcta<br>";*/
+			if($nacimiento <= $date)
+			{
+				/*echo "La fecha es correcta<br>";*/
+			}
 			else
 			{
 				header('Location: registro.php');
@@ -185,9 +200,9 @@
 
 			$insert = "INSERT INTO `usuarios`(`NomUsuario`, `Clave`, `Email`, `Sexo`, `FNacimiento`, `Ciudad`, `Pais`, `Foto`, `FRegistro`)
 					 VALUES ('".$usuario."', '".$pass."', '".$email."', ".$sexo.", '".$nacimiento."', '".$ciudad."', ".$res1['IdPais'].", '".$foto."', NOW())";
-					 //echo $insert;
+					// echo $insert;
 
 			if(!($res=$mysqli->query($insert))){
-				//echo "Error al ejecutar la sentencia";
+				echo "Error al ejecutar la sentencia";
 			}
 ?>
