@@ -22,12 +22,11 @@ session_start();
 
 		$albumes_usuario = "SELECT DISTINCT albumes.* from albumes, usuarios where albumes.Usuario = ". $_SESSION['id'] .";";
 		
+		
 		if(!($res_albumes=$mysqli->query($albumes_usuario))){
 			echo "Error al ejecutar la sentencia";
 		}
 ?>
-
-
 		<main>
 				<h1 id="titulo_busqueda">Añadir foto</h1>
 			<form method="POST" action="insert_foto.php">
@@ -35,6 +34,7 @@ session_start();
 				<p><label for="fechaFoto">Fecha</label><input type="date" name="fechaFoto" id="fechaFoto" required></p>
 				<p><label for="pais">Pais</label>
 				<select name="pais" id="pais">
+					<option value="Seleccionar">Seleccionar</option>
 				<?php
 					while($fila=$res_paises->fetch_assoc()){
 						echo "<option value='" . $fila['NomPais'] . "'>" . $fila['NomPais'] . "</option>";
