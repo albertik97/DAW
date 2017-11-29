@@ -95,10 +95,16 @@
 						}
 					}
 				}
+				if($nmbr == false || $uppr == false || $lowr == false)
+				{
+					header('Location: registro.php');
+					exit();
+				}
 			}
 			else
 			{
 				header('Location: registro.php');
+				exit();
 			}
 			$pass2 = $_POST['pass2'];
 			if($pass2 == $pass)
