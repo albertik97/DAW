@@ -30,7 +30,7 @@
 			echo "Error al ejecutar la sentencia";
 		}
 
-		header('Location: menu_usuario.php');
+		//header('Location: menu_usuario.php');
 
 
 	
