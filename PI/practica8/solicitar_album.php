@@ -4,6 +4,8 @@
 	$title = "Menú usuario - Pictures & images";
 	require_once('plantillas/cabecera.php');
 	require_once('plantillas/logotipo.php');
+	require_once("plantillas/conexion.php");
+	require_once('plantillas/datos_paises.php');
 	if(isset($_SESSION['user']))
 	{
 			require_once('plantillas/nav_usuario_identificado.php');
@@ -33,7 +35,7 @@
 							<select id="albumUsuario" name="albumUsuario" required="">
 								<?php
 									while($fila=$res->fetch_assoc()){
-										echo "<option value=" . $fila[Titulo] . ">" . $fila[Titulo] . "</option>";
+										echo '<option value="' . $fila['Titulo'] . '">' . $fila['Titulo'] . '</option>';
 									}
 								?>								
 							</select>
@@ -68,28 +70,16 @@
 						<p>
 							<label for="codigoPostal">Código postal: </label><input type="text" name="codigoPostal" id="codigoPostal" placeholder="Ej. 03698" maxlength="5" size="10" required="">
 							<label for="localidad">Localidad: </label>
-								<select id="localidad" name="localidad" required="">
-								 	<option value="">Elige una opción</option>
-									<option value="localidad1">Localidad1</option>
-								  	<option value="localidad2">Localidad2</option>
-								 	<option value="localidad3">Localidad3</option>
-								 	<option value="localidad4">Localidad4</option>
-								</select>
+								<input type="text" name="localidad" required>
 								<label for="provincia">Provincia</label>
-								<select id="provincia" name="provincia" required="">
-									<option value="">Elige una opción</option>
-									<option value="provincia1">Provncia1</option>
-								  	<option value="provincia2">Provincia2</option>
-								 	<option value="provincia3">Provincia3</option> 
-								 	<option value="provincia4">Provincia4</option>
-								</select>
+								<input type="text" name="provincia" required>
 								<label for="pais">Pais</label>
 								<select id="pais" name="pais" required=""> 
-									<option value="">Elige una opción</option>
-									<option value="pais1">País1</option>
-								  	<option value="pais2">País2</option>
-								 	<option value="pais3">País3</option>
-								 	<option value="pais4">País4</option>
+									<?php
+										while($linea=$res_paises->fetch_assoc()){
+											echo "<option value=".$linea['NomPais'].">".$linea['NomPais']."</option>";
+										}
+									?>
 								</select>
 						</p>
 						<p><label for="fechaRececpcion">Fecha de recepción (dd/mm/aaaa)</label><input type="date" name="fechaRecepcion" id="fechaRececpcion" size="15" required></p>
