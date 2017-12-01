@@ -16,6 +16,9 @@ session_start();
 		if(isset($_POST['pass'])){
 			$pass=$_POST['pass'];
 		}
+		if(isset($_POST['email'])){
+			$email=$_POST['email'];
+		}
 
 		if(isset($_POST['fecha'])){
 			$fecha=$_POST['fecha'];
@@ -89,6 +92,7 @@ session_start();
 </body>
 </html>
 <?php
+$_SESSION['user'] = $usuario;
 }
 	}
 	else

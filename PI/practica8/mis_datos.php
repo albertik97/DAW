@@ -27,7 +27,7 @@ session_start();
 	<main id="main_usuario">
 		<fieldset id="misdatos">
 			<legend><h2>Mis datos</h2></legend>
-			<?php if($_GET['error']=true) echo"<p id='error'>Introduzca unos datos correctos</p>"?>
+			<?php if(isset($_GET['error']) && $_GET['error']==true) echo"<p id='error'>Introduzca unos datos correctos</p>"?>
 			<form method="post" action="respuesta_mis_datos.php">
 				<p><img id="imagen_perfil" src="imagenes/<?php echo $usuario['Foto'];?>" alt="foto perfil" width="100" height="100"><input type="file" name="foto"></p>
 				<table>

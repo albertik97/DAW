@@ -27,7 +27,7 @@
 			{
 				if($fila['NomUsuario'] == $_POST['usuario'])
 				{
-					header('Location: registro.php');
+					header('Location: registro.php?error=1');
 					exit();
 				}
 			}
@@ -35,7 +35,7 @@
 	}
 	else
 	{
-		header('Location: registro.php');
+		header('Location: registro.php?error=1');
 		exit();
 	}
 
@@ -46,14 +46,14 @@
 	}
 	else
 	{
-		header('Location: registro.php');
+		header('Location: registro.php?error=2');
 		exit();
 	}
 
 	// Validacion de la repeticion de la contraseña
 	if( !isset($_POST['pass2']) || $contrasenya != $_POST['pass2'])
 	{
-		header('Location: registro.php');
+		header('Location: registro.php?error=3');
 		exit();
 	}
 
@@ -66,13 +66,13 @@
 		}
 		else
 		{
-			header('Location: registro.php');
+			header('Location: registro.php?error=4');
 			exit();
 		}
 	}
 	else
 	{
-		header('Location: registro.php');
+		header('Location: registro.php?error=4');
 		exit();
 	}
 
@@ -106,7 +106,7 @@
 	}
 	else
 	{
-		header('Location: registro.php');
+		header('Location: registro.php?error=5');
 		exit();
 	}
 
@@ -138,7 +138,7 @@
 
 	$insert = "INSERT INTO `usuarios`(`NomUsuario`, `Clave`, `Email`, `Sexo`, `FNacimiento`, `Ciudad`, `Pais`, `Foto`, `FRegistro`)
 			 VALUES ('".$usuario."', '".$contrasenya."', '".$email."', ".$sexo.", '".$nacimiento."', '".$ciudad."', ".$res1['IdPais'].", '".$foto."', NOW())";
-				// echo $insert;
+				 //echo $insert;
 
 	if(!($res=$mysqli->query($insert)))
 	{

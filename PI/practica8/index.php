@@ -8,10 +8,15 @@
 			echo "<p>Error al conectar con la base de datos :(</p>";
 		}else{
 			$mysqli->set_charset('utf8');
-			$sentencia = 'select * from fotos,paises where Pais=IdPais order by FRegistro DESC LIMIT 0, 5';
+			$sentencia = 'select * from fotos order by FRegistro DESC LIMIT 0, 5';
 			if(!($resultado=$mysqli->query($sentencia))){
 				echo "Error de sentencia";
-			}			
+			}
+			$comprobar_pais =  'select * from paises';
+			if(!($var2=$mysqli->query($comprobar_pais))){
+				echo "Error al realizar la consulta";
+
+	}			
 		}
 ?>
 <!DOCTYPE html> 
@@ -73,14 +78,31 @@
 				<hr>
 				<?php 
 				while($fila=$resultado->fetch_assoc()){
+					if($fila['Fecha']==""){
+				$fec=" Desconocida";
+			}else{
+				$fec=$fila['Fecha'];
+			}
+
+			if($fila['Pais']==""){
+				$pais="Desconocido";
+			}else{
+				while($pais_code=$var2->fetch_assoc()){
+					if($pais_code['IdPais']==$fila['Pais']){
+						$pais=$pais_code['NomPais'];
+					}
+				}
+
+			}
+
 					$date = new DateTime($fila['Fecha']);
 					$fecha = $date->format('d-m-Y');
 					echo "<article>";
 					echo	"<figure>";
 					echo		'<a href="detalles_foto.php?id=' . $fila['IdFoto'] . '" ><img src="fotos/' . $fila['Fichero'] .'" alt="Imagen1" height="164" width="164" ></a>';
 					echo		'<figcaption>' . $fila['Titulo'] . '</figcaption>';
-					echo '<p>Fecha : '. $fecha .'</p>';
-					echo '<p>Pais : '. $fila['NomPais'] .'</p>';
+					echo '<p>Fecha : '. $fec .'</p>';
+					echo '<p>Pais : '. $pais .'</p>';
 					echo	'</figure>';
 					echo '</article>';
 
