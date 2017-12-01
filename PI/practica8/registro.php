@@ -11,7 +11,7 @@
 	<main>
 		<h1 id="titulo_registro">Formulario de registro</h1>
 		<p id="obligatorio">IMPORTANTE: Todos los campos de este formulario son obligatorios.</p>
-		<form method="POST" action="nuevo_usuario.php"> <!-- valor del action provisional para que no de error en la validacion del código -->
+		<form method="POST" action="nuevo_usuario.php"> <!-- nuevo_usuario.php -->
 			<p><label for="usuario">Nombre de usuario :</label>
 				<input type="text" name="usuario" id="usuario" required autofocus>
 			</p>

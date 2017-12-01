@@ -14,28 +14,6 @@
 			
 		require_once('insert_usuario.php');
 
-			/*$mail = $_POST['mail'];
-			$sexo = $_POST['sexo'];
-			$nacimiento = $_POST['nacimiento'];
-			$ciudad = $_POST['ciudad'];
-			$pais = $_POST['pais'];
-			v*/
-
-
-			/*$usuario = $_POST['usuario'];
-			$mail = $_POST['mail'];
-			$sexo = $_POST['sexo'];
-			$nacimiento = $_POST['nacimiento'];
-			$ciudad = $_POST['ciudad'];
-			$pais = $_POST['pais'];
-			$foto = $_POST['foto'];*/
-
-			if($sexo==0){
-				$sexo="Hombre";
-			}elseif($sexo==1){
-				$sexo="Mujer";
-			}else
-				$sexo="Otro";
 		?>
 
 		<h1 id="titulo_registro">Datos registrados</h1>
@@ -46,7 +24,7 @@
 				<input type="email" name="mail" id="mail"  value="<?php echo $email; ?>" readonly>
 			</p>
 				<p><label for="text">Sexo :</label>
-				<input type="email" name="sexo" id="sexo" value="<?php echo $sexo; ?>" readonly>
+				<input type="email" name="sexo" id="sexo" value="<?php echo $_POST['sexo']; ?>" readonly>
 			</p>
 			<p>
 				<label for="nacimiento">Fecha de nacimiento :</label>
