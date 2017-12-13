@@ -129,15 +129,51 @@
 
 	// configuramos la foto de perfil a subir
 
-	if($_POST['foto'] == "")
+	if($_FILES["foto"]["name"] == "")
 		$foto = "defecto.jpg";
 	else
-		$foto = $_POST['foto'];
+		$foto = $_FILES['foto']['name'];
 
+	//subida de la imagen
+	 $msgError = array(0 => "No hay error, el fichero se subió con éxito", 
+               1 => "El tamaño del fichero supera la directiva 
+                   upload_max_filesize el php.ini", 
+               2 => "El tamaño del fichero supera la directiva 
+                   MAX_FILE_SIZE especificada en el formulario HTML", 
+               3 => "El fichero fue parcialmente subido", 
+               4 => "No se ha subido un fichero", 
+               6 => "No existe un directorio temporal", 
+               7 => "Fallo al escribir el fichero al disco", 
+               8 => "La subida del fichero fue detenida por la extensión"); 
+ 
+ 	$cont =1;
+ if($_FILES["foto"]["error"] > 0) 
+ { 
+   echo "Error: " . $msgError[$_FILES["foto"]["error"]] . "<br />"; 
+ } 
+ else 
+ {  
+   if(file_exists("./fotos/" . $_FILES["foto"]["name"])) 
+   { 
+   	while(file_exists("./fotos/" . $cont . "_" . $_FILES["foto"]["name"])){
+
+   		$cont++;
+   	}
+ 	  //	rename($_FILES["foto"]["name"],  $cont . $_FILES["foto"]["name"]); 
+   	 move_uploaded_file($_FILES["foto"]["tmp_name"],"./fotos/" . $cont . "_" . $_FILES["foto"]["name"]);
+   	 $sube=$cont . "_" . $_FILES["foto"]["name"];
+   } 
+   else 
+   { 
+   		move_uploaded_file($_FILES["foto"]["tmp_name"],"./fotos/" . $_FILES["foto"]["name"]);
+   		$sube= $_FILES["foto"]["name"];
+
+   } 
+ } 
 	// creamos la insercion y la ejecutamos
 
 	$insert = "INSERT INTO `usuarios`(`NomUsuario`, `Clave`, `Email`, `Sexo`, `FNacimiento`, `Ciudad`, `Pais`, `Foto`, `FRegistro`)
-			 VALUES ('".$usuario."', '".$contrasenya."', '".$email."', ".$sexo.", '".$nacimiento."', '".$ciudad."', ".$res1['IdPais'].", '".$foto."', NOW())";
+			 VALUES ('".$usuario."', '".$contrasenya."', '".$email."', ".$sexo.", '".$nacimiento."', '".$ciudad."', ".$res1['IdPais'].", '". $sube. "', NOW())";
 				 //echo $insert;
 
 	if(!($res=$mysqli->query($insert)))

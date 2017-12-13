@@ -20,16 +20,14 @@ session_start();
 		if(!($res2=$mysqli->query($consulta2))){
 			echo "Error al realziar la consulta" . $mysqli->error;
 		}
-
-		
 ?>
 	
 	<main id="main_usuario">
 		<fieldset id="misdatos">
 			<legend><h2>Mis datos</h2></legend>
 			<?php if(isset($_GET['error']) && $_GET['error']==true) echo"<p id='error'>Introduzca unos datos correctos</p>"?>
-			<form method="post" action="respuesta_mis_datos.php">
-				<p><img id="imagen_perfil" src="imagenes/<?php echo $usuario['Foto'];?>" alt="foto perfil" width="100" height="100"><input type="file" name="foto"></p>
+			<form method="post" action="respuesta_mis_datos.php" enctype="multipart/form-data">
+				<p><img id="imagen_perfil" src="fotos/<?php echo $usuario['Foto'];?>" alt="foto perfil" width="100" height="100"><input type="file" name="foto2"></p>
 				<table>
 					<tr>
 						<td>Usuario</td> <td><input type="text" name="usuario" value="<?php echo $usuario['NomUsuario'];?>"></td>
@@ -68,8 +66,7 @@ session_start();
 								echo "<option value='" . $fila['NomPais'] . "'>" . $fila['NomPais'] . "</option>";
 						}
 					?>
-					</select>
-							
+					</select>							
 						</td>
 					</tr>
 					<tr><td>Ciudad :</td> <td><input type="text" name="ciudad" value="<?php echo $usuario['Ciudad'];?>"></td></tr>

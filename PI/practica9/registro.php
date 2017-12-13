@@ -11,7 +11,7 @@
 	<main>
 		<h1 id="titulo_registro">Formulario de registro</h1>
 		<p id="obligatorio">IMPORTANTE: Todos los campos de este formulario son obligatorios.</p>
-		<form method="POST" action="nuevo_usuario.php"> <!-- nuevo_usuario.php -->
+		<form method="POST" action="nuevo_usuario.php" enctype="multipart/form-data"> <!-- nuevo_usuario.php -->
 			<p><label for="usuario">Nombre de usuario : <?php  if(isset($_GET['error']) && $_GET['error'] == 1) echo "<span id='error'>Usuario no válido</span>"?></label>
 				<input type="text" name="usuario" id="usuario" required autofocus>
 			</p>

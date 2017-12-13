@@ -79,21 +79,20 @@
 				<?php 
 				while($fila=$resultado->fetch_assoc()){
 					if($fila['Fecha']==""){
-				$fec=" Desconocida";
-			}else{
-				$fec=$fila['Fecha'];
-			}
-
-			if($fila['Pais']==""){
-				$pais="Desconocido";
-			}else{
-				while($pais_code=$var2->fetch_assoc()){
-					if($pais_code['IdPais']==$fila['Pais']){
-						$pais=$pais_code['NomPais'];
+						$fec=" Desconocida";
+					}else{
+						$fec=$fila['Fecha'];
 					}
-				}
 
-			}
+					if($fila['Pais']==""){
+						$pais="Desconocido";
+					}else{
+						while($pais_code=$var2->fetch_assoc()){
+							if($pais_code['IdPais']==$fila['Pais']){
+								$pais=$pais_code['NomPais'];
+							}
+						}
+					}
 
 					$date = new DateTime($fila['Fecha']);
 					$fecha = $date->format('d-m-Y');

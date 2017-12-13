@@ -32,7 +32,7 @@ session_start();
 	<main id="main_usuario">
 		<fieldset id="misdatos">
 			<legend><h2>Mis datos</h2></legend>
-			<p><img id="imagen_perfil" src="imagenes/<?php echo $usuario['Foto'];?>" alt="foto perfil" width="100" height="100"></p>
+			<p><img id="imagen_perfil" src="fotos/<?php echo $usuario['Foto'];?>" alt="foto perfil" width="100" height="100"></p>
 			<table>
 				<tr>
 					<td>Usuario</td> <td><?php echo $usuario['NomUsuario'];?></td>
