@@ -16,8 +16,12 @@
 			if(!($var2=$mysqli->query($comprobar_pais))){
 				echo "Error al realizar la consulta";
 
-	}			
+	}
+
+
 		}
+
+
 ?>
 <!DOCTYPE html> 
 <html lang="es">
@@ -72,6 +76,46 @@
 						}
 					?>
 				</section>
+				<?php
+                    ///generamos linea aleatoria
+                    $aleatorio=rand(0,4);
+                     $cont=0;
+                     $ruta="";
+                    //llemos  el archivo
+
+                        if(($fichero = @file("./premio/ganadores.txt")) == false) {
+                               echo "No se ha podido abrir el fichero";
+                         }else{
+                         
+                           foreach($fichero as $numLinea => $linea){
+                                
+                               if($cont==$aleatorio*3){
+                               	$caracteres = preg_split('//', $linea, -1, PREG_SPLIT_NO_EMPTY);
+                               			for($i=0;$i<strlen($linea)-2;$i++){
+                               				$ruta.=$caracteres[$i];
+                               			}
+                                     //  $ruta = $linea;
+                               }
+                               else if($cont==$aleatorio*3+1){
+                               		$trans = utf8_encode($linea);
+                                      $critico= $trans;
+
+                               }else if($cont==$aleatorio*3+2){
+                               		$trans = utf8_encode($linea);
+                                      
+                                    $comentario= $trans;
+                               }
+                            $cont++;
+                          }
+                        }
+
+                        $sol_foto_selec = 'select * from fotos inner join paises on Pais=IdPais where Fichero = "'.$ruta.'"';
+                        if(!($select_foto_seleccionada=$mysqli->query($sol_foto_selec))){
+							echo "Error al realizar la consulta";
+						}
+						$cosa = $select_foto_seleccionada->fetch_assoc();
+
+                    ?>
 			</div>
 			<section id="UltimasFotos">
 				<h2>Últimas fotos subidas - <a href="formulario_busqueda.php">Buscar más</a></h2>
@@ -79,20 +123,21 @@
 				<?php 
 				while($fila=$resultado->fetch_assoc()){
 					if($fila['Fecha']==""){
-						$fec=" Desconocida";
-					}else{
-						$fec=$fila['Fecha'];
-					}
+				$fec=" Desconocida";
+			}else{
+				$fec=$fila['Fecha'];
+			}
 
-					if($fila['Pais']==""){
-						$pais="Desconocido";
-					}else{
-						while($pais_code=$var2->fetch_assoc()){
-							if($pais_code['IdPais']==$fila['Pais']){
-								$pais=$pais_code['NomPais'];
-							}
-						}
+			if($fila['Pais']==""){
+				$pais="Desconocido";
+			}else{
+				while($pais_code=$var2->fetch_assoc()){
+					if($pais_code['IdPais']==$fila['Pais']){
+						$pais=$pais_code['NomPais'];
 					}
+				}
+
+			}
 
 					$date = new DateTime($fila['Fecha']);
 					$fecha = $date->format('d-m-Y');
@@ -105,9 +150,23 @@
 					echo	'</figure>';
 					echo '</article>';
 
-				} ?>				
-			</section>
+				} ?>
+				<br>
+				<h2 class="texto_foto_seleccionada">Fotos seleccionadas</h2>
+				<hr>
+				<article>
+					<figure>
+						<?php echo '<a href="detalles_foto.php?id=' . $cosa['IdFoto'] . '" ><img src="fotos/' . $cosa['Fichero'] .'" alt="Imagen Seleccionada"  height="512" width="512"></a>'; 
+						echo		'<figcaption>' . $fila['Titulo'] . '</figcaption>';
+						echo '<p>Fecha : '. $cosa["Fecha"] .'</p>';
+						echo '<p>Pais : '. $cosa["NomPais"] .'</p>';
+					?>
+						<p>Selector: <?php echo $critico ?></p>
+					</figure>
+				</article>
+				<p class="texto_foto_seleccionada">" <?php echo $comentario ?> "</p>			
 		</main>
+		
 		<?php
 				$resultado->close();
 				$mysqli->close();	

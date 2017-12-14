@@ -23,7 +23,7 @@ session_start();
 
 		<main>
 				<h1 id="titulo_busqueda">Añadir foto</h1>
-			<form method="POST" action="nueva_foto.php">
+			<form method="POST" action="nueva_foto.php" enctype="multipart/form-data">
 				<p><label for="tituloFoto">Título</label><input type="text" name="tituloFoto" id="tituloFoto" placeholder="Título" autofocus required></p>
 				<p><label for="fechaFoto">Fecha</label><input type="date" name="fechaFoto" id="fechaFoto" ></p>
 				<p><label for="pais">Pais</label>
@@ -45,7 +45,11 @@ session_start();
 				?>
 				</select></p>
 				<p>
-					<label for="foto">Archivo de la foto</label>
+					<label for="foto">Archivo de la foto
+											<?php
+										  if(isset($_GET['error']) && $_GET['error'] == 1) echo "<span id='error'>  Tipo de imagen no válida (Se permite 'png', 'jpg', 'jpeg' y 'gif')</span>";
+										  if(isset($_GET['error']) && $_GET['error'] == 2) echo "<span id='error'>  Tamaño de imágen demasiado grande (Max. 200 KB)</span>"
+										  	?></label>
 					<input type="file" name="foto" id="foto" required>
 				</p>
 				<p><input id="boton_buscar" type="submit" value="Subir foto"></p>

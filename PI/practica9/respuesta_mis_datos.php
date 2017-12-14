@@ -69,6 +69,20 @@ session_start();
 		unlink("./fotos/" . $image['Foto']);
 
  
+		$ext_allowed = array('png', 'jpg', 'jpeg', 'gif');
+		if(!in_array(pathinfo($_FILES["foto2"]["name"], PATHINFO_EXTENSION), $ext_allowed))
+		{
+			header('Location: mis_datos.php?error=1');
+			exit();
+		}
+
+		$tam = $_FILES["foto2"]["size"] / 1024;
+		if( $tam > 2000 )
+		{
+			header('Location: mis_datos.php?error=2');
+			exit();
+		}
+
  	$cont =1;
  if($_FILES["foto2"]["error"] > 0){ 
    echo "Error: " . $msgError[$_FILES["foto2"]["error"]] . "<br />"; 

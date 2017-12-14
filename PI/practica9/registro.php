@@ -50,7 +50,8 @@
 				</select>
 			</p>
 			<p>
-				<label for="foto">Foto de perfil :</label>
+				<label for="foto">Foto de perfil : <?php  if(isset($_GET['error']) && $_GET['error'] == 6) echo "<span id='error'>Extensión de foto no válida</span>";
+							  if(isset($_GET['error']) && $_GET['error'] == 7) echo "<span id='error'>Tamaño de fichero demasiado grande</span>"?></label>
 				<input type="file" name="foto" id="foto" required>
 			</p>
 			<p>

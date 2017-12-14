@@ -132,7 +132,22 @@
 	if($_FILES["foto"]["name"] == "")
 		$foto = "defecto.jpg";
 	else
+	{
+		$ext_allowed = array('png', 'jpg', 'jpeg', 'gif');
+		if(!in_array(pathinfo($_FILES["foto"]["name"], PATHINFO_EXTENSION), $ext_allowed))
+		{
+			header('Location: registro.php?error=6');
+			exit();
+		}
+
+		$tam = $_FILES["foto"]["size"] / 1024;
+		if( $tam > 2000 )
+		{
+			header('Location: registro.php?error=7');
+			exit();
+		}
 		$foto = $_FILES['foto']['name'];
+	}
 
 	//subida de la imagen
 	 $msgError = array(0 => "No hay error, el fichero se subió con éxito", 
