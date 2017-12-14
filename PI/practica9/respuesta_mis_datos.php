@@ -66,7 +66,7 @@ session_start();
 		}
 		$image=$borro->fetch_assoc();
 
-		unlink("./fotos/" . $image['Foto']);
+		
 
  
 		$ext_allowed = array('png', 'jpg', 'jpeg', 'gif');
@@ -82,6 +82,8 @@ session_start();
 			header('Location: mis_datos.php?error=2');
 			exit();
 		}
+
+		unlink("./fotos/" . $image['Foto']);
 
  	$cont =1;
  if($_FILES["foto2"]["error"] > 0){ 
