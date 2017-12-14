@@ -12,16 +12,8 @@
 			if(!($resultado=$mysqli->query($sentencia))){
 				echo "Error de sentencia";
 			}
-			$comprobar_pais =  'select * from paises';
-			if(!($var2=$mysqli->query($comprobar_pais))){
-				echo "Error al realizar la consulta";
 
 	}
-
-
-		}
-
-
 ?>
 <!DOCTYPE html> 
 <html lang="es">
@@ -131,6 +123,12 @@
 			if($fila['Pais']==""){
 				$pais="Desconocido";
 			}else{
+				
+
+					$comprobar_pais =  'select * from paises';
+			if(!($var2=$mysqli->query($comprobar_pais)))
+					echo "Error al realizar la consulta";
+
 				while($pais_code=$var2->fetch_assoc()){
 					if($pais_code['IdPais']==$fila['Pais']){
 						$pais=$pais_code['NomPais'];
