@@ -70,10 +70,10 @@
 				</section>
 				<?php
                     ///generamos linea aleatoria
-                    $aleatorio=rand(0,4);
+                    $aleatorio=rand(0,5);
                      $cont=0;
                      $ruta="";
-                    //llemos  el archivo
+                    //leemos  el archivo
 
                         if(($fichero = @file("./premio/ganadores.txt")) == false) {
                                echo "No se ha podido abrir el fichero";

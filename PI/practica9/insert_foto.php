@@ -26,15 +26,6 @@
 		}
 
 
-		// Se debe comprobar (por ahora):
-		/*
-			1. La extensión del fichero
-			2. el tamaño del fichero
-			3. Si ya existe un fichero con el mismo nombre guardado 
-				(se cambia el nombre para evitar colisiones)
-			4. 
-		*/
-
 		$ext_allowed = array('png', 'jpg', 'jpeg', 'gif');
 		if(!in_array(pathinfo($_FILES["foto"]["name"], PATHINFO_EXTENSION), $ext_allowed))
 		{
@@ -43,7 +34,7 @@
 		}
 
 		$tam = $_FILES["foto"]["size"] / 1024;
-		if( $tam > 200 )
+		if( $tam > 5000 )
 		{
 			header('Location: anyadir_foto.php?error=2');
 			exit();
@@ -88,12 +79,12 @@
  } 
  else 
  { 
-   echo "Nombre original: " . $_FILES["foto"]["name"] . "<br />"; 
+  /* echo "Nombre original: " . $_FILES["foto"]["name"] . "<br />"; 
    echo "Tipo: " . $_FILES["foto"]["type"] . "<br />"; 
    echo "Tamaño: " . ceil($_FILES["foto"]["size"] / 1024) . " Kb<br />"; 
    echo "Nombre temporal: " . $_FILES["foto"]["tmp_name"] . "<br />"; 
    echo "./fotos/" . $archivo_foto . "<br />";
-   echo pathinfo($_FILES["foto"]["name"], PATHINFO_EXTENSION) . "<br />";
+   echo pathinfo($_FILES["foto"]["name"], PATHINFO_EXTENSION) . "<br />";*/
 
 
    if(file_exists("./fotos/" . $archivo_foto))
@@ -107,7 +98,6 @@
 	}
     move_uploaded_file($_FILES["foto"]["tmp_name"], 
                   "./fotos/" . $archivo_foto); 
-    echo "Almacenado en: " . "./fotos/" . $archivo_foto;
    } 
  }
 
